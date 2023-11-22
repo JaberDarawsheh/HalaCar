@@ -34,7 +34,7 @@ public class ProductCat {
 	public void show_products_catalog_toUser(UserLoginPage userlogin) throws SQLException {
 	    connec.testConn();
 	    logger.log(Level.INFO, "|        id       |   product name   |   product type   |   product price  |   product img    |   availability   |");
-	    String query = "SELECT * FROM productcatalog";
+	    String query = "SELECT * FROM prodcutcatalog";
 
 	    try (PreparedStatement preparedStatement = connec.getConnection().prepareStatement(query)) {
 

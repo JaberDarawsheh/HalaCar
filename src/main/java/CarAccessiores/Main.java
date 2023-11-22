@@ -14,23 +14,14 @@ public class Main
 
 	public static void main(String[] args) throws SQLException
 	{
-		// Get the root logger
 		Logger logger = Logger.getLogger("");
-
-		// Remove existing handlers to avoid duplicate output
 		for (java.util.logging.Handler handler : logger.getHandlers()) {
 			logger.removeHandler(handler);
 		}
-
-		// Create a ConsoleHandler and set the custom formatter
 		ConsoleHandler consoleHandler = new ConsoleHandler();
 		CustomLogFormatter customFormatter = new CustomLogFormatter();
 		consoleHandler.setFormatter(customFormatter);
-
-		// Add the ConsoleHandler to the logger
 		logger.addHandler(consoleHandler);
-
-		
 		logger.info("---------------------------------------------------------");
 		logger.info("-         Welcome to our Car Accessories Company        -");
 		logger.info("-                                                       -");

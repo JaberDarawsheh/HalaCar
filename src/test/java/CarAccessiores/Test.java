@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		plugin= {"html: target/cucumber.html"},
 		features="use_cases",
-		glue="CarAccessories")
+		glue="CarAccessiores")
 public class Test {
   
 }

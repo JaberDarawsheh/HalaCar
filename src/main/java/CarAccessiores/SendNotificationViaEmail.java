@@ -1,127 +1,72 @@
 package CarAccessiores;
 
-import java.net.PasswordAuthentication;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
+import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.*;
-import com.mysql.cj.Session;
-import java.util.*;
-import java.net.*;
 
 public class SendNotificationViaEmail 
 {
-	public void sendNotificationToCustomer(String customerEmail, String message) throws SQLException 
+	static final Logger logger = Logger.getLogger(SendNotificationViaEmail.class.getName());
+	public void sendNotificationToCustomer(String customerEmail, String messageContent)throws SQLException
 	{
-		 
-		 // Recipient's email ID needs to be mentioned.
-        String to = customerEmail;
+        String fromEmail = "caraccessioescompany@gmail.com";
+        String password = "eujm kiyn xfjv kjfq";  
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
 
-        // Sender's email ID needs to be mentioned
-        String from = "halacar@gmail.com";
-
-        // Assuming you are sending email from through gmails smtp
-        String host = "smtp.gmail.com";
-
-        // Get system properties
-        Properties properties = System.getProperties();
-
-        // Setup mail server
-        properties.put("mail.smtp.host",host);
-        properties.put("mail.smtp.port","465");
-        properties.put("mail.smtp.ssl.enable","true");
-        properties.put("mail.smtp.auth","true");
-        // Get the Session object.// and pass username and password
-        Session session = Session.getInstance(properties, new javax.mail.Authenticator() 
-        {
-            protected PasswordAuthentication getPasswordAuthentication()
-            {
-                return new PasswordAuthentication("halacar@gmail.com", "12345678");
-
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
             }
-
         });
-        session.setDebug(true);
-        try
-
-        {
-            // Create a default MimeMessage object.
-            MimeMessage message = new MimeMessage(session);
-            // Set From: header field of the header.
-            message.setFrom(new InternetAddress(from));
-            // Set To: header field of the header.
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            // Set Subject: header field
-            message.setSubject("Your Reques Status!!");
-            // Now set the actual message
-            message.setText("Your installation request is complete : \n "+message);
-            System.out.println("sending email...");
-            // Send message
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(fromEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(customerEmail));
+            message.setSubject("Test Email");
+            message.setText(messageContent);
             Transport.send(message);
-            System.out.println("Sent message successfully....");
-        } catch(MessagingException mex)
-
-        {
-            mex.printStackTrace();
+            System.out.println("Verification email sent successfully!");
+        } catch (MessagingException e) {
+            e.printStackTrace();
         }
-		
-	}
-
-	public void sendNotificationToInstaller(String installerEmail, String message)throws SQLException 
+    }
+	public void sendNotificationToInstaller(String installerEmail, String InstallermessageContent)throws SQLException 
 	{
-		 // Recipient's email ID needs to be mentioned.
-        String to = installerEmail;
+		String fromEmail = "caraccessioescompany@gmail.com";
+        String password = "eujm kiyn xfjv kjfq";  
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
 
-        // Sender's email ID needs to be mentioned
-        String from = "halacar@gmail.com";
-
-        // Assuming you are sending email from through gmails smtp
-        String host = "smtp.gmail.com";
-
-        // Get system properties
-        Properties properties = System.getProperties();
-
-        // Setup mail server
-        properties.put("mail.smtp.host",host);
-        properties.put("mail.smtp.port","465");
-        properties.put("mail.smtp.ssl.enable","true");
-        properties.put("mail.smtp.auth","true");
-        // Get the Session object.// and pass username and password
-        Session session = Session.getInstance(properties, new javax.mail.Authenticator()
-        {
-            protected PasswordAuthentication getPasswordAuthentication() 
-            {
-            	return new PasswordAuthentication("halacar@gmail.com", "12345678");
-
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
             }
-
         });
-        session.setDebug(true);
-        try
-
-        {
-            // Create a default MimeMessage object.
-            MimeMessage message = new MimeMessage(session);
-            // Set From: header field of the header.
-            message.setFrom(new InternetAddress(from));
-            // Set To: header field of the header.
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            // Set Subject: header field
-            message.setSubject("Your Request Status!!");
-            // Now set the actual message
-            message.setText("You have a new installation request : \n "+message);
-            System.out.println("sending email...");
-            // Send message
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(fromEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(InstallermessageContent));
+            message.setSubject("Test Email");
+            message.setText(InstallermessageContent);
             Transport.send(message);
-            System.out.println("Sent message successfully....");
-        } catch(MessagingException mex)
-
-        {
-            mex.printStackTrace();
+            System.out.println("Verification email sent successfully!");
+        } catch (MessagingException e) {
+            e.printStackTrace();
         }
 	}
    

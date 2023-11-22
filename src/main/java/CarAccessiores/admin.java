@@ -1,5 +1,7 @@
 package CarAccessiores;
 
+
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Logger;
@@ -30,12 +32,7 @@ public class admin extends User {
             } else {
                 logger.warning("\nsome thing went wrong please try again later");
             }
-
         }
-
-
-
-
     }
 
     public void UpdatePass(String email, String Upass) throws SQLException {
