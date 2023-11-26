@@ -15,11 +15,18 @@ import java.util.Scanner;
 public class customer extends User {
     private UserLoginPage user;
     private ProductCat cat;
+    private String pass;
     private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
     public customer(String userEmail,String userPassword) {
         super(userEmail,userPassword);
+        pass = userPassword;
         user=new UserLoginPage(userEmail,userPassword);
         cat=new ProductCat();
+    }
+
+    public void ShowPersonalInfo() {
+        logger.info("Personal Information ");
+        logger.info("Email: " + user.getUser_email());
     }
 
 
@@ -72,8 +79,7 @@ public class customer extends User {
         cat.show_products_catalog_toUser(user);
     }
 
-    public void AddToCart(int id,int Quantity) throws SQLException
-    {
+    public void AddToCart(int id,int Quantity) throws SQLException {
         String CARTsql = "INSERT INTO cart (pid,productName,productType,unitPrice,quantity,email)"+
                      "SELECT `id`,`productName`,`productType`,`productPrice`,?,?"+
                      "FROM ProductCatalog WHERE id =?";
@@ -93,7 +99,6 @@ public class customer extends User {
             }
         }
     }
-
 
     public void viewCart() throws SQLException {
         String showCart = "SELECT `pid`,`productName`,`productType`,`unitPrice`,`quantity`" +
@@ -123,8 +128,8 @@ public class customer extends User {
             }
         }
     }
-    public void checkOut() throws SQLException
-    {
+
+    public void checkOut() throws SQLException {
         //this function should move the orders from the cart to the history with date and time of the order purchase
         String checkOutSql= "INSERT INTO history(id,productName,productType,unitPrice,quantity,email,orderDate)"+
                             "SELECT `pid`,`productName`,`productType`,`unitPrice`,`quantity`,`email`,?"+
@@ -228,7 +233,7 @@ public class customer extends User {
 
     public void showScheduled() throws SQLException {
         String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
-                " FROM install_request WHERE status =? AND email =?";
+                " FROM install_request WHERE status =? ";
         connectDB connection = new connectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowScheduled");
@@ -316,5 +321,56 @@ public class customer extends User {
                 logger.log(Level.INFO, String.format(format, rowData.toString()));
             }
         }
+    }
+
+    public void showAllRequests() throws SQLException {
+        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
+                " FROM install_request WHERE  email =?";
+        connectDB connection = new connectDB();
+        connection.testConn();
+        Logger logger = Logger.getLogger("ShowCanceled");
+
+        try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
+            stmt.setString(1, user.getUser_email());
+            ResultSet rSet = stmt.executeQuery();
+            ResultSetMetaData metaData = rSet.getMetaData();
+            int numberOfColumns = metaData.getColumnCount();
+            String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
+            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Type", "Installer Email", "Car Model", "Installation Date", "Status"));
+
+            while (rSet.next()) {
+                StringBuilder rowData = new StringBuilder();
+
+                for (int i = 1; i <= numberOfColumns; i++) {
+                    rowData.append(rSet.getString(i));
+                    if (i < numberOfColumns) {
+                        rowData.append(" ");
+                    }
+                }
+                logger.log(Level.INFO, String.format(format, rowData.toString()));
+            }
+        }
+    }
+
+    public void changeEmail(String newEmail) throws SQLException {
+        String sql = "UPDATE systemusers SET `user_email` = ? WHERE `user_email` = ?";
+        connectDB conDB = new connectDB();
+        conDB.testConn();
+        try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
+            stmt.setString(1, user.getUser_email());
+            stmt.setString(2, newEmail);
+            int rowsAffected = stmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                logger.info("the password updated successfully.");
+
+            } else {
+                logger.warning("\n some thing went wrong please try again later");
+            }
+
+        }
+        user=null;
+        user=new UserLoginPage(newEmail,pass);
+
     }
 }

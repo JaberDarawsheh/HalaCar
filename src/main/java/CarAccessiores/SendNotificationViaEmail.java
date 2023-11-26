@@ -17,8 +17,8 @@ public class SendNotificationViaEmail
 	static final Logger logger = Logger.getLogger(SendNotificationViaEmail.class.getName());
 	public void sendNotificationToCustomer(String customerEmail, String messageContent)throws SQLException
 	{
-        String fromEmail = "caraccessioescompany@gmail.com";
-        String password = "eujm kiyn xfjv kjfq";  
+        final String fromEmail = "caraccessioescompany@gmail.com";
+        final String password = "eujm kiyn xfjv kjfq";
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
@@ -44,8 +44,8 @@ public class SendNotificationViaEmail
     }
 	public void sendNotificationToInstaller(String installerEmail, String InstallermessageContent)throws SQLException 
 	{
-		String fromEmail = "caraccessioescompany@gmail.com";
-        String password = "eujm kiyn xfjv kjfq";  
+		final String fromEmail = "caraccessioescompany@gmail.com";
+        final String password = "eujm kiyn xfjv kjfq";
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");

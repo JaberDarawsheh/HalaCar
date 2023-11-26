@@ -2,7 +2,6 @@ package CarAccessiores;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Scanner;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.ConsoleHandler;
 
@@ -108,7 +107,7 @@ public class Main
 										logger.info("please enter the password for the user you want to add: ");
 										password = scanner.next();
 										try {
-											Admin.add(email, password);
+											Admin.addCustomer(email, password);
 										}
 										catch (SQLException e) {
 											logger.warning("\nsome thing went wrong please try again later");

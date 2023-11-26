@@ -65,7 +65,40 @@ public class ProductCat {
 	    }
 	}
 
+	public void show_products_catalog_toAdmin(admin d) throws SQLException {
+		connec.testConn();
+		logger.log(Level.INFO, "|        id       |   product name   |   product type   |   product price  |   product img    |   availability   |");
+		String query = "SELECT * FROM prodcutcatalog";
 
+		try (PreparedStatement preparedStatement = connec.getConnection().prepareStatement(query)) {
+
+			try (ResultSet resultSet = preparedStatement.executeQuery()) {
+				ResultSetMetaData metaData = resultSet.getMetaData();
+				int columnCount = metaData.getColumnCount();
+
+				while (resultSet.next()) {
+					StringBuilder rowData = new StringBuilder();
+
+					for (int i = 1; i <= columnCount; i++) {
+						String columnValue = resultSet.getString(i);
+
+						// Define a fixed width for each column and left-align the text
+						int columnWidth = 18;
+						String formattedValue = String.format("%-" + columnWidth + "s", columnValue);
+
+						rowData.append(formattedValue);
+
+						if (i < columnCount) {
+							rowData.append("|"); // Add a vertical bar as a separator between columns
+						}
+					}
+
+					logger.log(Level.INFO, rowData.toString());
+				}
+			}
+		}
+
+	}
 	public void search_and_show_filtered_result(String someProduct, String price) throws SQLException {
 	    connec.testConn();
 	    String query = "SELECT * FROM productcatalog WHERE `productName` = ? AND `productPrice` = ?";

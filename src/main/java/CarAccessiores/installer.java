@@ -61,7 +61,7 @@ public class installer extends User{
                 logger.info("The request time scheduled.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning("\n some thing went wrong please try again later");
             }
 
         }

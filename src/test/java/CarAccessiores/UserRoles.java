@@ -71,7 +71,7 @@ public class UserRoles {
         String user_mail="";
         // Write code here that turns the phrase above into concrete actions
         try {
-            user.add("subhi@outlook.com","subhi1234");
+            user.addCustomer("subhi@outlook.com","subhi1234");
         } catch (SQLException e) {
             e.printStackTrace();
         }
