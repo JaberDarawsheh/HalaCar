@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="4 feature ready">
+      <change afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/AdminDashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use_cases/AdminDashboard.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use_cases/UserProfile.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/SendNotificationViaEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/SendNotificationViaEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRoles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2XUXyoKDGhexXJd42GhLQEboba4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hamoo/Desktop/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="CarAccessiores" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="CarAccessiores" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cucumber Java.Feature: AdminDashboard">
+    <configuration name="Feature: AdminDashboard" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/AdminDashboard.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CarAccessioresCompany" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: AdminDashboard" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: InstallationRequest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/InstallationRequest.feature" />
+      <option name="GLUE" value="src/test/java/CarAccessiores" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CarAccessioresCompany" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Feature: InstallationRequest" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: UserProfile" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserProfile.feature" />
+      <option name="GLUE" value="src/test/java/CarAccessiores" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CarAccessioresCompany" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Feature: UserProfile" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: UserRoles" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserRoles.feature" />
+      <option name="GLUE" value="src/test/java/CarAccessiores" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CarAccessioresCompany" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Feature: UserRoles" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Admin Manages Users" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserRoles.feature" />
+      <option name="GLUE" value="src/test/java/CarAccessiores" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CarAccessioresCompany" />
+      <option name="NAME_FILTER" value="^Admin Manages Users$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Admin Manages Users$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: Admin Manages Users" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
+      <item itemvalue="Cucumber Java.Feature: InstallationRequest" />
+      <item itemvalue="Cucumber Java.Feature: UserProfile" />
+      <item itemvalue="Cucumber Java.Feature: UserRoles" />
+      <item itemvalue="Cucumber Java.Scenario: Admin Manages Users" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
+        <item itemvalue="Cucumber Java.Feature: UserProfile" />
+        <item itemvalue="Cucumber Java.Scenario: Admin Manages Users" />
+        <item itemvalue="Cucumber Java.Feature: UserRoles" />
+        <item itemvalue="Cucumber Java.Feature: InstallationRequest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="" />
+      <created>1698684889126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698684889126</updated>
+      <workItem from="1698684890274" duration="31000" />
+      <workItem from="1698864112289" duration="12030000" />
+      <workItem from="1698876668767" duration="16661000" />
+      <workItem from="1698939804178" duration="454000" />
+      <workItem from="1698940900789" duration="11941000" />
+      <workItem from="1700663136594" duration="492000" />
+      <workItem from="1700663646543" duration="3247000" />
+      <workItem from="1700759398318" duration="14767000" />
+      <workItem from="1700944728655" duration="9612000" />
+    </task>
+    <task id="LOCAL-00001" summary="some of the main">
+      <option name="closed" value="true" />
+      <created>1698876297076</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698876297076</updated>
+    </task>
+    <task id="LOCAL-00002" summary="some of the main">
+      <option name="closed" value="true" />
+      <created>1698876446880</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698876446880</updated>
+    </task>
+    <task id="LOCAL-00003" summary="some of the main">
+      <option name="closed" value="true" />
+      <created>1698908711436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698908711436</updated>
+    </task>
+    <task id="LOCAL-00004" summary="some of the main">
+      <option name="closed" value="true" />
+      <created>1698908754428</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698908754428</updated>
+    </task>
+    <task id="LOCAL-00005" summary="full main">
+      <option name="closed" value="true" />
+      <created>1698937619799</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698937619799</updated>
+    </task>
+    <task id="LOCAL-00006" summary="l3yon alsha3eb">
+      <option name="closed" value="true" />
+      <created>1698942204892</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698942204892</updated>
+    </task>
+    <task id="LOCAL-00007" summary="l3yon alsha3eb">
+      <option name="closed" value="true" />
+      <created>1698943066230</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698943066230</updated>
+    </task>
+    <task id="LOCAL-00008" summary="4 feature ready">
+      <option name="closed" value="true" />
+      <created>1698955944419</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698955944419</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="4f686ae9-f3aa-40e2-959a-a7ffd25acfca" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="4f686ae9-f3aa-40e2-959a-a7ffd25acfca">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="user roles feature and installation request feature" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/CarAccessiores/CustomLogFormatter.java&#10;#&#9;src/main/java/CarAccessiores/Dashboard.java&#10;#&#9;src/main/java/CarAccessiores/Main.java&#10;#&#9;src/main/java/CarAccessiores/UserLoginPage.java&#10;#&#9;src/main/java/CarAccessiores/connectDB.java&#10;#&#9;src/test/java/CarAccessiores/AdminDashboard.java" />
+    <MESSAGE value="some of the main" />
+    <MESSAGE value="full main" />
+    <MESSAGE value="l3yon alsha3eb" />
+    <MESSAGE value="4 feature ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="4 feature ready" />
+  </component>
+</project>
