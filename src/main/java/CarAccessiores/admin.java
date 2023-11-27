@@ -135,7 +135,7 @@ public class admin extends User {
         connectDB conn=new connectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
-            stmt.setInt(1,2);
+            stmt.setInt(1,0);
             stmt.setInt(2,pid);
             rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {

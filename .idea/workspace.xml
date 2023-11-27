@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="4 feature ready">
-      <change afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/AdminDashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/AdminDashboard.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_cases/UserProfile.feature" afterDir="false" />
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="admin dashboard and user profile ready">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/SendNotificationViaEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/SendNotificationViaEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRoles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +205,7 @@
       <workItem from="1700663136594" duration="492000" />
       <workItem from="1700663646543" duration="3247000" />
       <workItem from="1700759398318" duration="14767000" />
-      <workItem from="1700944728655" duration="9612000" />
+      <workItem from="1700944728655" duration="15094000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -280,7 +271,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698955944419</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="admin dashboard and user profile ready">
+      <option name="closed" value="true" />
+      <created>1701012723989</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701012723989</updated>
+    </task>
+    <task id="LOCAL-00010" summary="admin dashboard and user profile ready">
+      <option name="closed" value="true" />
+      <created>1701012790629</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701012790630</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +353,8 @@
     <MESSAGE value="full main" />
     <MESSAGE value="l3yon alsha3eb" />
     <MESSAGE value="4 feature ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="4 feature ready" />
+    <MESSAGE value="notifications section" />
+    <MESSAGE value="admin dashboard and user profile ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin dashboard and user profile ready" />
   </component>
 </project>

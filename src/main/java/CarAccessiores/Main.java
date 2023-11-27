@@ -60,6 +60,9 @@ public class Main
 				int choice=0;
 				String email;
 				String password;
+				String temp1;
+				String temp2;
+				int temp3=0;
 				admin Admin=new admin(user_email,user_password);
 				logger.info("The Admin entered the site");
 				boolean adminLogFlag = true;
@@ -69,7 +72,8 @@ public class Main
 				logger.info("Option 1 - Show Products Catalog .");
 				logger.info("Option 2 - Search and filter options to easily find products.");
 				logger.info("Option 3 - Admin role management menu.");
-				logger.info("Option 4 - Admin Logout the site.");
+				logger.info("Option 4 - Show admin dashboard.");
+				logger.info("Option 5 - Admin Logout the site.");
 				logger.info("==============================================");
 				while(adminLogFlag)
 				{
@@ -152,11 +156,141 @@ public class Main
 
 							}
 							break;
-						case 4: theAdminLogout(loginP);
+						case 4:
+							choice =0;
+							while(choice !=4) {
+								logger.info("=== Admin dashboard ===");
+								logger.info(" 1 - Manage product Product listing.");
+								logger.info(" 2 - View and manage customer accounts.");
+								logger.info(" 3 - Schedule and manage installation appointments. ");
+								logger.info(" 4 - Back to main menu. ");
+								choice = scanner.nextInt();
+								switch (choice) {
+									case 1:
+										Admin.showProductCatalog();
+										logger.info("=== Product management options ===");
+										logger.info(" 1 - Add new product");
+										logger.info(" 2 - Edit current product");
+										logger.info(" 3 - Delete a product");
+										logger.info(" 4 - Back to the dashboard");
+										choice= scanner.nextInt();
+										switch(choice){
+											case 1:
+												logger.info("please enter the product name: ");
+												temp1= scanner.nextLine();
+												logger.info("please enter the product type: ");
+												temp2= scanner.nextLine();
+												logger.info("please enter the product price: ");
+												temp3= scanner.nextInt();
+												Admin.addProduct(temp1,temp2,temp3);
+												break;
+											case 2 :
+												logger.info("=== Product edit options ===");
+												logger.info(" 1 -Rename a product");
+												logger.info(" 2- Change product type");
+												logger.info(" 3- Change product price");
+												logger.info(" 4- Make product unavailable");
+												choice = scanner.nextInt();
+												logger.info("please enter the product id you want to edit: ");
+												temp3 = scanner.nextInt();
+												switch(choice){
+													case 1:
+														logger.info("please enter the new name for the product: ");
+														temp2=scanner.nextLine();
+														Admin.changeProductName(temp3,temp2);
+														break;
+													case 2:
+														logger.info("please enter the new type for the product: ");
+														temp2=scanner.nextLine();
+														Admin.changeProductType(temp3,temp2);
+														break;
+													case 3:
+														logger.info("please enter the new price for the product: ");
+														int price= scanner.nextInt();
+														Admin.changeProductPrice(temp3,price);
+														break;
+													case 4:
+														Admin.isUnavailable(temp3);
+														break;
+												}
+												break;
+											case 3:
+												logger.info("Please enter the product id you want to delete:");
+												temp3= scanner.nextInt();
+												Admin.deleteProduct(temp3);
+												break;
+
+
+										}
+										break;
+									case 2:
+										Admin.showCustomer();
+										logger.info("please enter the mail of the user you want to edit: ");
+										email= scanner.nextLine();
+										logger.info("If you want to change the password for the customer press 1");
+										logger.info("If you want to change the email for the customer press 2");
+										temp3=scanner.nextInt();
+										if(temp3==1){
+											logger.info("please enter the new password: ");
+											temp1=scanner.nextLine();
+											Admin.UpdatePass(email,temp1);
+										}else if(temp3==2){
+											logger.info("please enter the new email: ");
+											temp1=scanner.nextLine();
+											Admin.updateEmail(email,temp1);
+										}else{
+											logger.info("invalid option");
+										}
+										break;
+									case 3:
+										Admin.showScheduledAppointments();
+										logger.info("=== Appointment management options ===");
+										logger.info(" 1 - Reschedule an appointment");
+										logger.info(" 2 - Mark as completed");
+										logger.info(" 3 - Mark as canceled");
+										logger.info(" 4 - Back to the dashboard");
+										temp3= scanner.nextInt();
+										switch(temp3){
+											case 1:
+												logger.info("please enter the request ID you want to reschedule: ");
+												temp3= scanner.nextInt();
+												logger.info("please enter the email of the installer you want to assign the request to: ");
+												email= scan.nextLine();
+												logger.info("enter a time for the appointment in the following format HH:mm:ss");
+												temp1= scanner.nextLine();
+												Admin.scheduleNewAppointment(temp3,email,temp1);
+												break;
+											case 2:
+												logger.info("please enter the request ID you want to mark as completed: ");
+												temp3= scanner.nextInt();
+												Admin.setStatusToCompleted(temp3);
+												break;
+											case 3:
+												logger.info("please enter the request ID you want to mark as canceled: ");
+												temp3= scanner.nextInt();
+												Admin.setStatusToCanceled(temp3);
+												break;
+											case 4:
+
+												break;
+											default:
+												logger.info("Invalid Choice !, Pleas try again");
+										}
+										break;
+									case 4:
+
+										break;
+									default:
+										logger.info("Invalid Choice !, Pleas try again");
+
+								}
+							}
+							break;
+						case 5: theAdminLogout(loginP);
 							adminLogFlag=false;
 							break;
 
-						default:logger.info("Invalid Chooes !, Pleas try again");
+						default:logger.info("Invalid Choice !, Pleas try again");
 					}//end switch
 				}// end while(adminLogFlag)
 
@@ -167,6 +301,7 @@ public class Main
 
 			else if(loginP.is_Customer_logged())
 			{
+				String temp1;
 				customer Customer=new customer(user_email,user_password);
 				boolean customerLogFlag=true;
 				int choice=0;
@@ -177,8 +312,10 @@ public class Main
 				logger.info("Option 1 - Show Products Catalog .");
 				logger.info("Option 2 - View shopping cart.");
 				logger.info("Option 3 - Customer Profile access.");
-				logger.info("Option 4 - installation request menu.");
-				logger.info("Option 5 - Customer Logout the site.");
+				logger.info("Option 4 - Installation request menu.");
+				logger.info("Option 5 - Change email.");
+				logger.info("Option 6 - Show personal information.");
+				logger.info("Option 7 - Customer Logout the site.");
 				logger.info("==============================================");
 				while(customerLogFlag) {
 
@@ -275,6 +412,14 @@ public class Main
 							}
 							break;
 						case 5:
+							logger.info("please enter your new email");
+							temp1=scanner.nextLine();
+							Customer.changeEmail(temp1);
+							break;
+						case 6:
+							Customer.ShowPersonalInfo();
+							break;
+						case 7:
 							logger.info("The Customer has left the site.");
 							customerLogFlag=false;
 							break;
