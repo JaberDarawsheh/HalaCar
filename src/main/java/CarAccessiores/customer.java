@@ -45,22 +45,39 @@ public class customer extends User {
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-20s | %-15s | %-10s | %-12s |%n";
             logger.log(Level.INFO, String.format(format, "Product Name", "Product Type", "Unit Price", "Order Date"));
-
+            int[] columnWidths={20,15,10,12};
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
+                for (int i = 1; i < numberOfColumns; i++) {
+                    String columnValue = rSet.getString(i);
+                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    rowData.append(formattedColumn);
+                    rowData.append(" | "); // Add separator between columns
 
-                for (int i = 1; i <= numberOfColumns; i++) {
-                    rowData.append(rSet.getString(i));
-                    if (i < numberOfColumns) {
-                        rowData.append(" ");
-                    }
                 }
-
                 Date date = rSet.getDate("orderDate");
-                String formattedDate = dateFormat.format(date);
-                rowData.append(formattedDate);
-                logger.log(Level.INFO, String.format(format, rowData.toString()));
+                String formattedDateTime = dateFormat.format(date);
+                String [] dateTimeSplit=formattedDateTime.split("\\s+");
+                String onlydate =dateTimeSplit[0];
+                rowData.append(onlydate);
+
+                logger.info(String.format("| %-20s   |%n", rowData));
             }
+//            while (rSet.next()) {
+//                StringBuilder rowData = new StringBuilder();
+//
+//                for (int i = 1; i <= numberOfColumns; i++) {
+//                    rowData.append(rSet.getString(i));
+//                    if (i < numberOfColumns) {
+//                        rowData.append(" ");
+//                    }
+//                }
+//
+//                Date date = rSet.getDate("orderDate");
+//                String formattedDate = dateFormat.format(date);
+//                rowData.append(formattedDate);
+//                logger.log(Level.INFO, String.format("|%-20s|", rowData.toString()));
+//            }
         }
     }
 
@@ -101,8 +118,7 @@ public class customer extends User {
     }
 
     public void viewCart() throws SQLException {
-        String showCart = "SELECT `pid`,`productName`,`productType`,`unitPrice`,`quantity`" +
-                " FROM cart WHERE email =?";
+        String showCart = "SELECT `pid`,`productName`,`productType`,`unitPrice`,`quantity` FROM cart WHERE email =?";
         connectDB connDataBase = new connectDB();
         connDataBase.testConn();
         Logger logger = Logger.getLogger("ViewCart");
@@ -112,29 +128,31 @@ public class customer extends User {
             ResultSet rSet = stmnt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            String format = "| %-5s | %-30s | %-15s | %-10s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, "ID", "Product Name", "Product Type", "Unit Price", "Quantity"));
-
+            String format = "| %-15s | %-30s | %-15s | %-10s | %-10s |%n";
+            logger.log(Level.INFO, String.format("| %-5s | %-30s | %-15s | %-10s | %-10s |%n", "ID", "Product Name", "Product Type", "Unit Price", "Quantity"));
+            int[] columnWidths={5,30,15,10,10};
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
-
                 for (int i = 1; i <= numberOfColumns; i++) {
-                    rowData.append(rSet.getString(i));
+                    String columnValue = rSet.getString(i);
+                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
-                        rowData.append(" ");
+                        rowData.append(" | "); // Add separator between columns
                     }
                 }
-                logger.log(Level.INFO, String.format(format, rowData.toString()));
+
+                logger.info(String.format("| %-5s  |%n", rowData));
             }
         }
     }
 
     public void checkOut() throws SQLException {
         //this function should move the orders from the cart to the history with date and time of the order purchase
-        String checkOutSql= "INSERT INTO history(id,productName,productType,unitPrice,quantity,email,orderDate)"+
+        String checkOutSql= "INSERT INTO history(pid,productName,productType,unitPrice,quantity,email,orderDate)"+
                             "SELECT `pid`,`productName`,`productType`,`unitPrice`,`quantity`,`email`,?"+
                             "FROM cart WHERE email =?";
-        String delteOrderFromCart= "DELETE FROM cart" +
+        String delteOrderFromCart= "DELETE FROM cart " +
                                    "WHERE email =?;";
         connectDB conDB= new connectDB();
         conDB.testConn();
@@ -188,20 +206,19 @@ public class customer extends User {
 
 
         String creatRequest="INSERT INTO install_request (pid,productName,productType,email,carModel,preferredDate,status)"+
-                            "SELECT `id`,`productName`,`productType`,`email`,?,?,?"+
-                            "FROM ProductCatalog WHERE email=? AND id=?";
-        String customer_email="SELECT `email` FROM install_request";
-        String orderName ="SELECT `productName` FROM install_request";
-        String installerEmail="SELECT `assigned` FROM install_request";
-        String orderData="SELECT `preferredData` FROM install_request";
+                            "SELECT `id`,`productName`,`productType`,?,?,?,?"+
+                            "FROM ProductCatalog WHERE id=?";
+        String customer_email=user.getUser_email();
+        String query ="SELECT * FROM ProductCatalog WHERE id=?";
+        String orderName;
         Timestamp date = new Timestamp(Date.getTime());
         connectDB connection = new connectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(creatRequest)){
-            stmt.setString(1,carModel);
-            stmt.setTimestamp(2,date);
-            stmt.setString(3,"pending");
-            stmt.setString(4, user.getUser_email());
+            stmt.setString(2,carModel);
+            stmt.setTimestamp(3,date);
+            stmt.setString(4,"pending");
+            stmt.setString(1, user.getUser_email());
             stmt.setInt(5,id);
             int rowsAffected = stmt.executeUpdate();
 
@@ -212,23 +229,25 @@ public class customer extends User {
                 logger.warning("\nsome thing went wrong please try again later");
             }
         }
+        try(PreparedStatement stmt =connection.getConnection().prepareStatement(query)){
+            stmt.setInt(1,id);
+            ResultSet rs= stmt.executeQuery();
+            orderName="";
+            while(rs.next()) {
+                orderName = rs.getString("productName");
+            }
+
+        }
       SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
       String emailMessageTOCustomer = "Dear Customer,\n\n"
               + "We hope this email finds you well. We would like to request information about your order:\n\n"
               + "Order Name: " + orderName + "\n"
-              + "Date: " + orderData + "\n"
-              + "Installer Email: " + installerEmail + "\n\n"
+              + "Date: " + installationDate + "\n"
               + "Please provide the necessary details at your earliest convenience.\n\n"
               + "Thank you,\nCar Accessories Company";
-      String emailMessageToInstaller = "Dear Installer,\n\n"
-              + "We hope this email finds you well. We would like to request information about your installation :\n\n"
-              + "Order Name: " + orderName + "\n"
-              + "Date: " + orderData + "\n"
-              + "Customer Email: " + customer_email + "\n\n"
-              + "Please provide the necessary details at your earliest convenience.\n\n"
-              + "Thank you,\nCar Accessories Company";
+
       toCustomerEmail.sendNotificationToCustomer(customer_email, emailMessageTOCustomer);
-      toCustomerEmail.sendNotificationToInstaller(installerEmail, emailMessageToInstaller);
+
     }
 
     public void showScheduled() throws SQLException {

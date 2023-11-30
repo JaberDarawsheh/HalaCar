@@ -7,7 +7,15 @@
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="admin dashboard and user profile ready">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,18 +80,13 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: AdminDashboard">
-    <configuration name="Feature: AdminDashboard" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/AdminDashboard.feature" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CarAccessiores.Main" />
       <module name="CarAccessioresCompany" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: AdminDashboard" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="PATTERN" value="CarAccessiores.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,15 +94,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: InstallationRequest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: AdminDashboard" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/InstallationRequest.feature" />
-      <option name="GLUE" value="src/test/java/CarAccessiores" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/AdminDashboard.feature" />
+      <option name="GLUE" value="test.java.CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Feature: InstallationRequest" />
+      <option name="SUGGESTED_NAME" value="Feature: AdminDashboard" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -131,15 +134,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: UserRoles" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Admin Adds and Updates Product listing" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserRoles.feature" />
-      <option name="GLUE" value="src/test/java/CarAccessiores" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/AdminDashboard.feature" />
+      <option name="GLUE" value="CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Feature: UserRoles" />
+      <option name="NAME_FILTER" value="^Admin Adds and Updates Product listing$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Admin Adds and Updates Product listing$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Admin Adds and Updates Product listing" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -173,19 +176,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Cucumber Java.Scenario: Admin Adds and Updates Product listing" />
       <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
-      <item itemvalue="Cucumber Java.Feature: InstallationRequest" />
       <item itemvalue="Cucumber Java.Feature: UserProfile" />
-      <item itemvalue="Cucumber Java.Feature: UserRoles" />
       <item itemvalue="Cucumber Java.Scenario: Admin Manages Users" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
+        <item itemvalue="Cucumber Java.Scenario: Admin Adds and Updates Product listing" />
         <item itemvalue="Cucumber Java.Feature: UserProfile" />
         <item itemvalue="Cucumber Java.Scenario: Admin Manages Users" />
-        <item itemvalue="Cucumber Java.Feature: UserRoles" />
-        <item itemvalue="Cucumber Java.Feature: InstallationRequest" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +208,7 @@
       <workItem from="1700663136594" duration="492000" />
       <workItem from="1700663646543" duration="3247000" />
       <workItem from="1700759398318" duration="14767000" />
-      <workItem from="1700944728655" duration="15094000" />
+      <workItem from="1700944728655" duration="33198000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -287,7 +290,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701012790630</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="admin dashboard and user profile ready">
+      <option name="closed" value="true" />
+      <created>1701118409227</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701118409227</updated>
+    </task>
+    <task id="LOCAL-00012" summary="admin dashboard and user profile ready">
+      <option name="closed" value="true" />
+      <created>1701118430024</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701118430024</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,5 +375,15 @@
     <MESSAGE value="notifications section" />
     <MESSAGE value="admin dashboard and user profile ready" />
     <option name="LAST_COMMIT_MESSAGE" value="admin dashboard and user profile ready" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.MissingFormatArgumentException" package="java.util" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

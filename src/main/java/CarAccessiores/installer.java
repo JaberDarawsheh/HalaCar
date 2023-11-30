@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -102,7 +104,9 @@ public class installer extends User{
 
     public void assign(int id) throws SQLException {
         String assign ="UPDATE install_request SET assigned = ? WHERE rid =?";
+        String query= "SELECT productName,email,preferredDate FROM Install_request WHERE rid=?";
         connectDB connection = new connectDB();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(assign)){
             stmt.setString(1, user.getUser_email());
@@ -117,6 +121,26 @@ public class installer extends User{
             }
 
         }
+        String orderName;
+        String orderDate;
+        String customer_email;
+        try(PreparedStatement stmt=connection.getConnection().prepareStatement(query)){
+            stmt.setInt(1,id);
+            ResultSet rs= stmt.executeQuery();
+            orderName = rs.getString("productName");
+            Date date = rs.getDate("preferredDate");
+            orderDate = dateFormat.format(date);
+            customer_email = rs.getString("email");
+        }
+        SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
+        String emailMessageToInstaller = "Dear Installer,\n\n"
+                + "We hope this email finds you well. We would like to request information about your installation :\n\n"
+                + "Order Name: " + orderName + "\n"
+                + "Date: " + orderDate + "\n"
+                + "Customer Email: " + customer_email + "\n\n"
+                + "Please provide the necessary details at your earliest convenience.\n\n"
+                + "Thank you,\nCar Accessories Company";
+        toCustomerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
     }
 
     public void schedule(int id, String time) throws SQLException {

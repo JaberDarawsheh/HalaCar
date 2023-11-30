@@ -25,8 +25,8 @@ public class Main
 		logger.info("-         Welcome to our Car Accessories Company        -");
 		logger.info("-                                                       -");
 		logger.info("-   Login                                 SignUp        -");
-		logger.info("-    (1)                             * New Account *    -");
-		logger.info("-                                           (0)         -");
+		logger.info("-                                    * New Account *    -");
+		logger.info("-    (1)                                    (0)         -");
 		logger.info("-                                                       -");
 		logger.info("---------------------------------------------------------");
 		
@@ -177,12 +177,12 @@ public class Main
 										switch(choice){
 											case 1:
 												logger.info("please enter the product name: ");
-												temp1= scanner.nextLine();
+												String Temp1= str.nextLine();
 												logger.info("please enter the product type: ");
-												temp2= scanner.nextLine();
+												temp2= str.nextLine();
 												logger.info("please enter the product price: ");
 												temp3= scanner.nextInt();
-												Admin.addProduct(temp1,temp2,temp3);
+												Admin.addProduct(Temp1,temp2,temp3);
 												break;
 											case 2 :
 												logger.info("=== Product edit options ===");
@@ -196,17 +196,17 @@ public class Main
 												switch(choice){
 													case 1:
 														logger.info("please enter the new name for the product: ");
-														temp2=scanner.nextLine();
+														temp2=str.nextLine();
 														Admin.changeProductName(temp3,temp2);
 														break;
 													case 2:
 														logger.info("please enter the new type for the product: ");
-														temp2=scanner.nextLine();
+														temp2=str.nextLine();
 														Admin.changeProductType(temp3,temp2);
 														break;
 													case 3:
 														logger.info("please enter the new price for the product: ");
-														int price= scanner.nextInt();
+														int price= str.nextInt();
 														Admin.changeProductPrice(temp3,price);
 														break;
 													case 4:
@@ -226,18 +226,18 @@ public class Main
 									case 2:
 										Admin.showCustomer();
 										logger.info("please enter the mail of the user you want to edit: ");
-										email= scanner.nextLine();
+										String Cemail= scanner.nextLine();
 										logger.info("If you want to change the password for the customer press 1");
 										logger.info("If you want to change the email for the customer press 2");
 										temp3=scanner.nextInt();
 										if(temp3==1){
 											logger.info("please enter the new password: ");
 											temp1=scanner.nextLine();
-											Admin.UpdatePass(email,temp1);
+											Admin.UpdatePass(Cemail,temp1);
 										}else if(temp3==2){
 											logger.info("please enter the new email: ");
 											temp1=scanner.nextLine();
-											Admin.updateEmail(email,temp1);
+											Admin.updateEmail(Cemail,temp1);
 										}else{
 											logger.info("invalid option");
 										}
@@ -351,6 +351,7 @@ public class Main
 
 							} catch (SQLException e) {
 								logger.info("something went wrong please try again later");
+								logger.info(String.format("%s",e));
 								break;
 							}
 						case 3:

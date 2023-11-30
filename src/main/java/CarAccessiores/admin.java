@@ -112,7 +112,7 @@ public class admin extends User {
     }
 
     public void addProduct(String productName, String productType, int productPrice) throws SQLException {
-        sql = "INSERT INTO productcatalog (productName, productType, productPrice, isAvailable) VALUES (?, ?, ?, ?)";
+        sql = "INSERT INTO productcatalog (productName, productType, productPrice, isAvilable) VALUES (?, ?, ?, ?)";
         connectDB connection= new connectDB();
         connection.testConn();
         try(PreparedStatement stmt = connection.getConnection().prepareStatement(sql)){
@@ -199,7 +199,7 @@ public class admin extends User {
     }
 
     public void deleteProduct(int pid) throws SQLException {
-        sql="DELETE FROM prosuctcatalog WHERE id = ?";
+        sql="DELETE FROM productcatalog WHERE id = ?";
         connectDB conn=new connectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
