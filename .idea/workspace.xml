@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="admin dashboard and user profile ready">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1de836f4-b278-4cff-aa95-49d4b2e08e96.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1de836f4-b278-4cff-aa95-49d4b2e08e96.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" afterDir="false" />
-    </list>
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="updated pom file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,6 +128,7 @@
     <configuration name="Feature: InstallationRequest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/InstallationRequest.feature" />
+      <option name="GLUE" value="CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
@@ -212,7 +199,7 @@
       <workItem from="1700944728655" duration="55499000" />
       <workItem from="1702046486696" duration="684000" />
       <workItem from="1703104038639" duration="2567000" />
-      <workItem from="1703106632394" duration="2499000" />
+      <workItem from="1703106632394" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -334,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701381557354</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="updated pom file">
+      <option name="closed" value="true" />
+      <created>1703109506968</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703109506968</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +397,8 @@
     <MESSAGE value="4 feature ready" />
     <MESSAGE value="notifications section" />
     <MESSAGE value="admin dashboard and user profile ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin dashboard and user profile ready" />
+    <MESSAGE value="updated pom file" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated pom file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
