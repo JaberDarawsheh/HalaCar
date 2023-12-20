@@ -9,6 +9,7 @@ public class Main
 {
 	static Scanner scan = new Scanner(System.in);
 	static Scanner str = new Scanner(System.in);
+	static Scanner strin= new Scanner(System.in);
 	static final Logger logger = Logger.getLogger(Main.class.getName());
 
 	public static void main(String[] args) throws SQLException
@@ -211,6 +212,7 @@ public class Main
 														break;
 													case 4:
 														Admin.isUnavailable(temp3);
+														choice=0;
 														break;
 												}
 												break;
@@ -219,6 +221,12 @@ public class Main
 												temp3= scanner.nextInt();
 												Admin.deleteProduct(temp3);
 												break;
+											case 4:
+												choice=0;
+												break;
+											default :
+												logger.info("unavailable choice");
+												break;
 
 
 										}
@@ -226,17 +234,17 @@ public class Main
 									case 2:
 										Admin.showCustomer();
 										logger.info("please enter the mail of the user you want to edit: ");
-										String Cemail= scanner.nextLine();
+										String Cemail= strin.nextLine();
 										logger.info("If you want to change the password for the customer press 1");
 										logger.info("If you want to change the email for the customer press 2");
 										temp3=scanner.nextInt();
 										if(temp3==1){
 											logger.info("please enter the new password: ");
-											temp1=scanner.nextLine();
+											temp1=str.nextLine();
 											Admin.UpdatePass(Cemail,temp1);
 										}else if(temp3==2){
 											logger.info("please enter the new email: ");
-											temp1=scanner.nextLine();
+											temp1=scan.nextLine();
 											Admin.updateEmail(Cemail,temp1);
 										}else{
 											logger.info("invalid option");
@@ -252,13 +260,19 @@ public class Main
 										temp3= scanner.nextInt();
 										switch(temp3){
 											case 1:
+												Scanner fathi = new Scanner(System.in);
+												Scanner samer = new Scanner(System.in);
+												Scanner apointTime = new Scanner(System.in);
 												logger.info("please enter the request ID you want to reschedule: ");
-												temp3= scanner.nextInt();
+												temp3= fathi.nextInt();
 												logger.info("please enter the email of the installer you want to assign the request to: ");
-												email= scan.nextLine();
+												email= samer.nextLine();
 												logger.info("enter a time for the appointment in the following format HH:mm:ss");
-												temp1= scanner.nextLine();
+												temp1= apointTime.nextLine();
 												Admin.scheduleNewAppointment(temp3,email,temp1);
+//												fathi.close();
+//												samer.close();
+//												apointTime.close();
 												break;
 											case 2:
 												logger.info("please enter the request ID you want to mark as completed: ");
@@ -369,6 +383,7 @@ public class Main
 							}
 							break;
 						case 4:
+							Scanner req =new Scanner(System.in);
 							int reqChoice=0;
 							logger.info("=== Option 4 Menu ===");
 							logger.info("Sub-option 1 - creat new installation request");
@@ -378,8 +393,9 @@ public class Main
 							logger.info("Sub-option 5 - back to the main menu ");
 							while(reqChoice!=5) {
 
-								reqChoice= scanner.nextInt();
+								reqChoice= req.nextInt();
 								switch(reqChoice){
+
 									case 1:
 										logger.info("please enter the wanted product id :");
 										int pid=scanner.nextInt();
@@ -413,8 +429,9 @@ public class Main
 							}
 							break;
 						case 5:
+							Scanner mahmoud = new Scanner(System.in);
 							logger.info("please enter your new email");
-							temp1=scanner.nextLine();
+							temp1=mahmoud.nextLine();
 							Customer.changeEmail(temp1);
 							break;
 						case 6:

@@ -13,10 +13,18 @@ import java.util.logging.Logger;
 
 public class installer extends User{
     private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
+    private String orderName;
+    private String orderDate;
+    private String customer_email;
+    private String carModel;
+    private String requestID;
+    private String customerEmail;
+    private String installationTime;
     private UserLoginPage user;
     public installer(String userEmail,String userPassword) {
         super(userEmail,userPassword);
         user=new UserLoginPage(userEmail,userPassword);
+
 
     }
 
@@ -52,6 +60,8 @@ public class installer extends User{
     public void setTime(int id,String time) throws SQLException {
         String updateTimeSQL = "UPDATE install_request SET preferredDate = TIMESTAMP(CONCAT(CAST(DATE(preferredDate) AS DATE), ' ', ?))"+
                                " WHERE rid=?";
+        String query= "SELECT * FROM Install_request WHERE rid=?";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         connectDB connection = new connectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(updateTimeSQL)){
@@ -61,6 +71,45 @@ public class installer extends User{
 
             if (rowsAffected > 0) {
                 logger.info("The request time scheduled.");
+
+                try(PreparedStatement stmnt=connection.getConnection().prepareStatement(query)){
+                    stmnt.setInt(1,id);
+                    ResultSet rs= stmnt.executeQuery();
+                    if(rs.next()) {
+                        orderName = rs.getString("productName");
+                        Date date = rs.getDate("preferredDate");
+                        orderDate = dateFormat.format(date);
+                        customer_email = rs.getString("email");
+                        carModel = rs.getString("carModel");
+                        requestID = rs.getString("rid");
+                        customerEmail = rs.getString("email");
+                    }
+                }
+                SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
+                String emailMessageToInstaller = "Dear Installer,\n\n"
+                                + "We hope this email finds you well."
+                                + "We would like to inform you that one of your installation requests with request id number: "+requestID+" has been set to installation on a specific time.\n\n"
+                                + "Here are the request information :"
+                                + "Part to be installed: " + orderName + "\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation: " + orderDate + "\n"
+                                + "Time of installation: " + installationTime + "\n"
+                                + "Customer Email: " + customer_email + "\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
+                String emailMessageToCustomer =
+                                  "Dear Customer,\n\n"
+                                + "We would like to inform you that your installation request with request id number : "+requestID+" has been set to installation on a specific time.\n"
+                                + "Request information :\n"
+                                + "Part to be installed: "+orderName+"\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation :"+ orderDate +"\n"
+                                + "Time of installation :"+ installationTime +"\n"
+                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "Please feel free to contact your installer on his email\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
                 logger.warning("\n some thing went wrong please try again later");
@@ -76,8 +125,12 @@ public class installer extends User{
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(statusSQL)){
             stmt.setInt(1,id);
             ResultSet rSet = stmt.executeQuery();
-            String status= rSet.getString("status");
-            return status;
+            if(rSet.next()) {
+                String status = rSet.getString("status");
+                return status;
+            }
+            return "request not found";
+
 
         }
 
@@ -104,7 +157,7 @@ public class installer extends User{
 
     public void assign(int id) throws SQLException {
         String assign ="UPDATE install_request SET assigned = ? WHERE rid =?";
-        String query= "SELECT productName,email,preferredDate FROM Install_request WHERE rid=?";
+        String query= "SELECT * FROM Install_request WHERE rid=?";
         connectDB connection = new connectDB();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         connection.testConn();
@@ -115,32 +168,51 @@ public class installer extends User{
 
             if (rowsAffected > 0) {
                 logger.info("The request has been assigned to :"+user.getUser_email());
+                try(PreparedStatement stmnt=connection.getConnection().prepareStatement(query)){
+                    stmnt.setInt(1,id);
+                    ResultSet rs= stmnt.executeQuery();
+                    orderName = rs.getString("productName");
+                    Date date = rs.getDate("preferredDate");
+                    String formatedDateTime=dateFormat.format(date);
+                    String [] dateTimeSplit = formatedDateTime.split("\\s+");
+                    installationTime = dateTimeSplit[1];
+                    orderDate = dateTimeSplit[0];
+                    customer_email = rs.getString("email");
+                    carModel = rs.getString("carModel");
+                    requestID = rs.getString("rid");
+                    customerEmail = rs.getString("email");
+                }
+                SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
+                String emailMessageToInstaller =
+                        "Dear Installer,\n\n"
+                                + "We hope this email finds you well."
+                                + "We would like to inform you that the installation request with request id number: "+requestID+" has been assigned to you.\n\n"
+                                + "Here are the request information :"
+                                + "Part to be installed: " + orderName + "\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation: " + orderDate + "\n"
+                                + "Customer Email: " + customer_email + "\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
+                String emailMessageToCustomer =
+                        "Dear Customer,\n\n"
+                                + "We would like to inform you that your installation request with request id number : "+requestID+" has been assigned to one of our installers\n"
+                                + "Request information :\n"
+                                + "Part to be installed: "+orderName+"\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation :"+ orderDate +"\n"
+                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "Please feel free to contact your installer on his email\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
                 logger.warning("\nsome thing went wrong please try again later");
             }
 
         }
-        String orderName;
-        String orderDate;
-        String customer_email;
-        try(PreparedStatement stmt=connection.getConnection().prepareStatement(query)){
-            stmt.setInt(1,id);
-            ResultSet rs= stmt.executeQuery();
-            orderName = rs.getString("productName");
-            Date date = rs.getDate("preferredDate");
-            orderDate = dateFormat.format(date);
-            customer_email = rs.getString("email");
-        }
-        SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
-        String emailMessageToInstaller = "Dear Installer,\n\n"
-                + "We hope this email finds you well. We would like to request information about your installation :\n\n"
-                + "Order Name: " + orderName + "\n"
-                + "Date: " + orderDate + "\n"
-                + "Customer Email: " + customer_email + "\n\n"
-                + "Please provide the necessary details at your earliest convenience.\n\n"
-                + "Thank you,\nCar Accessories Company";
-        toCustomerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+
     }
 
     public void schedule(int id, String time) throws SQLException {
@@ -159,6 +231,8 @@ public class installer extends User{
     public void setCompleted(int id) throws SQLException {
         //completed
         String sche="UPDATE install_request SET status = ? WHERE rid =?";
+        String query= "SELECT * FROM Install_request WHERE rid=?";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         connectDB connection = new connectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
@@ -168,6 +242,44 @@ public class installer extends User{
 
             if (rowsAffected > 0) {
                 logger.info("The request status updated to completed.");
+                try(PreparedStatement stmnt=connection.getConnection().prepareStatement(query)){
+                    stmnt.setInt(1,id);
+                    ResultSet rs= stmnt.executeQuery();
+                    if(rs.next()) {
+                        orderName = rs.getString("productName");
+                        Date date = rs.getDate("preferredDate");
+                        String formatedDateTime = dateFormat.format(date);
+                        String[] dateTimeSplit = formatedDateTime.split("\\s+");
+                        installationTime = dateTimeSplit[0];
+                        orderDate = dateTimeSplit[0];
+                        customer_email = rs.getString("email");
+                        carModel = rs.getString("carModel");
+                        requestID = rs.getString("rid");
+                        customerEmail = rs.getString("email");
+                    }
+                }
+                SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
+                String emailMessageToInstaller = "Dear Installer,\n\n"
+                                + "We hope this email finds you well."
+                                + "We would like to inform you that set the status of the following  installation request with request id number: "+requestID+" to completed.\n\n"
+                                + "Here are the request information :"
+                                + "Part to be installed: " + orderName + "\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation: " + orderDate + "\n"
+                                + "Customer Email: " + customer_email + "\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
+                String emailMessageToCustomer = "Dear Customer,\n\n"
+                                + "We would like to inform you that the status of the following installation request with request id number : "+requestID+" has been updated to completed\n"
+                                + "Request information :\n"
+                                + "Part to be installed: "+orderName+"\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation :"+ orderDate +"\n"
+                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "Please feel free to contact us or your installer on his email\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
                 logger.warning("\nsome thing went wrong please try again later");
@@ -178,6 +290,8 @@ public class installer extends User{
 
     public void setCanceled(int id) throws SQLException {
         String sche="UPDATE install_request SET status = ? WHERE rid =?";
+        String query= "SELECT * FROM Install_request WHERE rid=?";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         connectDB connection = new connectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
@@ -187,6 +301,46 @@ public class installer extends User{
 
             if (rowsAffected > 0) {
                 logger.info("The request status updated to canceled.");
+                try(PreparedStatement stmnt=connection.getConnection().prepareStatement(query)){
+                    stmnt.setInt(1,id);
+                    ResultSet rs= stmnt.executeQuery();
+                    if(rs.next()) {
+                        orderName = rs.getString("productName");
+                        Date date = rs.getDate("preferredDate");
+                        String formatedDateTime = dateFormat.format(date);
+                        String[] dateTimeSplit = formatedDateTime.split("\\s+");
+                        installationTime = dateTimeSplit[1];
+                        orderDate = dateTimeSplit[0];
+                        customer_email = rs.getString("email");
+                        carModel = rs.getString("carModel");
+                        requestID = rs.getString("rid");
+                        customerEmail = rs.getString("email");
+                    }
+                }
+                SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
+                String emailMessageToInstaller =
+                                  "Dear Installer,\n\n"
+                                + "We hope this email finds you well."
+                                + "We would like to inform you that set the status of the following  installation request with request id number: "+requestID+" to canceled.\n\n"
+                                + "Here are the request information :"
+                                + "Part to be installed: " + orderName + "\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation: " + orderDate + "\n"
+                                + "Customer Email: " + customer_email + "\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
+                String emailMessageToCustomer =
+                                  "Dear Customer,\n\n"
+                                + "We would like to inform you that the installation request with request id number : "+requestID+" has been canceled.\n"
+                                + "Request information :\n"
+                                + "Part to be installed: "+orderName+"\n"
+                                + "Car model :"+carModel+"\n"
+                                + "Date of installation :"+ orderDate +"\n"
+                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "You can always apply for a new installation request.\n\n"
+                                + "Thank you,\nCar Accessories Company";
+                toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
                 logger.warning("\nsome thing went wrong please try again later");

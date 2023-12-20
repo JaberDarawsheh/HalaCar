@@ -82,10 +82,10 @@ public class admin extends User {
     }
 
     public void DeleteUser(String email) throws SQLException {
-        sql = "DELETE FROM systemusers WHERE `user_email` = ?";
+        sql = "DELETE FROM systemusers WHERE user_email = ?";
 
         connectDB conDB = new connectDB();
-        //the new user is added
+
 
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
@@ -250,30 +250,35 @@ public class admin extends User {
     }
 
     public void showScheduledAppointments() throws SQLException {
-        sql = "SELECT `rid`,`pid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`" +
-                " FROM install_request WHERE assigned =?";
+        sql = "SELECT `rid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`,`status`" +
+                " FROM install_request WHERE status NOT IN ('canceled', 'completed');";
         connectDB connection = new connectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowScheduled");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(sql)) {
-            stmt.setString(1, "scheduled");
+
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Type", "Installer Email", "Car Model", "Installation Date", "Status"));
+            String format = "| %-15s | %-20s | %-20s | %-35s | %-30s | %-20s | %-15s |%n";
+            logger.log(Level.INFO, String.format(format, "Request Number","Product Name", "Product Type", "Customer Email", "Car Model", "Installation Time", "Status"));
+            int[] columnWidths={15,20,20,35,30,20,15};
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
 
                 for (int i = 1; i <= numberOfColumns; i++) {
-                    rowData.append(rSet.getString(i));
-                    if (i < numberOfColumns) {
-                        rowData.append(" ");
+
+                    if (i <= numberOfColumns) {
+
+                        String columnValue = rSet.getString(i);
+                        String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                        rowData.append(formattedColumn);
+                        rowData.append(" | "); // Add separator between columns
                     }
                 }
-                logger.log(Level.INFO, String.format(format, rowData.toString()));
+                logger.log(Level.INFO, String.format("| %-15s ", rowData.toString()));
             }
         }
     }

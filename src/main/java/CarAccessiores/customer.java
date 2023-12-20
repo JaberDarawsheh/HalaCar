@@ -63,21 +63,7 @@ public class customer extends User {
 
                 logger.info(String.format("| %-20s   |%n", rowData));
             }
-//            while (rSet.next()) {
-//                StringBuilder rowData = new StringBuilder();
-//
-//                for (int i = 1; i <= numberOfColumns; i++) {
-//                    rowData.append(rSet.getString(i));
-//                    if (i < numberOfColumns) {
-//                        rowData.append(" ");
-//                    }
-//                }
-//
-//                Date date = rSet.getDate("orderDate");
-//                String formattedDate = dateFormat.format(date);
-//                rowData.append(formattedDate);
-//                logger.log(Level.INFO, String.format("|%-20s|", rowData.toString()));
-//            }
+
         }
     }
 
@@ -224,35 +210,37 @@ public class customer extends User {
 
             if (rowsAffected > 0) {
                 logger.info("The request placed successfully.");
+                try(PreparedStatement stmnt =connection.getConnection().prepareStatement(query)){
+                    stmnt.setInt(1,id);
+                    ResultSet rs= stmnt.executeQuery();
+                    orderName="";
+                    while(rs.next()) {
+                        orderName = rs.getString("productName");
+                    }
+
+                }
+                SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
+                String emailMessageTOCustomer = "Dear Customer,\n\n"
+                        + "We hope this email finds you well. We would like inform you that your installation request is under process  \n\n"
+                        + "Here are your request information"
+                        + "Part to be installed: " + orderName + "\n"
+                        + "Preferred Date: " + installationDate + "\n"
+                        + "Our team will contact you shortly\n\n"
+                        + "Thank you,\nCar Accessories Company";
+
+                toCustomerEmail.sendNotificationToCustomer(customer_email, emailMessageTOCustomer);
 
             } else {
                 logger.warning("\nsome thing went wrong please try again later");
             }
         }
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(query)){
-            stmt.setInt(1,id);
-            ResultSet rs= stmt.executeQuery();
-            orderName="";
-            while(rs.next()) {
-                orderName = rs.getString("productName");
-            }
 
-        }
-      SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
-      String emailMessageTOCustomer = "Dear Customer,\n\n"
-              + "We hope this email finds you well. We would like to request information about your order:\n\n"
-              + "Order Name: " + orderName + "\n"
-              + "Date: " + installationDate + "\n"
-              + "Please provide the necessary details at your earliest convenience.\n\n"
-              + "Thank you,\nCar Accessories Company";
-
-      toCustomerEmail.sendNotificationToCustomer(customer_email, emailMessageTOCustomer);
 
     }
 
     public void showScheduled() throws SQLException {
-        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
-                " FROM install_request WHERE status =? ";
+        String query =  "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
+                        " FROM install_request WHERE status =? and email = ? ";
         connectDB connection = new connectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowScheduled");
@@ -265,17 +253,20 @@ public class customer extends User {
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
             logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Type", "Installer Email", "Car Model", "Installation Date", "Status"));
+            //logger.info(" "+numberOfColumns+"");
+            int[] columnWidths={15,10,15,20,15,30,10};
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
 
+
                 for (int i = 1; i <= numberOfColumns; i++) {
-                    rowData.append(rSet.getString(i));
-                    if (i < numberOfColumns) {
-                        rowData.append(" ");
-                    }
+                    String columnValue = rSet.getString(i);
+                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    rowData.append(formattedColumn);
+                    rowData.append(" | "); // Add separator between columns
                 }
-                logger.log(Level.INFO, String.format(format, rowData.toString()));
+                logger.log(Level.INFO, String.format("| %-5s |", rowData.toString()));
             }
         }
     }
@@ -372,16 +363,16 @@ public class customer extends User {
     }
 
     public void changeEmail(String newEmail) throws SQLException {
-        String sql = "UPDATE systemusers SET `user_email` = ? WHERE `user_email` = ?";
+        String sql = "UPDATE systemusers SET user_email = ? WHERE user_email = ?";
         connectDB conDB = new connectDB();
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
-            stmt.setString(1, user.getUser_email());
-            stmt.setString(2, newEmail);
+            stmt.setString(2, user.getUser_email());
+            stmt.setString(1, newEmail);
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                logger.info("the password updated successfully.");
+                logger.info("the email updated successfully.");
 
             } else {
                 logger.warning("\n some thing went wrong please try again later");
