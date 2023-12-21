@@ -35,6 +35,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=carAccCompany_HalaCar
+        run: mvn -B verify -Dmaven.compiler.source=17 -Dmaven.compiler.target=17 org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=carAccCompany_HalaCar
 
     
