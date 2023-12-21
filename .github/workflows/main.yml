@@ -1,0 +1,29 @@
+name: github action by mohammad and jaber
+
+on:
+  push:
+    branches: [main]
+jobs:
+
+  build-on-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+     
+      - name: step1 checkout the main branch from Github repo.
+        uses: actions/checkout@v2
+
+      - name: step2 setup jdk version
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+
+        env:
+             JAVA_HOME: ${{run.outputs.java-home}}   
+
+      - name: step3 build the maven project
+        run: mvn --batch-mode clean -DskipTests 
+
+      - name: step4 run the test cases
+        run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+
