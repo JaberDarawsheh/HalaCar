@@ -1,19 +1,15 @@
 package CarAccessiores;
-//
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import io.cucumber.junit.CucumberOptions.SnippetType;
 import org.junit.runner.RunWith;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-
-
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-		plugin= {"html: target/cucumber.html"},
-		features="use_cases",
-		glue="")
+@CucumberOptions(features = "use_cases",
+		plugin= {"html: C:/Users/hamoo/Desktop/cucumber_report"},
+		monochrome = true,
+		snippets = CucumberOptions.SnippetType.CAMELCASE,glue = {""})
 public class Test {
 
 }
-
-
 
