@@ -17,10 +17,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
-
-        env:
-             JAVA_HOME: ${{run.outputs.java-home}}   
-
+          
       - name: step3 build the maven project
         run: mvn --batch-mode clean -DskipTests 
 
