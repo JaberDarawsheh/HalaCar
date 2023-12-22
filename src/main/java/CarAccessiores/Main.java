@@ -234,18 +234,18 @@ public class Main // to delete
 									case 2:
 										Admin.showCustomer();
 										logger.info("please enter the mail of the user you want to edit: ");
-										String Cemail= strin.nextLine();
+										String cemail= strin.nextLine();
 										logger.info("If you want to change the password for the customer press 1");
 										logger.info("If you want to change the email for the customer press 2");
 										temp3=scanner.nextInt();
 										if(temp3==1){
 											logger.info("please enter the new password: ");
 											temp1=str.nextLine();
-											Admin.UpdatePass(Cemail,temp1);
+											Admin.UpdatePass(cemail,temp1);
 										}else if(temp3==2){
 											logger.info("please enter the new email: ");
 											temp1=scan.nextLine();
-											Admin.updateEmail(Cemail,temp1);
+											Admin.updateEmail(cemail,temp1);
 										}else{
 											logger.info("invalid option");
 										}
