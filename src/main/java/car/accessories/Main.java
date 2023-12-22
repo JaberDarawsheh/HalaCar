@@ -31,8 +31,8 @@ public class Main // to delete
 		logger.info("-    (1)                                    (0)         -");
 		logger.info("-                                                       -");
 		logger.info("---------------------------------------------------------");
-		
-		while(true) {
+		boolean loopRunner=true;
+		while(loopRunner) {
 			
 			Scanner scanner = new Scanner(System.in);
 			if(scanner.nextInt()==0)
