@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		plugin= {"html: target/cucumber.html"},
-		features="use_cases",
+		features= "src/use_cases",
 		glue="")
 
 public class Test {

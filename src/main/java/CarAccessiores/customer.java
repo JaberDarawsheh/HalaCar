@@ -329,14 +329,18 @@ public class customer extends User {
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
+                int [] column_value={15,10,15,20,15,30,10};
 
-                for (int i = 1; i <= numberOfColumns; i++) {
-                    rowData.append(rSet.getString(i));
+
+                for (int i = 1; i <= numberOfColumns&&i <= column_value.length; i++) {
+                    String columnValue = rSet.getString(i);
+                    String formattedColumn = String.format("%-"+column_value[i-1]+"s", columnValue); // Adjust width as needed
+                    rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
-                        rowData.append(" ");
+                        rowData.append(" | "); // Separator between columns
                     }
                 }
-                logger.log(Level.INFO, String.format(format, rowData.toString()));
+                logger.log(Level.INFO, rowData.toString());
             }
         }
     }

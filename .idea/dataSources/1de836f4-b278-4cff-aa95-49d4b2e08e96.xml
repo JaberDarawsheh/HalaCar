@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="caraccessories@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.49">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.51">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1148,8 +1148,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     </schema>
     <schema id="326" parent="1" name="caraccessories">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-28.01:07:33</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-27.21:07:33</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2023-11-27.21:07:33</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="327" parent="1" name="goodfood">
