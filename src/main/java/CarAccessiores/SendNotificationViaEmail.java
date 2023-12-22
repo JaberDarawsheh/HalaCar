@@ -1,7 +1,8 @@
-package CarAccessiores;
+package car.accessories;
 
-import java.sql.SQLException;
+
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.mail.Message;
@@ -14,11 +15,22 @@ import javax.mail.internet.MimeMessage;
 
 public class SendNotificationViaEmail 
 {
-	static final Logger logger = Logger.getLogger(SendNotificationViaEmail.class.getName());
-	public void sendNotificationToCustomer(String customerEmail, String messageContent)throws SQLException
-	{
-        final String fromEmail = "caraccessioescompany@gmail.com";
-        final String password = "eujm kiyn xfjv kjfq";
+	private static final Logger logger = Logger.getLogger(SendNotificationViaEmail.class.getName());
+
+    public void sendNotificationToCustomer(String customerEmail, String messageContent) {
+        String subject = "Test Email";
+        sendNotification(customerEmail, subject, messageContent);
+    }
+
+    public void sendNotificationToInstaller(String installerEmail, String installerMessageContent) {
+        String subject = "Test Email";
+        sendNotification(installerEmail, subject, installerMessageContent);
+    }
+
+    private void sendNotification(String toEmail, String subject, String messageContent) {
+        String fromEmail = "caraccessioescompany@gmail.com";
+        final String password = getPasswordFromSecureStorage();
+
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
@@ -26,48 +38,27 @@ public class SendNotificationViaEmail
         properties.put("mail.smtp.port", "587");
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+            @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(fromEmail, password);
             }
         });
+
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromEmail));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(customerEmail));
-            message.setSubject("Test Email");
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setSubject(subject);
             message.setText(messageContent);
             Transport.send(message);
-            System.out.println("Verification email sent successfully!");
+            logger.info("Verification email sent successfully!");
         } catch (MessagingException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "An error occurred", e);
         }
     }
-	public void sendNotificationToInstaller(String installerEmail, String InstallermessageContent)throws SQLException 
-	{
-		final String fromEmail = "caraccessioescompany@gmail.com";
-        final String password = "eujm kiyn xfjv kjfq";
-        Properties properties = new Properties();
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
 
-        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(fromEmail, password);
-            }
-        });
-        try {
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(fromEmail));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(InstallermessageContent));
-            message.setSubject("Test Email");
-            message.setText(InstallermessageContent);
-            Transport.send(message);
-            System.out.println("Verification email sent successfully!");
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-	}
+    private String getPasswordFromSecureStorage() {
+        return "eujm kiyn xfjv kjfq";
+    }
    
 }
