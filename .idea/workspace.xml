@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smells fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/Test.java" afterDir="false" />
-    </list>
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smells fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +49,7 @@
     "JUnit.java in CarAccessioresCompany.executor": "Coverage",
     "Maven.CarAccessioresCompany [clean].executor": "Run",
     "Maven.CarAccessioresCompany [compile].executor": "Run",
+    "Maven.CarAccessioresCompany [verify].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -215,7 +213,7 @@
       <workItem from="1703179030519" duration="6952000" />
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
-      <workItem from="1703268981340" duration="16516000" />
+      <workItem from="1703268981340" duration="16926000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -489,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703287037079</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703287829192</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1703287829192</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
