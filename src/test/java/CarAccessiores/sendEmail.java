@@ -30,7 +30,7 @@ public class sendEmail
 		  String Message ="Your installation request is complete. Thank you for choosing us.";
 		  email.sendNotificationToCustomer(CustomerEmail, Message);
 	  }
-	  catch(SQLException e)
+	  catch(Exception e)
 	  {
 		  e.printStackTrace();
 	  }
@@ -51,7 +51,7 @@ public class sendEmail
 		   String Message="You have a new installation request.";
 		   email.sendNotificationToInstaller(InstallerEmail, Message);
 	   }
-	   catch(SQLException e)
+	   catch(Exception e)
 	   {
 		   e.printStackTrace();
 	   }
