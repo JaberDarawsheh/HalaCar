@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;

@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 import java.sql.SQLException;
 

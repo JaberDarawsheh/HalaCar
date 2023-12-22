@@ -1,7 +1,8 @@
-package CarAccessiores;
+package car.accessories;
 
 import java.sql.SQLException;
 
+import car.accessories.SendNotificationViaEmail;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

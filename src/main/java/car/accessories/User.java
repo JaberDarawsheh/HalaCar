@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 public abstract class User {
     String email ,PhoneNumber,UserName,password;

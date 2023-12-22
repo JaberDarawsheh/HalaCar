@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,10 +13,15 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import car.accessories.ProductCat;
+import car.accessories.UserLoginPage;
+import car.accessories.customer;
+import car.accessories.installer;
+
 public class InstallationRequest {
     private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
     customer Customer;
-    CarAccessiores.installer installer;
+    car.accessories.installer installer;
     boolean Customer_logged;
     boolean installer_logged;
     UserLoginPage loginObj;

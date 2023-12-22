@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 
 
@@ -11,6 +11,12 @@ import io.cucumber.java.en.When;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Logger;
+
+import car.accessories.UserLoginPage;
+import car.accessories.connectDB;
+import car.accessories.customer;
+import car.accessories.installer;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import static org.junit.Assert.assertEquals;
@@ -30,7 +36,7 @@ public class UserRoles {
     int rid;
     admin user;
     customer Customer;
-    CarAccessiores.installer installer;
+    car.accessories.installer installer;
     boolean Admin_logged;
     boolean Customer_logged;
     boolean installer_logged;
