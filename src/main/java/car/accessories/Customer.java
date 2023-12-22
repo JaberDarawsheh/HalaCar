@@ -63,7 +63,8 @@ public class Customer extends User {
         try {
             returnValue= cat.systemFoundCatalog();
         } catch (SQLException e) {
-            e.printStackTrace();
+        	Logger logger = Logger.getLogger(Customer.class.getName());
+            logger.log(Level.SEVERE, "An error occurred", e);
         }
         return returnValue;
     }
@@ -219,7 +220,7 @@ public class Customer extends User {
               + "Please provide the necessary details at your earliest convenience.\n\n"
               + "Thank you,\nCar Accessories Company";
       toCustomerEmail.sendNotificationToCustomer(customer_email, emailMessageTOCustomer);
-      toCustomerEmail.sendNotificationToInstaller( emailMessageToInstaller);
+      //toCustomerEmail.sendNotificationToInstaller( emailMessageToInstaller);
     }
 
     public void showScheduled() throws SQLException {

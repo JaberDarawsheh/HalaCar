@@ -29,7 +29,8 @@ public class ProductCat {
 		    }
 
 		} catch (SQLException e) {
-		    e.printStackTrace(); 
+			Logger logger = Logger.getLogger(ProductCat.class.getName());
+		    logger.log(Level.SEVERE, "An error occurred", e);
 		}
 		return productFoundFlag;
 	}
@@ -116,7 +117,8 @@ public class ProductCat {
 		        }
 		    }
 		} catch (SQLException e) {
-		    e.printStackTrace(); 
+			Logger logger = Logger.getLogger(ProductCat.class.getName());
+		    logger.log(Level.SEVERE, "An error occurred", e); 
 		}
 
 		return false;

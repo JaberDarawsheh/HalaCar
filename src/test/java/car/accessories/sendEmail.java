@@ -42,7 +42,7 @@ public class sendEmail
 	{	   
 		   String InstallerEmail="mohammed@gmail.com";
 		   String Message="You have a new installation request.";
-		   email.sendNotificationToInstaller( Message);  
+		   //email.sendNotificationToInstaller( Message);  
 	}
 
 }

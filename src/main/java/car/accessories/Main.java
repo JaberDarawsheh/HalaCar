@@ -22,7 +22,11 @@ public class Main
 		ConsoleHandler consoleHandler = new ConsoleHandler();
 		CustomLogFormatter customFormatter = new CustomLogFormatter();
 		consoleHandler.setFormatter(customFormatter);
+		consoleHandler.setFilter(record -> {   
+		    return true; 
+		});
 		logger.addHandler(consoleHandler);
+		
 		logger.info(EQUALS_LINEmain);
 		logger.info("-         Welcome to our Car Accessories Company        -");
 		logger.info("-                                                       -");
@@ -340,7 +344,12 @@ public class Main
 				logger.info("User email and.or password in Correct , Pleas try agine");
 			}
 		}
+			if(scanner.nextInt()==1000 ) {
+				break;
+			}
 		}
+		
+		
 			
 	} 
 	public static void theAdminLogout(UserLoginPage login) {

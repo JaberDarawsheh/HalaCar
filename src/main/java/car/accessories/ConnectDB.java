@@ -1,7 +1,10 @@
 package car.accessories;
 
 import java.sql.*;
+import java.util.logging.Level;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class ConnectDB {
 
 	protected Connection connection; 
@@ -16,7 +19,8 @@ public class ConnectDB {
 		    connection = DriverManager.getConnection(url, username, password);
 		    
 		} catch (ClassNotFoundException | SQLException e) {
-		    e.printStackTrace(); 
+			Logger logger = Logger.getLogger(ConnectDB.class.getName());
+		    logger.log(Level.SEVERE, "An error occurred", e); 
 		}
     }
 

@@ -3,6 +3,7 @@ package car.accessories;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class Registeration {
     
@@ -37,7 +38,8 @@ public class Registeration {
 	            logger.warning("Account creation failed. No rows were affected.");
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	    	Logger logger = Logger.getLogger(Registeration.class.getName());
+	        logger.log(Level.SEVERE, "An error occurred", e);
 	    }
 	}
 
