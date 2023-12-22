@@ -15,6 +15,7 @@ public class Admin extends User {
     static final Logger logger = Logger.getLogger(Main.class.getName());
     String sql;
     int rowsAffected;
+    private static final String someThingWrongMessage="\nsome thing went wrong please try again later";
 
     public Admin(String userEmail,String userPassword) {
         super(userEmail,userPassword);
@@ -37,7 +38,7 @@ public class Admin extends User {
                 logger.info("User added successfully.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
         }
     }
@@ -55,7 +56,7 @@ public class Admin extends User {
                 logger.info("the password updated successfully.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
         }
@@ -75,7 +76,7 @@ public class Admin extends User {
                 logger.info("the email updated successfully.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
         }
@@ -96,7 +97,7 @@ public class Admin extends User {
                 logger.info("User deleted successfully.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
 
@@ -125,7 +126,7 @@ public class Admin extends User {
                 logger.info("Product added successfully.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
         }
     }
@@ -142,7 +143,7 @@ public class Admin extends User {
                 logger.info("Product is now un available.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
         }
     }
@@ -159,7 +160,7 @@ public class Admin extends User {
                 logger.info("Product name updated.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
         }
     }
@@ -176,7 +177,7 @@ public class Admin extends User {
                 logger.info("Product type updated.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
         }
     }
@@ -193,7 +194,7 @@ public class Admin extends User {
                 logger.info("Product price updated.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
         }
     }
@@ -209,7 +210,7 @@ public class Admin extends User {
                 logger.info("Product is deleted successfully.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
         }
     }
@@ -302,7 +303,7 @@ public class Admin extends User {
                 logger.info("The request status updated to scheduled.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
         }
@@ -322,7 +323,7 @@ public class Admin extends User {
                 logger.info("The request has been assigned to :"+Email);
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
         }
@@ -342,7 +343,7 @@ public class Admin extends User {
                 logger.info("The request time scheduled.");
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
         }
@@ -361,7 +362,7 @@ public class Admin extends User {
                 logger.info("The request status updated to completed.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
         }
@@ -380,7 +381,7 @@ public class Admin extends User {
                 logger.info("The request status updated to canceled.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(someThingWrongMessage);
             }
 
         }
