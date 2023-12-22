@@ -4,50 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="all test cases passed">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/CustomLogFormatter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/SendNotificationViaEmail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/UserLoginPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ConnectDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/InstallationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/InstallationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/ProductCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/ProductCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/UserLoginToSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/UserLoginToSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/UserProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/UserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/UserRoles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/sendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/sendEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/CustomLogFormatter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/UserLoginPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/connectDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/registeration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/AdminDashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/InstallationRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/ProductCatalog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserLoginToSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserProfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserRegisteration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserRoles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/sendEmail.class" beforeDir="false" />
-    </list>
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smell fix with refactoring all classes and methods" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -255,7 +212,7 @@
       <workItem from="1703179030519" duration="6952000" />
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
-      <workItem from="1703268981340" duration="10086000" />
+      <workItem from="1703268981340" duration="10403000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -457,7 +414,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703278155586</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="bad smell fix with refactoring all classes and methods">
+      <option name="closed" value="true" />
+      <created>1703281482318</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1703281482318</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +492,8 @@
     <MESSAGE value="admin dashboard and user profile ready" />
     <MESSAGE value="updated pom file" />
     <MESSAGE value="all test cases passed" />
-    <option name="LAST_COMMIT_MESSAGE" value="all test cases passed" />
+    <MESSAGE value="bad smell fix with refactoring all classes and methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="bad smell fix with refactoring all classes and methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
