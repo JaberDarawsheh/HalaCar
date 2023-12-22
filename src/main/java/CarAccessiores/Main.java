@@ -11,6 +11,7 @@ public class Main // to delete
 	static Scanner str = new Scanner(System.in);
 	static Scanner strin= new Scanner(System.in);
 	static final Logger logger = Logger.getLogger(Main.class.getName());
+	private static final String invalidCho="Invalid Choice !, Pleas try again";
 
 	public static void main(String[] args) throws SQLException
 	{
@@ -285,14 +286,14 @@ public class Main // to delete
 
 												break;
 											default:
-												logger.info("Invalid Choice !, Pleas try again");
+												logger.info(invalidCho);
 										}
 										break;
 									case 4:
 
 										break;
 									default:
-										logger.info("Invalid Choice !, Pleas try again");
+										logger.info(invalidCho);
 
 								}
 							}
@@ -301,7 +302,7 @@ public class Main // to delete
 							adminLogFlag=false;
 							break;
 
-						default:logger.info("Invalid Choice !, Pleas try again");
+						default:logger.info(invalidCho);
 					}//end switch
 				}// end while(adminLogFlag)
 
