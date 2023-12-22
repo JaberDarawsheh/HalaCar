@@ -7,13 +7,10 @@
    <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-      <sonar.host.url>http://localhost:9000</sonar.host.url>   
-    </properties>
-
-<properties>
-  <sonar.organization>caracccompany</sonar.organization>
+      <sonar.host.url>http://localhost:9000</sonar.host.url> 
+       <sonar.organization>caracccompany</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties
+    </properties>
 
    
        <dependencies>
