@@ -270,9 +270,6 @@ public class Main // to delete
 												logger.info("enter a time for the appointment in the following format HH:mm:ss");
 												temp1= apointTime.nextLine();
 												Admin.scheduleNewAppointment(temp3,email,temp1);
-//												fathi.close();
-//												samer.close();
-//												apointTime.close();
 												break;
 											case 2:
 												logger.info("please enter the request ID you want to mark as completed: ");
