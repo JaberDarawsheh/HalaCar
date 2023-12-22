@@ -25,16 +25,10 @@ public class sendEmail
 	@Then("send notification to the customer via email")
 	public void send_notification_to_the_customer_via_email() 
 	{
-	  try
-	  {
+	  
 		  String CustomerEmail="ahmad@gmail.com";
 		  String Message ="Your installation request is complete. Thank you for choosing us.";
 		  email.sendNotificationToCustomer(CustomerEmail, Message);
-	  }
-	  catch(SQLException e)
-	  {
-		  e.printStackTrace();
-	  }
 	}
 
 	@Given("The installer receives customer instllation")
@@ -45,17 +39,10 @@ public class sendEmail
 
 	@Then("send notification to the installer via email")
 	public void send_notification_to_the_installer_via_email() 
-	{
-	   try
-	   {
+	{	   
 		   String InstallerEmail="mohammed@gmail.com";
 		   String Message="You have a new installation request.";
-		   email.sendNotificationToInstaller(InstallerEmail, Message);
-	   }
-	   catch(SQLException e)
-	   {
-		   e.printStackTrace();
-	   }
+		   email.sendNotificationToInstaller( Message);  
 	}
 
 }

@@ -7,125 +7,125 @@ import java.sql.ResultSet;
 
 public class UserLoginPage {
     
-	protected boolean Admin_is_login; // declaring the flag to chekck id the admin id login to the system or not
-	protected boolean Customer_is_login; 
-	protected boolean Installer_is_login;
+	protected boolean adminIsLogin; 
+	protected boolean customerIsLogin; 
+	protected boolean installerIsLogin;
 	
-	protected boolean login_flag;
+	protected boolean loginFlag;
 	
-	protected String type_admin="admin";
-	protected String type_customer="customer";
-	protected String type_installer="installer";
+	protected String typeAdmin="admin";
+	protected String typeCustomer="customer";
+	protected String typeInstaller="installer";
 	
-	protected String user_email;
-	protected String user_password;
+	protected String userEmail;
+	protected String userPassword;
 	
-	public UserLoginPage() // initilazation for this calss
+	public UserLoginPage() 
 	{
-		Admin_is_login=false;
-		Customer_is_login=false;
-		Installer_is_login=false;
+		adminIsLogin=false;
+		customerIsLogin=false;
+		installerIsLogin=false;
 		
-		login_flag=false;
+		loginFlag=false;
 		
-		user_email=null;
-		user_password=null;
+		userEmail=null;
+		userPassword=null;
 	}
 	
-	public UserLoginPage(String user_email, String user_password) { 
-		// TODO Auto-generated constructor stub
-		this.user_email=user_email;
-		this.user_password=user_password;
+	public UserLoginPage(String userEmail, String userPassword) { 
+	
+		this.userEmail=userEmail;
+		this.userPassword=userPassword;
 	}
 
-	public void is_valid_credentials(String user_email, String user_password) throws SQLException {
-		// TODO Auto-generated method stub
-		 connectDB conDB = new connectDB();
+	public void isValidCredentials(String userEmail, String userPassword) throws SQLException {
+		
+		 ConnectDB conDB = new ConnectDB();
 		 conDB.testConn();
 		 String sql = "SELECT * FROM systemusers WHERE user_email = ? AND user_password = ?";
 		try ( 
                 PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)) 
 		{
-	        stmt.setString(1, user_email);
-	        stmt.setString(2, user_password);
+	        stmt.setString(1, userEmail);
+	        stmt.setString(2, userPassword);
 	        ResultSet resultSet = stmt.executeQuery();
 			if(resultSet.next())
 			{
-				String type_of_user =resultSet.getString("user_type");
+				String typeOfUser =resultSet.getString("user_type");
 				
-				this.Admin_is_login=false;
-				this.Customer_is_login=false;
-				this.Installer_is_login=false;
-				this.login_flag=false;
+				this.adminIsLogin=false;
+				this.customerIsLogin=false;
+				this.installerIsLogin=false;
+				this.loginFlag=false;
 				
-				if(type_of_user.equals(type_admin))
+				if(typeOfUser.equals(typeAdmin))
 				{
-					this.Admin_is_login=true;
-					this.login_flag=true;
+					this.adminIsLogin=true;
+					this.loginFlag=true;
 				}
-				else if(type_of_user.equals(type_customer)) 
+				else if(typeOfUser.equals(typeCustomer)) 
 				{
-					this.Customer_is_login=true;
-					this.login_flag=true;
+					this.customerIsLogin=true;
+					this.loginFlag=true;
 				}
 				else 
 				{
-					this.Installer_is_login=true;
-					this.login_flag=true;
+					this.installerIsLogin=true;
+					this.loginFlag=true;
 				}
 			}
 		}
 		catch(SQLException e)
 		{
-			System.out.print(e);
+		    e.printStackTrace();
 		}
 	}
 
-	public boolean is_user_logged() 
+	public boolean isUserLogged() 
 	{
-		return this.login_flag;
+		return this.loginFlag;
 	}
 	
-	public boolean Logout() 
+	public boolean LogOut() 
 	{
-		this.login_flag=false;
-		return this.login_flag;
+		this.loginFlag=false;
+		return this.loginFlag;
 	}
 	
-	public boolean is_Admin_logged()
+	public boolean isAdminLogged()
 	{
-	  return this.Admin_is_login;	
+	  return this.adminIsLogin;	
 	}
 	
-	public boolean is_Customer_logged()
+	public boolean isCustomerLogged()
 	{
-		return this.Customer_is_login;
+		return this.adminIsLogin;
 	}
 	
-	public boolean is_Installer_logged()
+	public boolean isInstallerLogged()
 	{
-		return this.Installer_is_login;
+		return this.installerIsLogin;
 	}
 	
-	public boolean Admin_logout()
+	public boolean adminLogout() throws SQLException
 	{
-		this.Admin_is_login=false;
-		return this.Admin_is_login;
+		this.adminIsLogin=false;
+		return this.adminIsLogin;
 	}
 	
-	public boolean Customer_logout()
+	public boolean customerLogout()
 	{
-		this.Customer_is_login=false;
-		return this.Customer_is_login;
+		this.adminIsLogin=false;
+		return this.adminIsLogin;
 	}
 	
-	public boolean Installer_logout()
+	public boolean installerLogout()
 	{
-		this.Installer_is_login=false;
-		return this.Installer_is_login;
+		this.installerIsLogin=false;
+		return this.installerIsLogin;
 	}
 
-    public String getUser_email() {
-        return this.user_email;
+    public String getUserEmail() {
+        return this.userEmail;
     }
 }

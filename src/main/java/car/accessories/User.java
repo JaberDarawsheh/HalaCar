@@ -1,11 +1,14 @@
 package car.accessories;
 
 public abstract class User {
-    String email ,PhoneNumber,UserName,password;
+    String email;
+    String phoneNumber;
+    String userName;
+    String password;
     User(){}
-    User(String email,String Password){
+    User(String email,String password){
         this.email=email;
-        this.password=Password;
+        this.password=password;
     }
 
 }

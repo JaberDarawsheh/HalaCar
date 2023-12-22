@@ -15,7 +15,7 @@ import javax.mail.internet.MimeMessage;
 public class SendNotificationViaEmail 
 {
 	static final Logger logger = Logger.getLogger(SendNotificationViaEmail.class.getName());
-	public void sendNotificationToCustomer(String customerEmail, String messageContent)throws SQLException
+	public void sendNotificationToCustomer(String customerEmail, String messageContent)
 	{
         String fromEmail = "caraccessioescompany@gmail.com";
         String password = "eujm kiyn xfjv kjfq";  
@@ -26,6 +26,7 @@ public class SendNotificationViaEmail
         properties.put("mail.smtp.port", "587");
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+        	@Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(fromEmail, password);
             }
@@ -37,12 +38,12 @@ public class SendNotificationViaEmail
             message.setSubject("Test Email");
             message.setText(messageContent);
             Transport.send(message);
-            System.out.println("Verification email sent successfully!");
+            logger.info("Verification email sent successfully!");
         } catch (MessagingException e) {
             e.printStackTrace();
         }
     }
-	public void sendNotificationToInstaller(String installerEmail, String InstallermessageContent)throws SQLException 
+	public void sendNotificationToInstaller( String installerMessageContent) 
 	{
 		String fromEmail = "caraccessioescompany@gmail.com";
         String password = "eujm kiyn xfjv kjfq";  
@@ -53,6 +54,7 @@ public class SendNotificationViaEmail
         properties.put("mail.smtp.port", "587");
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+        	@Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(fromEmail, password);
             }
@@ -60,11 +62,11 @@ public class SendNotificationViaEmail
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromEmail));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(InstallermessageContent));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(installerMessageContent));
             message.setSubject("Test Email");
-            message.setText(InstallermessageContent);
+            message.setText(installerMessageContent);
             Transport.send(message);
-            System.out.println("Verification email sent successfully!");
+            logger.info("Verification email sent successfully!");
         } catch (MessagingException e) {
             e.printStackTrace();
         }
