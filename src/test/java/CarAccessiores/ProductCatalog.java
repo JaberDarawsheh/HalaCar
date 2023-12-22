@@ -55,8 +55,8 @@ public class ProductCatalog {
 	    }
 	}
 
-	@When("the user search for a product \\(e.g., {string} and set filters for {string} to {string} and {string} to {string}")
-	public void the_user_search_for_a_product_e_g_and_set_filters_for_to_and_to(String someProdct, String price, String amountOfMoney) {
+	@When("the user search for a product \\(e.g., {string} and set filters for {string} to {string}")
+	public void the_user_search_for_a_product_e_g_and_set_filters_for_to(String someProdct, String price, String amountOfMoney) {
 	       try
 	       {
 	    	    proCat.search_and_show_filtered_result(someProdct,price);
@@ -66,8 +66,20 @@ public class ProductCatalog {
 	    	   excption.printStackTrace();
 	       }
 	}
+	@Then("should see all product  that in price equal to {int} and category to electronics")
+	public void should_see_all_product_that_in_price_equal_to_and_category_to_electronics(Integer int1) {
+		try
+		{
+			proCat.search_and_show_filtered_result("Tire", String.valueOf(int1));
+		}
+		catch(SQLException excption)
+		{
+			excption.printStackTrace();
+		}
 
-	@When("the user search for product \\(ex: {strangeProduct}) does not found in out company")
+	}
+
+	@When("the user search for product \\(ex: {string}) does not found in out company")
 	public void the_user_search_for_product_ex_does_not_found_in_out_company(String strangeProduct) {
 	   try
 	   {

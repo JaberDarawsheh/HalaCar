@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Random;
 import java.util.logging.Logger;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -36,9 +37,12 @@ public class UserRoles {
     boolean installer_logged;
     UserLoginPage loginObj;
     int choice=0;
+    int randomNum;
     public UserRoles()  // initialization of class
     {
-        //assume these credentials used as admin,customer and installer
+        //assume these credentials used as admin
+        Random rand = new Random();
+        randomNum = rand.nextInt((1000 - 1) + 1) + 1;
         this.user_email="jaberDar@najah.edu";
         this.user_password="123455";
         loginObj=new UserLoginPage(this.user_email,this.user_password);
@@ -70,8 +74,9 @@ public class UserRoles {
     public void the_admin_should_be_able_to_add_a_new_user() {
         String user_mail="";
         // Write code here that turns the phrase above into concrete actions
+
         try {
-            user.addCustomer("subhi@outlook.com","subhi1234");
+            user.addCustomer("subhi"+randomNum+"@outlook.com","subhi123456");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -79,14 +84,14 @@ public class UserRoles {
         connectDB conDB = new connectDB();
 
         //check if the new user is added successfully
-        String sql2="SELECT * FROM systemusers WHERE userEmail = ?";
+        String sql2="SELECT * FROM systemusers WHERE user_email = ?";
         try {
             conDB.testConn();
             try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql2)){
-                stmt.setString(1, "subhi@outlook.com");
+                stmt.setString(1, "subhi"+randomNum+"@outlook.com");
                 ResultSet resultSet = stmt.executeQuery();
                 if(resultSet.next()) {
-                    user_mail = resultSet.getString("userEmail");
+                    user_mail = resultSet.getString("user_email");
 
                 }
 
@@ -98,7 +103,7 @@ public class UserRoles {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        assertEquals("subhi@outlook.com",user_mail);
+        assertEquals("subhi"+randomNum+"@outlook.com",user_mail);
 
 
     }
@@ -109,18 +114,18 @@ public class UserRoles {
         String user_pass="";
         // Write code here that turns the phrase above into concrete actions
         try {
-            user.UpdatePass("subhi@outlook.com","subhi123456");
+            user.UpdatePass("subhi"+randomNum+"@outlook.com","subhi123456");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         connectDB conDB = new connectDB();
 
-        String sql2="SELECT * FROM systemusers WHERE user_email = ?";
+        String sql2="SELECT user_password FROM systemusers WHERE user_email = ?";
         try {
             conDB.testConn();
             try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql2)){
-                stmt.setString(1, "subhi@outlook.com");
+                stmt.setString(1, "subhi"+randomNum+"@outlook.com");
                 ResultSet resultSet = stmt.executeQuery();
                 if(resultSet.next()) {
                     user_pass = resultSet.getString("user_password");
@@ -143,7 +148,7 @@ public class UserRoles {
         // Write code here that turns the phrase above into concrete actions
         boolean deleted=false;
         try {
-            user.DeleteUser("subhi@outlook.com");
+            user.DeleteUser("subhi"+randomNum+"@outlook.com");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -152,7 +157,7 @@ public class UserRoles {
         try {
             conDB.testConn();
             try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql2)){
-                stmt.setString(1, "subhi@outlook.com");
+                stmt.setString(1, "subhi"+randomNum+"@outlook.com");
                 ResultSet resultSet = stmt.executeQuery();
                 if (!resultSet.next())
                     deleted=true;
@@ -169,8 +174,11 @@ public class UserRoles {
 
     @Given("a Customer is logged into the system")
     public void a_customer_is_logged_into_the_system() {
+        String userEmail="s12028674@stu.najah.edu";
+        String userPass="1234567";
+        loginObj=new UserLoginPage();
         try {
-            loginObj.is_valid_credentials(this.user_email,this.user_password);
+            loginObj.is_valid_credentials(userEmail,userPass);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -178,7 +186,7 @@ public class UserRoles {
         if(Customer_logged) {
             Customer =new customer(this.user_email,this.user_password);
         }else {
-            throw new io.cucumber.java.PendingException();//the test case will not pass if the customer login failed
+            fail("1");
 
         }
 
@@ -244,16 +252,16 @@ public class UserRoles {
 
     @When("the Customer accesses their user profile")
     public void the_customer_accesses_their_user_profile() {
-        choice=Customer.showProfile();
-        //the method will ask the user to enter a number to choose an action to perform (change Email or password,view history ,etc.....)
-        if(choice<=0||choice>5)
-            fail("The user entered an in valid number that perform no action");
+
     }
 
     @When("views their order history")
     public void views_their_order_history() {
-        if(choice!=3)
-            fail("The user has entered a number that performs another operation different from viewing the history  ");
+        try {
+            Customer.showHistory();
+        } catch (SQLException e) {
+            fail("show history error "+e.getMessage());
+        }
     }
 
     @Then("the Customer should see a list of their past orders")
@@ -269,16 +277,16 @@ public class UserRoles {
 
     @Given("an Installer is logged into the system")
     public void an_installer_is_logged_into_the_system() {
-        installer_email="fathi@gmail.com";
-        installer_password="1234567";
+        installer_email="iim7md28@gmail.com";
+        installer_password="12345";
         try {
-            loginObj.is_valid_credentials(this.installer_email,this.installer_password);
+            loginObj.is_valid_credentials(installer_email,installer_password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         installer_logged =loginObj.is_Installer_logged();
         if(installer_logged) {
-            installer =new installer(this.user_email,this.user_password);
+            installer =new installer(installer_email,installer_password);
         }else {
             fail("there is no available installer");//the test case will not pass if the installer login failed
 

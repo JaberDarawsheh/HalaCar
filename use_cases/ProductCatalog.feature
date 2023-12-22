@@ -8,12 +8,12 @@ Feature: Product Catalog
   
   Scenario: Product Catalog Search and Filters
   Given the user is login to the system
-  When the user serrch for a product (e.g., "Matur" and set filters for "Price" to "5000" 
+  When the user search for a product (e.g., "Matur" and set filters for "Price" to "5000"
   Then should see all product  that in price equal to 5000 and category to electronics
   
   Scenario: Product Catalog Search and Filters
   Given the user is login to the system
-  When the user serrch for product (ex: "banana") does not found in out company
+  When the user search for product (ex: "banana") does not found in out company
   Then the user should have error message
   
   Scenario: User does not login to the system

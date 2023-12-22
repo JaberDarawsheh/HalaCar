@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 
 import java.sql.SQLException;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class AdminDashboard {
@@ -28,56 +29,71 @@ public class AdminDashboard {
 
     @Then("the admin should see a list of current products")
     public void the_admin_should_see_a_list_of_current_products() {
+        int flag=1;
         try {
             admin.showProductCatalog();
         } catch (SQLException e) {
             fail("some thing wrong with showProductCatalog method ");
+            flag=0;
         }
+        assertTrue(flag==1);
     }
 
     @Then("should be able to add a new product")
     public void should_be_able_to_add_a_new_product() {
+        int flag=1;
         try {
             admin.addProduct("product name ","product type", 1500);
         } catch (SQLException e) {
             fail("some thing wrong with addProduct method ");
+            flag=0;
         }
+        assertTrue(flag==1);
 
     }
 
     @Then("should be able to edit details of existing products")
     public void should_be_able_to_edit_details_of_existing_products() {
-        pid =7;
+        pid =5;
+        int flag=1;
         try {
             admin.isUnavailable(pid);
         } catch (SQLException e) {
-            fail("some thing wrong with isUnavailable method");
+            fail("some thing wrong with isUnavailable method"+ e.getMessage());
+            flag=0;
         }
         try {
             admin.changeProductName(pid,"newName");
         } catch (SQLException e) {
-            fail("some thing wrong with changeProductName method");
+            fail("some thing wrong with changeProductName method"+ e.getMessage());
+            flag=0;
         }
         try {
             admin.changeProductType(pid,"newType");
         } catch (SQLException e) {
-            fail("some thing wrong with changeProductType method");
+            fail("some thing wrong with changeProductType method"+ e.getMessage());
+            flag=0;
         }
         try {
             admin.changeProductPrice(pid,1000);
         } catch (SQLException e) {
-            fail("some thing wrong with changeProductPrice method");
+            fail("changeProductPrice"+ e.getMessage());
+            flag=0;
         }
+        assertTrue(flag==1);
     }
 
     @Then("should be able to delete a product")
     public void should_be_able_to_delete_a_product() {
         pid=4;
+        int flag=1;
         try {
             admin.deleteProduct(pid);
         } catch (SQLException e) {
             fail("some thing wrong with deleteProduct method");
+            flag=0;
         }
+        assertTrue(flag==1);
     }
 
     @When("the admin selects the option to manage customer accounts")

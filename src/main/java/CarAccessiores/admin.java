@@ -131,7 +131,7 @@ public class admin extends User {
     }
 
     public void isUnavailable(int pid) throws SQLException {
-        sql ="UPDATE productcatalog SET isAvailable = ? WHERE id = ?";
+        sql ="UPDATE productcatalog SET isAvilable = ? WHERE id = ?";
         connectDB conn=new connectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
@@ -182,7 +182,7 @@ public class admin extends User {
     }
 
     public void changeProductPrice(int pid, int newPrice) throws SQLException {
-        sql="UPDATE prosuctcatalog SET productPrice = ? WHERE id =? ";
+        sql="UPDATE productcatalog SET productPrice = ? WHERE id =? ";
         connectDB conn=new connectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){

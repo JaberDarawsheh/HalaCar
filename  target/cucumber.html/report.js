@@ -1,4 +1,180 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("InstallationRequest.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("AdminDashboard.feature");
+formatter.feature({
+  "line": 1,
+  "name": "Admin Dashboard Management",
+  "description": "",
+  "id": "admin-dashboard-management",
+  "keyword": "Feature"
+});
+formatter.scenario({
+  "line": 3,
+  "name": "Admin Adds and Updates Product listing",
+  "description": "",
+  "id": "admin-dashboard-management;admin-adds-and-updates-product-listing",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 4,
+  "name": "the admin is logged in and on the dashboard",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "the admin selects the option to manage product listing",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 6,
+  "name": "the admin should see a list of current products",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 7,
+  "name": "should be able to add a new product",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "should be able to edit details of existing products",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "should be able to delete a product",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "line": 11,
+  "name": "Admin Manages Customer Accounts",
+  "description": "",
+  "id": "admin-dashboard-management;admin-manages-customer-accounts",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 12,
+  "name": "the admin is logged in and on the dashboard",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 13,
+  "name": "the admin selects the option to manage customer accounts",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 14,
+  "name": "the admin should see a list of registered customers with detailes",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 15,
+  "name": "should be able to edit customer information",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "should be able to delete a customer account",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "line": 18,
+  "name": "Admin Manages Installation Appointments",
+  "description": "",
+  "id": "admin-dashboard-management;admin-manages-installation-appointments",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 19,
+  "name": "the admin is logged in and on the dashboard",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 20,
+  "name": "the admin accesses the installation management section",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 21,
+  "name": "the admin should see a list of scheduled installation appointments",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 22,
+  "name": "should be able to reschedule appointments",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "should be able to mark appointments as completed or canceled",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.uri("InstallationRequest.feature");
 formatter.feature({
   "comments": [
     {
@@ -379,7 +555,7 @@ formatter.step({
 });
 formatter.step({
   "line": 11,
-  "name": "the user serrch for a product (e.g., \"Matur\" and set filters for \"Price\" to \"5000\"",
+  "name": "the user search for a product (e.g., \"Matur\" and set filters for \"Price\" to \"5000\"",
   "keyword": "When "
 });
 formatter.step({
@@ -414,7 +590,7 @@ formatter.step({
 });
 formatter.step({
   "line": 16,
-  "name": "the user serrch for product (ex: \"banana\") does not found in out company",
+  "name": "the user search for product (ex: \"banana\") does not found in out company",
   "keyword": "When "
 });
 formatter.step({
@@ -782,6 +958,190 @@ formatter.result({
 formatter.match({});
 formatter.result({
   "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.uri("UserProfile.feature");
+formatter.feature({
+  "line": 1,
+  "name": "User Profile Editing",
+  "description": "",
+  "id": "user-profile-editing",
+  "keyword": "Feature"
+});
+formatter.scenario({
+  "line": 3,
+  "name": "View User Profile Information",
+  "description": "",
+  "id": "user-profile-editing;view-user-profile-information",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 4,
+  "name": "the user is logged in",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "the user navigates to their profile",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 6,
+  "name": "they should see their personal information",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 7,
+  "name": "they should see their order history",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "they should see their installation requests",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "line": 10,
+  "name": "Edit User Profile Information",
+  "description": "",
+  "id": "user-profile-editing;edit-user-profile-information",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 11,
+  "name": "the user is logged in",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 12,
+  "name": "the user selects the edit profile option",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 13,
+  "name": "updates their contact information",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "the changes should be saved successfully",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 15,
+  "name": "the updated information should be visible in the profile",
+  "keyword": "And "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "line": 17,
+  "name": "View Order History",
+  "description": "",
+  "id": "user-profile-editing;view-order-history",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 18,
+  "name": "the user is logged in",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "the user accesses their profile\u0027s order history",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "they should see a list of their past orders in details",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenario({
+  "line": 22,
+  "name": "View Installation Requests",
+  "description": "",
+  "id": "user-profile-editing;view-installation-requests",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 23,
+  "name": "the user is logged in",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 24,
+  "name": "the user checks their profile\u0027s installation requests",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 25,
+  "name": "they should see a list of their previous installation requests in details",
+  "keyword": "Then "
 });
 formatter.match({});
 formatter.result({

@@ -171,7 +171,7 @@ public class customer extends User {
 
     }
 
-    public int showProfile() {
+    public int showProfile(int choice) {
         //the full functionality will be added soon
         //logger.log(Level.INFO,"| 1-Change Email |\n|2-Change password|\n|3-View order history|\n|4-View installation requests|\n|5-Go back to the main menu|");
         // logger.log(Level.INFO,"| 1-View order history|\n|2-View installation requests history|\n|3-Go back to the main menu|");
@@ -180,9 +180,13 @@ public class customer extends User {
         logger.info("Sub-option 2 View installation requests history");
         logger.info("Sub-option 3 Go back to the main menu");
         //the user will enter the corresponding number of the action wanted to be performed
-        Scanner scanner = new Scanner(System.in);
-        int userChoice = scanner.nextInt();
-        return userChoice;
+        if (choice != 3) {
+
+            Scanner scanner = new Scanner(System.in);
+            int userChoice = scanner.nextInt();
+            return userChoice;
+        }else
+            return choice;
 
     }
 
@@ -252,15 +256,15 @@ public class customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Type", "Installer Email", "Car Model", "Installation Date", "Status"));
-            //logger.info(" "+numberOfColumns+"");
+            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Name", "Product Type", "Car Model", "Installer Email" ,"Installation Date", "Status"));
+
             int[] columnWidths={15,10,15,20,15,30,10};
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
 
 
-                for (int i = 1; i <= numberOfColumns; i++) {
+                for (int i = 1; i <= numberOfColumns && i <= columnWidths.length; i++) {
                     String columnValue = rSet.getString(i);
                     String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
                     rowData.append(formattedColumn);
@@ -290,15 +294,18 @@ public class customer extends User {
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
+                int [] column_value={15,10,15,20,15,30,10};
 
-                for (int i = 1; i <= numberOfColumns; i++) {
-                    rowData.append(rSet.getString(i));
+
+                for (int i = 1; i <= numberOfColumns&&i <= column_value.length; i++) {
+                    String columnValue = rSet.getString(i);
+                    String formattedColumn = String.format("%-"+column_value[i-1]+"s", columnValue); // Adjust width as needed
+                    rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
-                        rowData.append(" ");
+                        rowData.append(" | "); // Separator between columns
                     }
                 }
-
-                logger.log(Level.INFO, String.format(format, rowData.toString()));
+                logger.log(Level.INFO, rowData.toString());
             }
         }
     }
@@ -345,19 +352,29 @@ public class customer extends User {
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Type", "Installer Email", "Car Model", "Installation Date", "Status"));
+            String format = "| %-15s | %-10s | %-15s | %-20s | %-20s | %-15s | %-30s | %-10s |";
+            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Name" , "Product Type", "Installer Email", "Car Model", "Installation Date", "Status"));
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
 
+//                for (int i = 1; i <= numberOfColumns; i++) {
+//                    rowData.append(rSet.getString(i));
+//                    if (i < numberOfColumns) {
+//                        rowData.append(" ");
+//                    }
+//                }
+//                logger.log(Level.INFO, String.format(format, rowData.toString()));
+                int [] columnval={15,10,15,20,20,15,30,10};
                 for (int i = 1; i <= numberOfColumns; i++) {
-                    rowData.append(rSet.getString(i));
+                    String columnValue = rSet.getString(i);
+                    String formattedColumn = String.format("%-"+columnval[i-1]+"s", columnValue); // Adjust width as needed
+                    rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
-                        rowData.append(" ");
+                        rowData.append(" | "); // Separator between columns
                     }
                 }
-                logger.log(Level.INFO, String.format(format, rowData.toString()));
+                logger.log(Level.INFO, rowData.toString());
             }
         }
     }

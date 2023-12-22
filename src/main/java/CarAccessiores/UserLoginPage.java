@@ -39,7 +39,7 @@ public class UserLoginPage {
 	}
 
 	public void is_valid_credentials(String user_email, String user_password) throws SQLException {
-		// TODO Auto-generated method stub
+
 		 connectDB conDB = new connectDB();
 		 conDB.testConn();
 		 String sql = "SELECT * FROM systemusers WHERE user_email = ? AND user_password = ?";

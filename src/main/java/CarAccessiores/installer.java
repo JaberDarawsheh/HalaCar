@@ -171,12 +171,19 @@ public class installer extends User{
                 try(PreparedStatement stmnt=connection.getConnection().prepareStatement(query)){
                     stmnt.setInt(1,id);
                     ResultSet rs= stmnt.executeQuery();
+                    rs.next();//
                     orderName = rs.getString("productName");
                     Date date = rs.getDate("preferredDate");
                     String formatedDateTime=dateFormat.format(date);
-                    String [] dateTimeSplit = formatedDateTime.split("\\s+");
-                    installationTime = dateTimeSplit[1];
-                    orderDate = dateTimeSplit[0];
+                    if (formatedDateTime.contains(" ")) {
+                        String[] dateTimeSplit = formatedDateTime.split("\\s+");
+                        installationTime = dateTimeSplit[1];
+                        orderDate = dateTimeSplit[0];
+                    }else {
+                        installationTime ="not determined yet";
+                        orderDate =formatedDateTime;
+
+                    }
                     customer_email = rs.getString("email");
                     carModel = rs.getString("carModel");
                     requestID = rs.getString("rid");
@@ -308,9 +315,16 @@ public class installer extends User{
                         orderName = rs.getString("productName");
                         Date date = rs.getDate("preferredDate");
                         String formatedDateTime = dateFormat.format(date);
-                        String[] dateTimeSplit = formatedDateTime.split("\\s+");
-                        installationTime = dateTimeSplit[1];
-                        orderDate = dateTimeSplit[0];
+
+                        if (formatedDateTime.contains(" ")) {
+                            String[] dateTimeSplit = formatedDateTime.split("\\s+");
+                            installationTime = dateTimeSplit[1];
+                            orderDate = dateTimeSplit[0];
+                        }else {
+                            installationTime ="not determined yet";
+                            orderDate =formatedDateTime;
+
+                        }
                         customer_email = rs.getString("email");
                         carModel = rs.getString("carModel");
                         requestID = rs.getString("rid");

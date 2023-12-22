@@ -371,7 +371,7 @@ public class Main // to delete
 						case 3:
 							int access=0;
 							while(access!=3) {
-								access=Customer.showProfile();
+								access=Customer.showProfile(0);
 								switch (access) {
 									case 1:
 										Customer.showHistory();

@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="updated pom file" />
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="updated pom file">
+      <change beforePath="$PROJECT_DIR$/ target/cucumber.html/formatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/ target/cucumber.html/formatter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ target/cucumber.html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ target/cucumber.html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ target/cucumber.html/jquery-1.8.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ target/cucumber.html/jquery-1.8.2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ target/cucumber.html/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/ target/cucumber.html/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ target/cucumber.html/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ target/cucumber.html/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1de836f4-b278-4cff-aa95-49d4b2e08e96.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1de836f4-b278-4cff-aa95-49d4b2e08e96.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/UserLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/UserLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/InstallationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/InstallationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/ProductCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/ProductCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserLoginToSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserLoginToSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRoles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/CustomLogFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/CustomLogFormatter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/UserLoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/connectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/connectDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/registeration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/registeration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/ProductCatalog.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/ProductCatalog.feature" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +61,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -35,35 +71,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "junit.framework.TestCase",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/hamoo/Desktop/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.build",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hamoo/Desktop/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hamoo\Desktop\HalaCar\use_cases" />
+      <recent name="C:\Users\hamoo\Desktop\HalaCar\src\main\java\CarAccessiores" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="CarAccessiores" />
@@ -72,20 +112,7 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: InstallationRequest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CarAccessiores.Main" />
-      <module name="CarAccessioresCompany" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="CarAccessiores.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cucumber Java.All Features in: use_cases">
     <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
@@ -105,15 +132,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: AdminDashboard" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User enters vaild user_email invalid user_password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/AdminDashboard.feature" />
-      <option name="GLUE" value="test.java.CarAccessiores" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserLogin.feature" />
+      <option name="GLUE" value="CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Feature: AdminDashboard" />
+      <option name="NAME_FILTER" value="^User enters vaild user_email invalid user_password$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User enters vaild user_email invalid user_password$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User enters vaild user_email invalid user_password" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -125,14 +152,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: InstallationRequest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User leaves user_email and user_password is empty" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/InstallationRequest.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserLogin.feature" />
       <option name="GLUE" value="CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: InstallationRequest" />
+      <option name="NAME_FILTER" value="^User leaves user_email and user_password is empty$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User leaves user_email and user_password is empty$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User leaves user_email and user_password is empty" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -144,14 +172,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: UserRoles" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User leaves user_email is empty" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserRoles.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserLogin.feature" />
       <option name="GLUE" value="CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: UserRoles" />
+      <option name="NAME_FILTER" value="^User leaves user_email is empty$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User leaves user_email is empty$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User leaves user_email is empty" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: User leaves user_password is empty" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/UserLogin.feature" />
+      <option name="GLUE" value="CarAccessiores" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CarAccessioresCompany" />
+      <option name="NAME_FILTER" value="^User leaves user_password is empty$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User leaves user_password is empty$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User leaves user_password is empty" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -164,19 +213,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Cucumber Java.Feature: InstallationRequest" />
-      <item itemvalue="Cucumber Java.Feature: UserRoles" />
+      <item itemvalue="Cucumber Java.Scenario: User enters vaild user_email invalid user_password" />
+      <item itemvalue="Cucumber Java.Scenario: User leaves user_email and user_password is empty" />
+      <item itemvalue="Cucumber Java.Scenario: User leaves user_email is empty" />
+      <item itemvalue="Cucumber Java.Scenario: User leaves user_password is empty" />
       <item itemvalue="Cucumber Java.All Features in: use_cases" />
-      <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Feature: InstallationRequest" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
-        <item itemvalue="Cucumber Java.Feature: UserRoles" />
+        <item itemvalue="Cucumber Java.Scenario: User leaves user_email and user_password is empty" />
+        <item itemvalue="Cucumber Java.Scenario: User leaves user_password is empty" />
+        <item itemvalue="Cucumber Java.Scenario: User leaves user_email is empty" />
+        <item itemvalue="Cucumber Java.Scenario: User enters vaild user_email invalid user_password" />
       </list>
     </recent_temporary>
   </component>
@@ -200,6 +249,10 @@
       <workItem from="1702046486696" duration="684000" />
       <workItem from="1703104038639" duration="2567000" />
       <workItem from="1703106632394" duration="3036000" />
+      <workItem from="1703176707030" duration="2304000" />
+      <workItem from="1703179030519" duration="6952000" />
+      <workItem from="1703192252323" duration="445000" />
+      <workItem from="1703192722517" duration="9961000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -406,6 +459,14 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.MissingFormatArgumentException" package="java.util" />
           <option name="timeStamp" value="8" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.AssertionError" package="java.lang" />
+          <option name="timeStamp" value="9" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="javax.mail.internet.AddressException" package="javax.mail.internet" />
+          <option name="timeStamp" value="10" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
