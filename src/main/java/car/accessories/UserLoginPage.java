@@ -39,7 +39,7 @@ public class UserLoginPage {
 	}
 
 	public void isValidCredentials(String userEmail, String userPassword) throws SQLException {
-		
+
 		 ConnectDB conDB = new ConnectDB();
 		 conDB.testConn();
 		 String sql = "SELECT * FROM systemusers WHERE user_email = ? AND user_password = ?";
@@ -99,7 +99,7 @@ public class UserLoginPage {
 	
 	public boolean isCustomerLogged()
 	{
-		return this.adminIsLogin;
+		return this.customerIsLogin;
 	}
 	
 	public boolean isInstallerLogged()

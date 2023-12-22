@@ -1,4 +1,4 @@
-package CarAccessiores; 
+package car.accessories;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Scanner;
@@ -42,7 +42,7 @@ public class Main // to delete
 				logger.info("Enter user password : ");
 				String newUserPassword = scanner.next();
 				String customer = "customer";
-				registeration reg = new registeration();
+				Registeration reg = new Registeration();
 				reg.setData(newUserEmail, newUserPassword , customer);
 			}
 			else 
@@ -55,9 +55,9 @@ public class Main // to delete
 			UserLoginPage loginP = new UserLoginPage(user_email , user_password);
 			ProductCat catalog = new ProductCat();
 
-			loginP.is_valid_credentials(user_email, user_password);
+			loginP.isValidCredentials(user_email, user_password);
 
-			if(loginP.is_Admin_logged())
+			if(loginP.isAdminLogged())
 			{
 				int choice=0;
 				String email;
@@ -65,7 +65,7 @@ public class Main // to delete
 				String temp1;
 				String temp2;
 				int temp3=0;
-				admin Admin=new admin(user_email,user_password);
+				Admin admin=new Admin(user_email,user_password);
 				logger.info("The Admin entered the site");
 				boolean adminLogFlag = true;
 				logger.info("==============================================");
@@ -85,7 +85,7 @@ public class Main // to delete
 					switch(selectedListValue)
 					{
 						case 1: logger.info("You select Option 1 :");
-							catalog.show_products_catalog_toUser(loginP);
+							catalog.showProductsCatalogToUser();
 							logger.info("You can also choose from the menu : ");
 							break;
 
@@ -94,7 +94,7 @@ public class Main // to delete
 							String selectProduct = str.nextLine();
 							logger.info("Please The Filterd price for an selected product  : ");
 							String selectPrice = str.nextLine();
-							catalog.search_and_show_filtered_result(selectProduct,selectPrice);
+							catalog.searchAndShowFilteredResult(selectProduct,selectPrice);
 							logger.info("You can also choose from the menu : ");
 							break;
 						case 3:
@@ -113,7 +113,7 @@ public class Main // to delete
 										logger.info("please enter the password for the user you want to add: ");
 										password = scanner.next();
 										try {
-											Admin.addCustomer(email, password);
+											admin.addCustomer(email, password);
 										}
 										catch (SQLException e) {
 											logger.warning("\nsome thing went wrong please try again later");
@@ -127,7 +127,7 @@ public class Main // to delete
 										password = scanner.next();
 										try {
 
-											Admin.UpdatePass(email, password);
+											admin.UpdatePass(email, password);
 										}
 										catch (SQLException e) {
 											logger.warning("some thing went wrong please try again later");
@@ -140,7 +140,7 @@ public class Main // to delete
 										email = scanner.next();
 										try {
 
-											Admin.DeleteUser(email);
+											admin.DeleteUser(email);
 										}
 										catch (SQLException e) {
 											logger.warning("some thing went wrong please try again later");
@@ -169,7 +169,7 @@ public class Main // to delete
 								choice = scanner.nextInt();
 								switch (choice) {
 									case 1:
-										Admin.showProductCatalog();
+										admin.showProductCatalog();
 										logger.info("=== Product management options ===");
 										logger.info(" 1 - Add new product");
 										logger.info(" 2 - Edit current product");
@@ -184,7 +184,7 @@ public class Main // to delete
 												temp2= str.nextLine();
 												logger.info("please enter the product price: ");
 												temp3= scanner.nextInt();
-												Admin.addProduct(Temp1,temp2,temp3);
+												admin.addProduct(Temp1,temp2,temp3);
 												break;
 											case 2 :
 												logger.info("=== Product edit options ===");
@@ -199,20 +199,20 @@ public class Main // to delete
 													case 1:
 														logger.info("please enter the new name for the product: ");
 														temp2=str.nextLine();
-														Admin.changeProductName(temp3,temp2);
+														admin.changeProductName(temp3,temp2);
 														break;
 													case 2:
 														logger.info("please enter the new type for the product: ");
 														temp2=str.nextLine();
-														Admin.changeProductType(temp3,temp2);
+														admin.changeProductType(temp3,temp2);
 														break;
 													case 3:
 														logger.info("please enter the new price for the product: ");
 														int price= str.nextInt();
-														Admin.changeProductPrice(temp3,price);
+														admin.changeProductPrice(temp3,price);
 														break;
 													case 4:
-														Admin.isUnavailable(temp3);
+														admin.isUnavailable(temp3);
 														choice=0;
 														break;
 												}
@@ -220,7 +220,7 @@ public class Main // to delete
 											case 3:
 												logger.info("Please enter the product id you want to delete:");
 												temp3= scanner.nextInt();
-												Admin.deleteProduct(temp3);
+												admin.deleteProduct(temp3);
 												break;
 											case 4:
 												choice=0;
@@ -233,7 +233,7 @@ public class Main // to delete
 										}
 										break;
 									case 2:
-										Admin.showCustomer();
+										admin.showCustomer();
 										logger.info("please enter the mail of the user you want to edit: ");
 										String cemail= strin.nextLine();
 										logger.info("If you want to change the password for the customer press 1");
@@ -242,17 +242,17 @@ public class Main // to delete
 										if(temp3==1){
 											logger.info("please enter the new password: ");
 											temp1=str.nextLine();
-											Admin.UpdatePass(cemail,temp1);
+											admin.UpdatePass(cemail,temp1);
 										}else if(temp3==2){
 											logger.info("please enter the new email: ");
 											temp1=scan.nextLine();
-											Admin.updateEmail(cemail,temp1);
+											admin.updateEmail(cemail,temp1);
 										}else{
 											logger.info("invalid option");
 										}
 										break;
 									case 3:
-										Admin.showScheduledAppointments();
+										admin.showScheduledAppointments();
 										logger.info("=== Appointment management options ===");
 										logger.info(" 1 - Reschedule an appointment");
 										logger.info(" 2 - Mark as completed");
@@ -270,17 +270,17 @@ public class Main // to delete
 												email= samer.nextLine();
 												logger.info("enter a time for the appointment in the following format HH:mm:ss");
 												temp1= apointTime.nextLine();
-												Admin.scheduleNewAppointment(temp3,email,temp1);
+												admin.scheduleNewAppointment(temp3,email,temp1);
 												break;
 											case 2:
 												logger.info("please enter the request ID you want to mark as completed: ");
 												temp3= scanner.nextInt();
-												Admin.setStatusToCompleted(temp3);
+												admin.setStatusToCompleted(temp3);
 												break;
 											case 3:
 												logger.info("please enter the request ID you want to mark as canceled: ");
 												temp3= scanner.nextInt();
-												Admin.setStatusToCanceled(temp3);
+												admin.setStatusToCanceled(temp3);
 												break;
 											case 4:
 
@@ -311,10 +311,10 @@ public class Main // to delete
 
 
 
-			else if(loginP.is_Customer_logged())
+			else if(loginP.isCustomerLogged())
 			{
 				String temp1;
-				customer Customer=new customer(user_email,user_password);
+				Customer Customer=new Customer(user_email,user_password);
 				boolean customerLogFlag=true;
 				int choice=0;
 				logger.info("The Customer entered the site");
@@ -447,10 +447,10 @@ public class Main // to delete
 				}
 			}
 
-			else if(loginP.Installer_is_login)
+			else if(loginP.installerIsLogin)
 			{
 				logger.info("The Installer entered the site");
-				installer Installer=new installer(user_email,user_password);
+				Installer Installer=new Installer(user_email,user_password);
 				boolean installerLogFlag=true;
 				int choice=0;
 				logger.info("==============================================");
@@ -525,7 +525,7 @@ public class Main // to delete
 	
 	public static void theAdminLogout(UserLoginPage login) throws SQLException {
 
-		login.Admin_logout();
+		login.adminLogout();
 		logger.info("The Admin has left the site.");
 	}
 }

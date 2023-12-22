@@ -4,8 +4,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import car.accessories.ProductCat;
-import car.accessories.UserLoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -72,7 +70,7 @@ public class ProductCatalog {
 	public void should_see_all_product_that_in_price_equal_to_and_category_to_electronics(Integer int1) {
 		try
 		{
-			proCat.search_and_show_filtered_result("Tire", String.valueOf(int1));
+			proCat.searchAndShowFilteredResult("Tire", String.valueOf(int1));
 		}
 		catch(SQLException excption)
 		{

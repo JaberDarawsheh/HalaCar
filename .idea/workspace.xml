@@ -5,12 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="all test cases passed">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRegisteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRegisteration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CarAccessiores/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/CustomLogFormatter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/SendNotificationViaEmail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/UserLoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ConnectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/InstallationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/InstallationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/ProductCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/ProductCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/UserLoginToSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/UserLoginToSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/UserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/UserRoles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/sendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/sendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/CustomLogFormatter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/SendNotificationViaEmail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/UserLoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/connectDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/installer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/registeration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/AdminDashboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/InstallationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/ProductCatalog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserLoginToSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserRegisteration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/UserRoles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/sendEmail.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +90,11 @@
     "JUnit.CarAccessiores in CarAccessioresCompany.executor": "Coverage",
     "JUnit.Test.executor": "Run",
     "JUnit.java in CarAccessioresCompany.executor": "Coverage",
+    "Maven.CarAccessioresCompany [clean].executor": "Run",
+    "Maven.CarAccessioresCompany [compile].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "junit.framework.TestCase",
@@ -96,27 +135,15 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CarAccessioresCompany">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CarAccessiores.Main" />
-      <module name="CarAccessioresCompany" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="CarAccessiores.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cucumber Java.All Features in: use_cases">
     <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
-      <option name="GLUE" value="CarAccessiores" />
+      <option name="GLUE" value="car.accessories" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <shortenClasspath name="NONE" />
       <option name="SUGGESTED_NAME" value="All Features in: use_cases" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
@@ -157,6 +184,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarAccessioresCompany" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="car.accessories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="car.accessories" />
+      <option name="MAIN_CLASS_NAME" value="car.accessories.Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in CarAccessioresCompany" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CarAccessioresCompany" />
       <option name="TEST_OBJECT" value="directory" />
@@ -166,19 +208,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
       <item itemvalue="Cucumber Java.All Features in: use_cases" />
       <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
+      <item itemvalue="JUnit.Test" />
       <item itemvalue="JUnit.java in CarAccessioresCompany" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.All Features in: use_cases" />
+        <item itemvalue="JUnit.Test" />
         <item itemvalue="JUnit.java in CarAccessioresCompany" />
         <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
         <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
-        <item itemvalue="Cucumber Java.All Features in: use_cases" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +255,7 @@
       <workItem from="1703179030519" duration="6952000" />
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
-      <workItem from="1703268981340" duration="6919000" />
+      <workItem from="1703268981340" duration="10086000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -407,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703271798711</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="all test cases passed">
+      <option name="closed" value="true" />
+      <created>1703278155586</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1703278155586</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

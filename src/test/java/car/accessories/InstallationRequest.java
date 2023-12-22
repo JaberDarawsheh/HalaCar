@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,8 +15,8 @@ import java.util.logging.Logger;
 
 public class InstallationRequest {
     private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
-    customer Customer;
-    installer installer;
+    Customer customer;
+    Installer installer;
     boolean Customer_logged;
     boolean installer_logged;
     UserLoginPage loginObj;
@@ -34,13 +34,13 @@ public class InstallationRequest {
         user_password="54321";
         loginObj=new UserLoginPage(user_email,user_password);
         try {
-            loginObj.is_valid_credentials(user_email,user_password);
+            loginObj.isValidCredentials(user_email,user_password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Customer_logged =loginObj.is_Customer_logged();
+        Customer_logged =loginObj.isCustomerLogged();
         if(Customer_logged) {
-            Customer =new customer(user_email,user_password);
+            customer =new Customer(user_email,user_password);
         }else {
             fail();//the test case will not pass if the customer login failed
 
@@ -50,13 +50,13 @@ public class InstallationRequest {
     @Given("there are available installers")
     public void there_are_available_installers() {
         try {
-            loginObj.is_valid_credentials(installer_email,installer_password);
+            loginObj.isValidCredentials(installer_email,installer_password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        installer_logged =loginObj.is_Installer_logged();
+        installer_logged =loginObj.isInstallerLogged();
         if(installer_logged) {
-            installer =new installer(installer_email,installer_password);
+            installer =new Installer(installer_email,installer_password);
         }else {
             fail("there is no available installer");//the test case will not pass if the installer login failed
 
@@ -78,7 +78,7 @@ public class InstallationRequest {
     @Then("the installation request is submitted successfully")
     public void the_installation_request_is_submitted_successfully() {
         try {
-            Customer.installationRequest(id,carModel,date);
+            customer.installationRequest(id,carModel,date);
         } catch (SQLException e) {
             e.printStackTrace();
             fail();
@@ -90,7 +90,7 @@ public class InstallationRequest {
     }
     @Given("an installation request is Pending")
     public void an_installation_request_is_pending() {
-        installer=new installer(installer_email,installer_password);
+        installer=new Installer(installer_email,installer_password);
         try {
             installer.showPending();
         } catch (SQLException e) {
@@ -139,8 +139,8 @@ public class InstallationRequest {
         // Write code here that turns the phrase above into concrete actions
         try {
 
-            Customer=new customer("s12028647@stu.najah.edu","1234567");
-            Customer.showScheduled();
+            customer=new Customer("s12028647@stu.najah.edu","1234567");
+            customer.showScheduled();
         } catch (SQLException e) {
             e.printStackTrace();
             fail();
@@ -148,13 +148,13 @@ public class InstallationRequest {
     }
     @Given("an appointment is Scheduled")
     public void an_appointment_is_Scheduled() {
-        installer=new installer(installer_email,installer_password);
+        installer=new Installer(installer_email,installer_password);
 
 
     }
     @When("the installer completes the installation")
     public void the_installer_completes_the_installation() {
-        installer=new installer(installer_email,installer_password);
+        installer=new Installer(installer_email,installer_password);
         id =9;
         try {
             installer.setCompleted(id);
@@ -178,9 +178,9 @@ public class InstallationRequest {
 
     @Then("the request status is displayed as completed")
     public void the_request_status_is_displayed_as_completed() {
-        Customer=new customer("s12028647@stu.najah.edu","1234567");
+        customer=new Customer("s12028647@stu.najah.edu","1234567");
         try {
-            Customer.showCompleted();
+            customer.showCompleted();
         } catch (SQLException e) {
             e.printStackTrace();
             fail();
@@ -193,7 +193,7 @@ public class InstallationRequest {
     }
     @When("the installer cancels the installation")
     public void the_installer_cancels_the_installation() {
-        installer=new installer(installer_email,installer_password);
+        installer=new Installer(installer_email,installer_password);
         try {
             installer.setCanceled(id);
         } catch (SQLException e) {
@@ -203,7 +203,7 @@ public class InstallationRequest {
     }
     @Then("the installation request status is updated to canceled")
     public void the_installation_request_status_is_updated_to_canceled() {
-        installer=new installer(installer_email,installer_password);
+        installer=new Installer(installer_email,installer_password);
         id=6;
         try {
             status=installer.getStatus(id);
@@ -217,9 +217,9 @@ public class InstallationRequest {
 
     @Then("the request status is displayed as canceled")
     public void the_request_status_is_displayed_as() {
-        Customer=new customer("s12028647@stu.najah.edu","1234567");
+        customer=new Customer("s12028647@stu.najah.edu","1234567");
         try {
-            Customer.showCanceled();
+            customer.showCanceled();
         } catch (SQLException e) {
             e.printStackTrace();
             fail();

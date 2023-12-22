@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,14 +14,14 @@ public class UserProfile {
     private static final Logger logger = Logger.getLogger(UserRoles.class.getName());
     String user_email , user_password;
     int rid;
-    customer Customer;
+    Customer customer;
     String new_email;
 
     @Given("the user is logged in")
     public void the_user_is_logged_in() {
         user_email= "fathi@gmail.com";
         user_password="0000";
-        Customer=new customer(user_email,user_password);
+        customer=new Customer(user_email,user_password);
     }
 
     @When("the user navigates to their profile")
@@ -32,7 +32,7 @@ public class UserProfile {
 
     @Then("they should see their personal information")
     public void they_should_see_their_personal_information() {
-        Customer.ShowPersonalInfo();
+        customer.ShowPersonalInfo();
 
 
     }
@@ -40,7 +40,7 @@ public class UserProfile {
     @Then("they should see their order history")
     public void they_should_see_their_order_history() {
         try {
-            Customer.showHistory();
+            customer.showHistory();
         } catch (SQLException e) {
             fail("some thing wrong in the showHistory method 1");
         }
@@ -49,7 +49,7 @@ public class UserProfile {
     @Then("they should see their installation requests")
     public void they_should_see_their_installation_requests() {
         try {
-            Customer.showAllRequests();
+            customer.showAllRequests();
         } catch (SQLException e) {
             fail("some thing wrong with showAllRequests method");
         }
@@ -68,7 +68,7 @@ public class UserProfile {
     @Then("the changes should be saved successfully")
     public void the_changes_should_be_saved_successfully() {
         try {
-            Customer.changeEmail(new_email);
+            customer.changeEmail(new_email);
         } catch (SQLException e) {
             fail("some thing wrong with changeEmail method");
         }
@@ -76,7 +76,7 @@ public class UserProfile {
 
     @Then("the updated information should be visible in the profile")
     public void the_updated_information_should_be_visible_in_the_profile() {
-        Customer.ShowPersonalInfo();
+        customer.ShowPersonalInfo();
     }
 
     @When("the user accesses their profile's order history")
@@ -87,7 +87,7 @@ public class UserProfile {
     @Then("they should see a list of their past orders in details")
     public void they_should_see_a_list_of_their_past_orders_in_details() {
         try {
-            Customer.showHistory();
+            customer.showHistory();
         } catch (SQLException e) {
             fail("some thing wrong in the showHistory method 2");
         }
@@ -101,7 +101,7 @@ public class UserProfile {
     @Then("they should see a list of their previous installation requests in details")
     public void they_should_see_a_list_of_their_previous_installation_requests() {
         try {
-            Customer.showCompleted();
+            customer.showCompleted();
         } catch (SQLException e) {
             fail("some thing wrong in the showCompleted method");
         }

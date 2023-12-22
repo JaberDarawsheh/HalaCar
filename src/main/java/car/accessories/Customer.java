@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,12 +13,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 
-public class customer extends User {
+public class Customer extends User {
     private UserLoginPage user;
     private ProductCat cat;
     private String pass;
     private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
-    public customer(String userEmail,String userPassword) {
+    public Customer(String userEmail, String userPassword) {
         super(userEmail,userPassword);
         pass = userPassword;
         user=new UserLoginPage(userEmail,userPassword);
@@ -27,20 +27,20 @@ public class customer extends User {
 
     public void ShowPersonalInfo() {
         logger.info("Personal Information ");
-        logger.info("Email: " + user.getUser_email());
+        logger.info("Email: " + user.getUserEmail());
     }
 
 
     public void showHistory() throws SQLException {
         String historySQL = "SELECT `productName`,`productType`,`unitPrice`,`orderDate`" +
                 " FROM history WHERE email=? ";
-        connectDB DataBase = new connectDB();
+        ConnectDB DataBase = new ConnectDB();
         DataBase.testConn();
         Logger logger = Logger.getLogger("ShowHistory");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
         try (PreparedStatement stmnt = DataBase.getConnection().prepareStatement(historySQL)) {
-            stmnt.setString(1, user.getUser_email());
+            stmnt.setString(1, user.getUserEmail());
             ResultSet rSet = stmnt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
@@ -72,7 +72,7 @@ public class customer extends User {
     public boolean calatogAvailable(){
         boolean returnValue=false;
         try {
-            returnValue= cat.system_is_found_catalog();
+            returnValue= cat.systemFoundCatalog();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -80,18 +80,18 @@ public class customer extends User {
     }
 
     public void ShowCatalogToCustomer() throws SQLException{
-        cat.show_products_catalog_toUser(user);
+        cat.showProductsCatalogToUser();
     }
 
     public void AddToCart(int id,int Quantity) throws SQLException {
         String CARTsql = "INSERT INTO cart (pid,productName,productType,unitPrice,quantity,email)"+
                      "SELECT `id`,`productName`,`productType`,`productPrice`,?,?"+
                      "FROM ProductCatalog WHERE id =?";
-        connectDB connDataBase = new connectDB();
+        ConnectDB connDataBase = new ConnectDB();
         connDataBase.testConn();
         try(PreparedStatement stmt = connDataBase.getConnection().prepareStatement(CARTsql)){
             stmt.setInt(1, Quantity);
-            stmt.setString(2, user.getUser_email());
+            stmt.setString(2, user.getUserEmail());
             stmt.setInt(3,id);
             int rowsAffected = stmt.executeUpdate();
 
@@ -106,12 +106,12 @@ public class customer extends User {
 
     public void viewCart() throws SQLException {
         String showCart = "SELECT `pid`,`productName`,`productType`,`unitPrice`,`quantity` FROM cart WHERE email =?";
-        connectDB connDataBase = new connectDB();
+        ConnectDB connDataBase = new ConnectDB();
         connDataBase.testConn();
         Logger logger = Logger.getLogger("ViewCart");
 
         try (PreparedStatement stmnt = connDataBase.getConnection().prepareStatement(showCart)) {
-            stmnt.setString(1, user.getUser_email());
+            stmnt.setString(1, user.getUserEmail());
             ResultSet rSet = stmnt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
@@ -141,12 +141,12 @@ public class customer extends User {
                             "FROM cart WHERE email =?";
         String delteOrderFromCart= "DELETE FROM cart " +
                                    "WHERE email =?;";
-        connectDB conDB= new connectDB();
+        ConnectDB conDB= new ConnectDB();
         conDB.testConn();
         Timestamp currentTimestamp = new Timestamp(new Date().getTime());
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(checkOutSql)){
             stmt.setTimestamp(1,currentTimestamp);
-            stmt.setString(2,user.getUser_email());
+            stmt.setString(2,user.getUserEmail());
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -157,7 +157,7 @@ public class customer extends User {
             }
         }
         try (PreparedStatement stmt = conDB.getConnection().prepareStatement(delteOrderFromCart)){
-            stmt.setString(1,user.getUser_email());
+            stmt.setString(1,user.getUserEmail());
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -199,17 +199,17 @@ public class customer extends User {
         String creatRequest="INSERT INTO install_request (pid,productName,productType,email,carModel,preferredDate,status)"+
                             "SELECT `id`,`productName`,`productType`,?,?,?,?"+
                             "FROM ProductCatalog WHERE id=?";
-        String customer_email=user.getUser_email();
+        String customer_email=user.getUserEmail();
         String query ="SELECT * FROM ProductCatalog WHERE id=?";
         String orderName;
         Timestamp date = new Timestamp(Date.getTime());
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(creatRequest)){
             stmt.setString(2,carModel);
             stmt.setTimestamp(3,date);
             stmt.setString(4,"pending");
-            stmt.setString(1, user.getUser_email());
+            stmt.setString(1, user.getUserEmail());
             stmt.setInt(5,id);
             int rowsAffected = stmt.executeUpdate();
 
@@ -246,13 +246,13 @@ public class customer extends User {
     public void showScheduled() throws SQLException {
         String query =  "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
                         " FROM install_request WHERE status =? and email = ? ";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowScheduled");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "scheduled");
-            stmt.setString(2, user.getUser_email());
+            stmt.setString(2, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
@@ -279,13 +279,13 @@ public class customer extends User {
     public void showCompleted() throws SQLException {
         String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
                 " FROM install_request WHERE status =? AND email =?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowCompleted");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "completed");
-            stmt.setString(2, user.getUser_email());
+            stmt.setString(2, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
@@ -314,13 +314,13 @@ public class customer extends User {
     public void showCanceled() throws SQLException {
         String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
                 " FROM install_request WHERE status =? AND email =?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowCanceled");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "canceled");
-            stmt.setString(2, user.getUser_email());
+            stmt.setString(2, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
@@ -348,12 +348,12 @@ public class customer extends User {
     public void showAllRequests() throws SQLException {
         String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
                 " FROM install_request WHERE  email =?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowCanceled");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
-            stmt.setString(1, user.getUser_email());
+            stmt.setString(1, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
@@ -386,10 +386,10 @@ public class customer extends User {
 
     public void changeEmail(String newEmail) throws SQLException {
         String sql = "UPDATE systemusers SET user_email = ? WHERE user_email = ?";
-        connectDB conDB = new connectDB();
+        ConnectDB conDB = new ConnectDB();
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
-            stmt.setString(2, user.getUser_email());
+            stmt.setString(2, user.getUserEmail());
             stmt.setString(1, newEmail);
             int rowsAffected = stmt.executeUpdate();
 

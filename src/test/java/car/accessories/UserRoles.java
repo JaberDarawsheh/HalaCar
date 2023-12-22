@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 
 
@@ -29,9 +29,9 @@ public class UserRoles {
     String installer_email;
     String installer_password;
     int rid;
-    admin user;
-    customer Customer;
-    CarAccessiores.installer installer;
+    Admin user;
+    Customer customer;
+    Installer installer;
     boolean Admin_logged;
     boolean Customer_logged;
     boolean installer_logged;
@@ -50,13 +50,13 @@ public class UserRoles {
     @Given("an Admin is logged into the system")
     public void an_admin_is_logged_into_the_system() {
         try {
-            loginObj.is_valid_credentials(this.user_email,this.user_password);
+            loginObj.isValidCredentials(this.user_email,this.user_password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Admin_logged =loginObj.is_Admin_logged();
+        Admin_logged =loginObj.isAdminLogged();
         if(Admin_logged) {
-            user=new admin(this.user_email,this.user_password);
+            user=new Admin(this.user_email,this.user_password);
         }else {
             fail("this is not admin credentials");
         }
@@ -81,7 +81,7 @@ public class UserRoles {
             e.printStackTrace();
         }
 
-        connectDB conDB = new connectDB();
+        ConnectDB conDB = new ConnectDB();
 
         //check if the new user is added successfully
         String sql2="SELECT * FROM systemusers WHERE user_email = ?";
@@ -119,7 +119,7 @@ public class UserRoles {
             e.printStackTrace();
         }
 
-        connectDB conDB = new connectDB();
+        ConnectDB conDB = new ConnectDB();
 
         String sql2="SELECT user_password FROM systemusers WHERE user_email = ?";
         try {
@@ -152,7 +152,7 @@ public class UserRoles {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connectDB conDB = new connectDB();
+        ConnectDB conDB = new ConnectDB();
         String sql2="SELECT * FROM systemusers WHERE user_email = ?";
         try {
             conDB.testConn();
@@ -178,13 +178,13 @@ public class UserRoles {
         String userPass="1234567";
         loginObj=new UserLoginPage();
         try {
-            loginObj.is_valid_credentials(userEmail,userPass);
+            loginObj.isValidCredentials(userEmail,userPass);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        Customer_logged =loginObj.is_Customer_logged();
+        Customer_logged =loginObj.isCustomerLogged();
         if(Customer_logged) {
-            Customer =new customer(this.user_email,this.user_password);
+            customer =new Customer(this.user_email,this.user_password);
         }else {
             fail("1");
 
@@ -194,7 +194,7 @@ public class UserRoles {
 
     @When("the Customer browses the product catalog")
     public void the_customer_browses_the_product_catalog() {
-        if(!Customer.calatogAvailable()){
+        if(!customer.calatogAvailable()){
             fail("Catalog isn't available");//if the catalog is not available the test case will fail
         }
 
@@ -203,7 +203,7 @@ public class UserRoles {
     @Then("the Customer should be able to view detailed product information")
     public void the_customer_should_be_able_to_view_detailed_product_information() {
         try {
-            Customer.ShowCatalogToCustomer();
+            customer.ShowCatalogToCustomer();
             //the test will pass if there is no unhandled exception occurred
         } catch (SQLException e) {
             e.printStackTrace();
@@ -219,7 +219,7 @@ public class UserRoles {
         int id=1;
         int quantity=10;
         try {
-            Customer.AddToCart(id,quantity);
+            customer.AddToCart(id,quantity);
             //the test will pass if there is no unhandled exception occurred
         } catch (SQLException e) {
             e.printStackTrace();
@@ -231,7 +231,7 @@ public class UserRoles {
     @Then("the Customer should be able to proceed to checkout")
     public void the_customer_should_be_able_to_proceed_to_checkout() {
         try {
-            Customer.viewCart();
+            customer.viewCart();
         } catch (SQLException e) {
             e.printStackTrace();
             fail("Exception occurred: " + e.getMessage());
@@ -242,7 +242,7 @@ public class UserRoles {
     @Then("the Customer should be able to complete the purchase")
     public void the_customer_should_be_able_to_complete_the_purchase() {
         try {
-            Customer.checkOut();
+            customer.checkOut();
         } catch (SQLException e) {
             e.printStackTrace();
             fail("Exception occurred: " + e.getMessage());
@@ -258,7 +258,7 @@ public class UserRoles {
     @When("views their order history")
     public void views_their_order_history() {
         try {
-            Customer.showHistory();
+            customer.showHistory();
         } catch (SQLException e) {
             fail("show history error "+e.getMessage());
         }
@@ -267,7 +267,7 @@ public class UserRoles {
     @Then("the Customer should see a list of their past orders")
     public void the_customer_should_see_a_list_of_their_past_orders() {
         try {
-            Customer.showHistory();
+            customer.showHistory();
         } catch (SQLException e) {
             e.printStackTrace();
             fail("Exception occurred: " + e.getMessage());
@@ -280,13 +280,13 @@ public class UserRoles {
         installer_email="iim7md28@gmail.com";
         installer_password="12345";
         try {
-            loginObj.is_valid_credentials(installer_email,installer_password);
+            loginObj.isValidCredentials(installer_email,installer_password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        installer_logged =loginObj.is_Installer_logged();
+        installer_logged =loginObj.isInstallerLogged();
         if(installer_logged) {
-            installer =new installer(installer_email,installer_password);
+            installer =new Installer(installer_email,installer_password);
         }else {
             fail("there is no available installer");//the test case will not pass if the installer login failed
 

@@ -44,7 +44,7 @@ public class UserLoginToSystem {
 
 	@Then("user login successfully")
 	public void user_login_successfully() {
-		 boolean login_flag=loginObj.is_user_logged();
+		 boolean login_flag=loginObj.isUserLogged();
 		 assertEquals(true,login_flag);
 	}
 
@@ -78,7 +78,7 @@ public class UserLoginToSystem {
 
 	@Then("login faild")
 	public void login_faild() {
-		 boolean login_flag=loginObj.is_user_logged();
+		 boolean login_flag=loginObj.isUserLogged();
 	   assertEquals(false,login_flag);
 	}
 

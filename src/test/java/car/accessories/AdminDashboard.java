@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,14 +12,14 @@ import static org.junit.Assert.fail;
 public class AdminDashboard {
     String user_email , user_password;
     int pid,rid;
-    admin admin;
+    Admin admin;
     //jaberDar@najah.edu
     //123455
     @Given("the admin is logged in and on the dashboard")
     public void the_admin_is_logged_in_and_on_the_dashboard() {
         user_email="jaberDar@najah.edu";
         user_password="123455";
-        admin=new admin(user_email,user_password);
+        admin=new Admin(user_email,user_password);
     }
 
     @When("the admin selects the option to manage product listing")

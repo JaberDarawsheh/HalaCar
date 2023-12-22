@@ -1,5 +1,4 @@
-package CarAccessiores;
-
+package car.accessories;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class installer extends User{
+public class Installer extends User{
     private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
     private String orderName;
     private String orderDate;
@@ -21,7 +20,7 @@ public class installer extends User{
     private String customerEmail;
     private String installationTime;
     private UserLoginPage user;
-    public installer(String userEmail,String userPassword) {
+    public Installer(String userEmail, String userPassword) {
         super(userEmail,userPassword);
         user=new UserLoginPage(userEmail,userPassword);
 
@@ -32,7 +31,7 @@ public class installer extends User{
     public void showPending() throws SQLException {
         String query = "SELECT `rid`,`pid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`" +
                 " FROM install_request WHERE status =?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowPending");
 
@@ -62,7 +61,7 @@ public class installer extends User{
                                " WHERE rid=?";
         String query= "SELECT * FROM Install_request WHERE rid=?";
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(updateTimeSQL)){
             stmt.setString(1,time);
@@ -96,7 +95,7 @@ public class installer extends User{
                                 + "Time of installation: " + installationTime + "\n"
                                 + "Customer Email: " + customer_email + "\n\n"
                                 + "Thank you,\nCar Accessories Company";
-                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
                 String emailMessageToCustomer =
                                   "Dear Customer,\n\n"
@@ -106,7 +105,7 @@ public class installer extends User{
                                 + "Car model :"+carModel+"\n"
                                 + "Date of installation :"+ orderDate +"\n"
                                 + "Time of installation :"+ installationTime +"\n"
-                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "Installer email :"+user.getUserEmail()+"\n"
                                 + "Please feel free to contact your installer on his email\n\n"
                                 + "Thank you,\nCar Accessories Company";
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
@@ -120,7 +119,7 @@ public class installer extends User{
 
     public String getStatus(int id) throws SQLException {
         String statusSQL = "SELECT `status` FROM install_request WHERE rid=?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(statusSQL)){
             stmt.setInt(1,id);
@@ -138,7 +137,7 @@ public class installer extends User{
 
     public void setScheduled(int id) throws SQLException {
         String sche="UPDATE install_request SET status = ? WHERE rid =?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
             stmt.setString(1,"scheduled");
@@ -158,16 +157,16 @@ public class installer extends User{
     public void assign(int id) throws SQLException {
         String assign ="UPDATE install_request SET assigned = ? WHERE rid =?";
         String query= "SELECT * FROM Install_request WHERE rid=?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(assign)){
-            stmt.setString(1, user.getUser_email());
+            stmt.setString(1, user.getUserEmail());
             stmt.setInt(2,id);
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                logger.info("The request has been assigned to :"+user.getUser_email());
+                logger.info("The request has been assigned to :"+user.getUserEmail());
                 try(PreparedStatement stmnt=connection.getConnection().prepareStatement(query)){
                     stmnt.setInt(1,id);
                     ResultSet rs= stmnt.executeQuery();
@@ -200,7 +199,7 @@ public class installer extends User{
                                 + "Date of installation: " + orderDate + "\n"
                                 + "Customer Email: " + customer_email + "\n\n"
                                 + "Thank you,\nCar Accessories Company";
-                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
                 String emailMessageToCustomer =
                         "Dear Customer,\n\n"
@@ -209,7 +208,7 @@ public class installer extends User{
                                 + "Part to be installed: "+orderName+"\n"
                                 + "Car model :"+carModel+"\n"
                                 + "Date of installation :"+ orderDate +"\n"
-                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "Installer email :"+user.getUserEmail()+"\n"
                                 + "Please feel free to contact your installer on his email\n\n"
                                 + "Thank you,\nCar Accessories Company";
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
@@ -240,7 +239,7 @@ public class installer extends User{
         String sche="UPDATE install_request SET status = ? WHERE rid =?";
         String query= "SELECT * FROM Install_request WHERE rid=?";
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
             stmt.setString(1,"completed");
@@ -275,7 +274,7 @@ public class installer extends User{
                                 + "Date of installation: " + orderDate + "\n"
                                 + "Customer Email: " + customer_email + "\n\n"
                                 + "Thank you,\nCar Accessories Company";
-                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
                 String emailMessageToCustomer = "Dear Customer,\n\n"
                                 + "We would like to inform you that the status of the following installation request with request id number : "+requestID+" has been updated to completed\n"
@@ -283,7 +282,7 @@ public class installer extends User{
                                 + "Part to be installed: "+orderName+"\n"
                                 + "Car model :"+carModel+"\n"
                                 + "Date of installation :"+ orderDate +"\n"
-                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "Installer email :"+user.getUserEmail()+"\n"
                                 + "Please feel free to contact us or your installer on his email\n\n"
                                 + "Thank you,\nCar Accessories Company";
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
@@ -299,7 +298,7 @@ public class installer extends User{
         String sche="UPDATE install_request SET status = ? WHERE rid =?";
         String query= "SELECT * FROM Install_request WHERE rid=?";
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
             stmt.setString(1,"canceled");
@@ -342,7 +341,7 @@ public class installer extends User{
                                 + "Date of installation: " + orderDate + "\n"
                                 + "Customer Email: " + customer_email + "\n\n"
                                 + "Thank you,\nCar Accessories Company";
-                toInstallerEmail.sendNotificationToInstaller(user.getUser_email(), emailMessageToInstaller);
+                toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
                 String emailMessageToCustomer =
                                   "Dear Customer,\n\n"
@@ -351,7 +350,7 @@ public class installer extends User{
                                 + "Part to be installed: "+orderName+"\n"
                                 + "Car model :"+carModel+"\n"
                                 + "Date of installation :"+ orderDate +"\n"
-                                + "Installer email :"+user.getUser_email()+"\n"
+                                + "Installer email :"+user.getUserEmail()+"\n"
                                 + "You can always apply for a new installation request.\n\n"
                                 + "Thank you,\nCar Accessories Company";
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
@@ -367,12 +366,12 @@ public class installer extends User{
     public void showAssigned() throws SQLException {
         String query = "SELECT `rid`,`pid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`" +
                 " FROM install_request WHERE assigned =?";
-        connectDB connection = new connectDB();
+        ConnectDB connection = new ConnectDB();
         connection.testConn();
         Logger logger = Logger.getLogger("ShowAssigned");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
-            stmt.setString(1, user.getUser_email());
+            stmt.setString(1, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
