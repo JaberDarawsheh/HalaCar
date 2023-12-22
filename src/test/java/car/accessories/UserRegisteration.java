@@ -1,10 +1,9 @@
-package CarAccessiores;
+package car.accessories;
 
 
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,10 +11,10 @@ import io.cucumber.java.en.When;
 public class UserRegisteration {
 	private static final Logger logger = Logger.getLogger(UserRegisteration.class.getName());
 	String user_email, user_password , user_type;
-	registeration regObj;
+	Registeration regObj;
 	public UserRegisteration() // initilazation this class
 	{
-		regObj=new registeration();
+		regObj=new Registeration();
 	}
 	
 	@Given("a user is on the registration page")

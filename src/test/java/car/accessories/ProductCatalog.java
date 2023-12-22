@@ -1,9 +1,11 @@
-package CarAccessiores;
+package car.accessories;
 
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import car.accessories.ProductCat;
+import car.accessories.UserLoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,7 +26,7 @@ public class ProductCatalog {
 	@Given("the user is login to the system")
 	public void the_user_is_login_to_the_system() {
 	    try {
-	    	userLogin.is_valid_credentials("sam@najah.edu", "123541");
+	    	userLogin.isValidCredentials("sam@najah.edu", "123541");
 	    }
 	    catch(SQLException exp)
 	    {
@@ -35,7 +37,7 @@ public class ProductCatalog {
 	@When("they request the product categories")
 	public void they_request_the_product_categories() {
 	   try {
-		   proCat.system_is_found_catalog();
+		   proCat.systemFoundCatalog();
 	   }
 	   catch(SQLException expe)
 	   {
@@ -47,7 +49,7 @@ public class ProductCatalog {
 	public void they_should_see_detailed_product_information_including_description_images_price_and_availability() {
 	    try
 	    {
-	    	proCat.show_products_catalog_toUser(userLogin);
+	    	proCat.showProductsCatalogToUser();
 	    }
 	    catch(SQLException e)
 	    {
@@ -59,7 +61,7 @@ public class ProductCatalog {
 	public void the_user_search_for_a_product_e_g_and_set_filters_for_to(String someProdct, String price, String amountOfMoney) {
 	       try
 	       {
-	    	    proCat.search_and_show_filtered_result(someProdct,price);
+	    	    proCat.searchAndShowFilteredResult(someProdct,price);
 	       }
 	       catch(SQLException excption)
 	       {
@@ -83,7 +85,7 @@ public class ProductCatalog {
 	public void the_user_search_for_product_ex_does_not_found_in_out_company(String strangeProduct) {
 	   try
 	   {
-		   proCat.search_about_some_product(strangeProduct);
+		   proCat.searchAboutSomeProduct(strangeProduct);
 	   }
 	   catch(SQLException ee)
 	   {
@@ -102,7 +104,7 @@ public class ProductCatalog {
 	public void the_user_with_out_login() {
 	   try
 	   {
-		   userLogin.is_valid_credentials("smm@najah.edu", "123451");
+		   userLogin.isValidCredentials("smm@najah.edu", "123451");
 	   }
 	   catch(SQLException e)
 	   {
@@ -114,7 +116,7 @@ public class ProductCatalog {
 	public void the_user_want_to_see_product_catalog() {
 	    try
 	    {
-	    	proCat.show_products_catalog_toUser(userLogin);
+	    	proCat.showProductsCatalogToUser();
 	    }
 	    catch(SQLException expc)
 	    {

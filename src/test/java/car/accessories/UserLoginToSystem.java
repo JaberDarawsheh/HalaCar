@@ -1,4 +1,4 @@
-package CarAccessiores;
+package car.accessories;
 
 
 
@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import car.accessories.UserLoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -35,7 +36,7 @@ public class UserLoginToSystem {
 	public void the_user_enters_valid_credentials_useremail_and_password() {
 	   
 			try {
-				loginObj.is_valid_credentials(user_email,user_password);
+				loginObj.isValidCredentials(user_email,user_password);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -63,7 +64,7 @@ public class UserLoginToSystem {
 	    user_password="123455";
        
 			try {
-				loginObj.is_valid_credentials(user_email, user_password);
+				loginObj.isValidCredentials(user_email, user_password);
 			} catch (SQLException ex) {
 				ex.printStackTrace();
 			}
@@ -71,7 +72,7 @@ public class UserLoginToSystem {
 
 	@Then("the user should see an Incorrect userEmail")
 	public void the_user_should_see_an_incorrect_user_email() {
-		assertEquals(false,loginObj.is_user_logged());
+		assertEquals(false,loginObj.isUserLogged());
 	    logger.log(Level.INFO,"Incorrect user email!");
 	}
 
@@ -86,7 +87,7 @@ public class UserLoginToSystem {
 	   user_email="jaber@najah.edu";
 	   user_password="000000";
 	   try {
-		   loginObj.is_valid_credentials(user_email,user_password);
+		   loginObj.isValidCredentials(user_email,user_password);
 	   }catch(SQLException e) {
 		   e.printStackTrace();
 	   }
@@ -94,7 +95,7 @@ public class UserLoginToSystem {
 
 	@Then("the user should see an Incorrect Password")
 	public void the_user_should_see_an_incorrect_password() {
-	     assertEquals(false,loginObj.is_user_logged());
+	     assertEquals(false,loginObj.isUserLogged());
 	     logger.log(Level.INFO,"Incorrect user password!");
 	}
 
@@ -103,7 +104,7 @@ public class UserLoginToSystem {
 		user_email="";
 		user_password="123455";
 		try {
-			loginObj.is_valid_credentials(user_email, user_password);
+			loginObj.isValidCredentials(user_email, user_password);
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
@@ -111,7 +112,7 @@ public class UserLoginToSystem {
 
 	@Then("the user should see an userEmail is empty")
 	public void the_user_should_see_an_user_email_is_empty() {
-	    assertEquals(false,loginObj.is_user_logged());
+	    assertEquals(false,loginObj.isUserLogged());
 	    logger.log(Level.INFO,"user email is empty!");
 	}
 
@@ -120,7 +121,7 @@ public class UserLoginToSystem {
 		user_email="jaber@najah.edu";
 		user_password="";
 		try {
-			loginObj.is_valid_credentials(user_email, user_password);
+			loginObj.isValidCredentials(user_email, user_password);
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
@@ -128,7 +129,7 @@ public class UserLoginToSystem {
 
 	@Then("the user should see an password is empty")
 	public void the_user_should_see_an_password_is_empty() {
-	   assertEquals(false,loginObj.is_user_logged());
+	   assertEquals(false,loginObj.isUserLogged());
 	   logger.log(Level.INFO,"user password is empty!");
 	}
 
@@ -137,7 +138,7 @@ public class UserLoginToSystem {
 	    user_email=""; 
 	    user_password=""; 
 	    try {
-	    	loginObj.is_valid_credentials(user_email,user_password);
+	    	loginObj.isValidCredentials(user_email,user_password);
 	    }catch(SQLException e) {
 	    	e.printStackTrace();
 	    }
@@ -145,7 +146,7 @@ public class UserLoginToSystem {
 
 	@Then("the user should see an userEmail and password is empty")
 	public void the_user_should_see_an_user_email_and_password_is_empty() {
-	   assertEquals(false,loginObj.is_user_logged());
+	   assertEquals(false,loginObj.isUserLogged());
 	}
 
 }
