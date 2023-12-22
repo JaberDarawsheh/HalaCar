@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smell fix with refactoring all classes and methods" />
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smell fix with refactoring all classes and methods">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +95,7 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.All Features in: use_cases">
+  <component name="RunManager" selected="JUnit.java in CarAccessioresCompany">
     <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
@@ -173,9 +176,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in CarAccessioresCompany" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
         <item itemvalue="JUnit.Test" />
-        <item itemvalue="JUnit.java in CarAccessioresCompany" />
         <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
         <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
       </list>
@@ -212,7 +215,7 @@
       <workItem from="1703179030519" duration="6952000" />
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
-      <workItem from="1703268981340" duration="10748000" />
+      <workItem from="1703268981340" duration="11431000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -430,7 +433,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703281922089</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="bad smell fix with refactoring all classes and methods">
+      <option name="closed" value="true" />
+      <created>1703282081055</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1703282081055</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
