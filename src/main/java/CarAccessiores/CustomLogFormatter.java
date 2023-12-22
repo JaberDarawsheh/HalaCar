@@ -3,7 +3,7 @@ import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 public class CustomLogFormatter extends Formatter {
     @Override
-    public String format(LogRecord record) {
-        return record.getMessage() + System.lineSeparator();
+    public String format(LogRecord logRecord) {
+     return logRecord.getMessage() + System.lineSeparator();
     }
 }
