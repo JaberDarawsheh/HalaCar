@@ -11,6 +11,7 @@ public class Main // to delete
 	static Scanner str = new Scanner(System.in);
 	static Scanner strin= new Scanner(System.in);
 	static final Logger logger = Logger.getLogger(Main.class.getName());
+	private static final String invalidCho="Invalid Choice !, Pleas try again";
 
 	public static void main(String[] args) throws SQLException
 	{
@@ -234,18 +235,18 @@ public class Main // to delete
 									case 2:
 										Admin.showCustomer();
 										logger.info("please enter the mail of the user you want to edit: ");
-										String Cemail= strin.nextLine();
+										String cemail= strin.nextLine();
 										logger.info("If you want to change the password for the customer press 1");
 										logger.info("If you want to change the email for the customer press 2");
 										temp3=scanner.nextInt();
 										if(temp3==1){
 											logger.info("please enter the new password: ");
 											temp1=str.nextLine();
-											Admin.UpdatePass(Cemail,temp1);
+											Admin.UpdatePass(cemail,temp1);
 										}else if(temp3==2){
 											logger.info("please enter the new email: ");
 											temp1=scan.nextLine();
-											Admin.updateEmail(Cemail,temp1);
+											Admin.updateEmail(cemail,temp1);
 										}else{
 											logger.info("invalid option");
 										}
@@ -270,9 +271,6 @@ public class Main // to delete
 												logger.info("enter a time for the appointment in the following format HH:mm:ss");
 												temp1= apointTime.nextLine();
 												Admin.scheduleNewAppointment(temp3,email,temp1);
-//												fathi.close();
-//												samer.close();
-//												apointTime.close();
 												break;
 											case 2:
 												logger.info("please enter the request ID you want to mark as completed: ");
@@ -288,14 +286,14 @@ public class Main // to delete
 
 												break;
 											default:
-												logger.info("Invalid Choice !, Pleas try again");
+												logger.info(invalidCho);
 										}
 										break;
 									case 4:
 
 										break;
 									default:
-										logger.info("Invalid Choice !, Pleas try again");
+										logger.info(invalidCho);
 
 								}
 							}
@@ -304,7 +302,7 @@ public class Main // to delete
 							adminLogFlag=false;
 							break;
 
-						default:logger.info("Invalid Choice !, Pleas try again");
+						default:logger.info(invalidCho);
 					}//end switch
 				}// end while(adminLogFlag)
 
