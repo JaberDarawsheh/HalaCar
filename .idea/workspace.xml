@@ -5,8 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smells fix">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/CustomLogFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/CustomLogFormatter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/InstallationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/InstallationRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/ProductCatalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/ProductCatalog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserLoginToSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserLoginToSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRegisteration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRegisteration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRoles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/sendEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/sendEmail.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +77,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "junit.framework.TestCase",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/hamoo/Desktop/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar",
     "node.js.detected.package.eslint": "true",
@@ -215,7 +234,7 @@
       <workItem from="1703179030519" duration="6952000" />
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
-      <workItem from="1703268981340" duration="15471000" />
+      <workItem from="1703268981340" duration="15665000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -465,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703286427376</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703286730805</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1703286730805</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
