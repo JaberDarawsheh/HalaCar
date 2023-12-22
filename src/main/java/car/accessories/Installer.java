@@ -20,6 +20,8 @@ public class Installer extends User{
     private String customerEmail;
     private String installationTime;
     private UserLoginPage user;
+    private static final String tryAgainMessage= "\n some thing went wrong please try again later";
+    private static final String updateQuery ="UPDATE install_request SET status = ? WHERE rid =?";
     public Installer(String userEmail, String userPassword) {
         super(userEmail,userPassword);
         user=new UserLoginPage(userEmail,userPassword);
@@ -33,15 +35,13 @@ public class Installer extends User{
                 " FROM install_request WHERE status =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        Logger logger = Logger.getLogger("ShowPending");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "pending");
             ResultSet rSet = stmt.executeQuery();
-            ResultSetMetaData metaData = rSet.getMetaData();
-            int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-30s | %-15s | %-20s |%n";
-            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date"));
+            String toBePrinted=String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date");
+            logger.log(Level.INFO, toBePrinted);
 
             while (rSet.next()) {
                 int rid = rSet.getInt("rid");
@@ -51,7 +51,8 @@ public class Installer extends User{
                 String email = rSet.getString("email");
                 String carModel = rSet.getString("carModel");
                 String preferredDate = rSet.getString("preferredDate");
-                logger.log(Level.INFO, String.format(format, rid, pid, productName, email, carModel, preferredDate));
+                String infoToBePrinted=String.format(format, rid, pid, productName, email, carModel, preferredDate);
+                logger.log(Level.INFO, infoToBePrinted);
             }
         }
     }
@@ -111,7 +112,7 @@ public class Installer extends User{
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
-                logger.warning("\n some thing went wrong please try again later");
+                logger.warning(tryAgainMessage);
             }
 
         }
@@ -136,10 +137,9 @@ public class Installer extends User{
     }
 
     public void setScheduled(int id) throws SQLException {
-        String sche="UPDATE install_request SET status = ? WHERE rid =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
+        try(PreparedStatement stmt =connection.getConnection().prepareStatement(updateQuery)){
             stmt.setString(1,"scheduled");
             stmt.setInt(2,id);
             int rowsAffected = stmt.executeUpdate();
@@ -148,7 +148,7 @@ public class Installer extends User{
                 logger.info("The request status updated to scheduled.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(tryAgainMessage);
             }
 
         }
@@ -214,7 +214,7 @@ public class Installer extends User{
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(tryAgainMessage);
             }
 
         }
@@ -224,9 +224,9 @@ public class Installer extends User{
     public void schedule(int id, String time) throws SQLException {
         int length =time.length();
         if(length==8) {
-            setTime(id, time);//the time should be in the following format hh:mm:ss
-            setScheduled(id);//update the status to scheduled
-            assign(id);//assign the installation request to the installer
+            setTime(id, time);
+            setScheduled(id);
+            assign(id);
         }else{
             logger.warning("wrong time format");
             throw new RuntimeException("wrong time format");
@@ -235,13 +235,12 @@ public class Installer extends User{
     }
 
     public void setCompleted(int id) throws SQLException {
-        //completed
-        String sche="UPDATE install_request SET status = ? WHERE rid =?";
+
         String query= "SELECT * FROM Install_request WHERE rid=?";
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
+        try(PreparedStatement stmt =connection.getConnection().prepareStatement(updateQuery)){
             stmt.setString(1,"completed");
             stmt.setInt(2,id);
             int rowsAffected = stmt.executeUpdate();
@@ -288,19 +287,18 @@ public class Installer extends User{
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(tryAgainMessage);
             }
 
         }
     }
 
     public void setCanceled(int id) throws SQLException {
-        String sche="UPDATE install_request SET status = ? WHERE rid =?";
         String query= "SELECT * FROM Install_request WHERE rid=?";
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sche)){
+        try(PreparedStatement stmt =connection.getConnection().prepareStatement(updateQuery)){
             stmt.setString(1,"canceled");
             stmt.setInt(2,id);
             int rowsAffected = stmt.executeUpdate();
@@ -356,7 +354,7 @@ public class Installer extends User{
                 toCustomerEmail.sendNotificationToCustomer(customerEmail,emailMessageToCustomer);
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(tryAgainMessage);
             }
 
         }
@@ -368,15 +366,13 @@ public class Installer extends User{
                 " FROM install_request WHERE assigned =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        Logger logger = Logger.getLogger("ShowAssigned");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
-            ResultSetMetaData metaData = rSet.getMetaData();
-            int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-30s | %-15s | %-20s |%n";
-            logger.log(Level.INFO, String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date"));
+            String headOfTable=String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date");
+            logger.log(Level.INFO,headOfTable);
 
             while (rSet.next()) {
                 int rid = rSet.getInt("rid");
@@ -386,7 +382,8 @@ public class Installer extends User{
                 String email = rSet.getString("email");
                 String carModel = rSet.getString("carModel");
                 String preferredDate = rSet.getString("preferredDate");
-                logger.log(Level.INFO, String.format(format, rid, pid, productName, email, carModel, preferredDate));
+                String contentOfTable=String.format(format, rid, pid,productType ,productName, email, carModel, preferredDate);
+                logger.log(Level.INFO, contentOfTable);
             }
         }
     }

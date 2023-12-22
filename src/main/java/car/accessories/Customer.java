@@ -36,7 +36,6 @@ public class Customer extends User {
                 " FROM history WHERE email=? ";
         ConnectDB DataBase = new ConnectDB();
         DataBase.testConn();
-        Logger logger = Logger.getLogger("ShowHistory");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
         try (PreparedStatement stmnt = DataBase.getConnection().prepareStatement(historySQL)) {
