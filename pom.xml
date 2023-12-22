@@ -4,7 +4,11 @@
 <groupId>Cars</groupId>
 <artifactId>CarAccessioresCompany</artifactId>
 <version>0.0.1-SNAPSHOT</version>
-<dependencies>
+   <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+       <dependencies>
 <dependency>
 <groupId>io.cucumber</groupId>
 <artifactId>cucumber-java</artifactId>
@@ -45,10 +49,7 @@
 <version>1.6.2</version>
 </dependency>
 
-        <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-  </properties>
+   
 
 </dependencies>
 </project>
