@@ -31,6 +31,9 @@ public class ProductCat {
 		return productFound_flag;
 	}
 
+	
+	
+	
 	public void show_products_catalog_toUser(UserLoginPage userlogin) throws SQLException {
 	    connec.testConn();
 	    logger.log(Level.INFO, "|        id       |   product name   |   product type   |   product price  |   product img    |   availability   |");
@@ -66,6 +69,7 @@ public class ProductCat {
 	}
 
 
+	
 	public void search_and_show_filtered_result(String someProduct, String price) throws SQLException {
 	    connec.testConn();
 	    String query = "SELECT * FROM productcatalog WHERE `productName` = ? AND `productPrice` = ?";

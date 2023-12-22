@@ -22,7 +22,6 @@ public class customer extends User {
         cat=new ProductCat();
     }
 
-
     public void showHistory() throws SQLException {
         String historySQL = "SELECT `productName`,`productType`,`unitPrice`,`orderDate`" +
                 " FROM history WHERE email=? ";

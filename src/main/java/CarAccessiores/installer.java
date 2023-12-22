@@ -15,7 +15,6 @@ public class installer extends User{
     public installer(String userEmail,String userPassword) {
         super(userEmail,userPassword);
         user=new UserLoginPage(userEmail,userPassword);
-
     }
 
 
