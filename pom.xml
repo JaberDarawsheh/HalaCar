@@ -4,7 +4,16 @@
 <groupId>Cars</groupId>
 <artifactId>CarAccessioresCompany</artifactId>
 <version>0.0.1-SNAPSHOT</version>
-<dependencies>
+   <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+      <sonar.host.url>http://localhost:9000</sonar.host.url> 
+       <sonar.organization>caracccompany</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
+
+   
+       <dependencies>
 <dependency>
 <groupId>io.cucumber</groupId>
 <artifactId>cucumber-java</artifactId>
@@ -45,7 +54,7 @@
 <version>1.6.2</version>
 </dependency>
 
-       
+   
 
 </dependencies>
 </project>
