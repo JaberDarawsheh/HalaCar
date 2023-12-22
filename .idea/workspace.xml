@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smells fix">
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/CustomLogFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/CustomLogFormatter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/InstallationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/InstallationRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/ProductCatalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/ProductCatalog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserLoginToSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserLoginToSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRegisteration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRegisteration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRoles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/sendEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/sendEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +95,7 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CarAccessioresCompany">
+  <component name="RunManager" selected="Cucumber Java.All Features in: use_cases">
     <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
@@ -195,8 +176,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in CarAccessioresCompany" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
+        <item itemvalue="JUnit.java in CarAccessioresCompany" />
         <item itemvalue="JUnit.Test" />
         <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
         <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
@@ -234,7 +215,7 @@
       <workItem from="1703179030519" duration="6952000" />
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
-      <workItem from="1703268981340" duration="15665000" />
+      <workItem from="1703268981340" duration="16516000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -492,7 +473,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703286730805</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703287031423</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1703287031423</updated>
+    </task>
+    <task id="LOCAL-00034" summary="bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703287037079</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1703287037079</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
