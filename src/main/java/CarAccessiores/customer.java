@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+
 public class customer extends User {
     private UserLoginPage user;
     private ProductCat cat;

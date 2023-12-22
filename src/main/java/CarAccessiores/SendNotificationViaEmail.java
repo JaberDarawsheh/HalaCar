@@ -1,5 +1,4 @@
-package car.accessories;
-
+package CarAccessiores;
 
 import java.util.Properties;
 import java.util.logging.Level;
@@ -13,7 +12,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class SendNotificationViaEmail 
+public class SendNotificationViaEmail
 {
 	private static final Logger logger = Logger.getLogger(SendNotificationViaEmail.class.getName());
 
