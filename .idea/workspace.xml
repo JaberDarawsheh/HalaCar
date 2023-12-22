@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="all test cases passed">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1de836f4-b278-4cff-aa95-49d4b2e08e96.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1de836f4-b278-4cff-aa95-49d4b2e08e96.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarAccessiores/ProductCat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRegisteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarAccessiores/UserRegisteration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CarAccessiores/ProductCat.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/CarAccessiores/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CarAccessiores/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,8 @@
     "Application.Main.executor": "Coverage",
     "Cucumber Java.All Features in: HalaCar.executor": "Coverage",
     "Cucumber Java.All Features in: use_cases (1).executor": "Coverage",
-    "Cucumber Java.All Features in: use_cases.executor": "Coverage",
+    "Cucumber Java.All Features in: use_cases.executor": "Run",
+    "Cucumber Java.Scenario: Successful User Registration.executor": "Run",
     "JUnit.All in CarAccessioresCompany.executor": "Coverage",
     "JUnit.CarAccessiores in CarAccessioresCompany.executor": "Coverage",
     "JUnit.Test.executor": "Run",
@@ -110,9 +110,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All Features in: use_cases (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/use_cases" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
       <option name="GLUE" value="CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
@@ -129,14 +129,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Successful User Registration" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/userRegisteration.feature" />
       <option name="GLUE" value="CarAccessiores" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="CarAccessioresCompany" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="All Features in: use_cases" />
+      <option name="NAME_FILTER" value="^Successful User Registration$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Successful User Registration$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Successful User Registration" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -166,7 +167,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Cucumber Java.All Features in: use_cases (1)" />
+      <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
       <item itemvalue="Cucumber Java.All Features in: use_cases" />
       <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
       <item itemvalue="JUnit.java in CarAccessioresCompany" />
@@ -174,10 +175,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in CarAccessioresCompany" />
+        <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
+        <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
-        <item itemvalue="Cucumber Java.All Features in: use_cases (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +213,7 @@
       <workItem from="1703179030519" duration="6952000" />
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
-      <workItem from="1703268981340" duration="2640000" />
+      <workItem from="1703268981340" duration="6919000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -398,7 +399,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703267854352</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="all test cases passed">
+      <option name="closed" value="true" />
+      <created>1703271798711</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1703271798711</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,8 +498,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HalaCar$CarAccessiores_in_CarAccessioresCompany.ic" NAME="CarAccessiores in CarAccessioresCompany Coverage Results" MODIFIED="1703270547033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/HalaCar$All_Features_in__use_cases.ic" NAME="All Features in: use_cases Coverage Results" MODIFIED="1703269936616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/HalaCar$CarAccessiores_in_CarAccessioresCompany.ic" NAME="CarAccessiores in CarAccessioresCompany Coverage Results" MODIFIED="1703277652457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/HalaCar$All_Features_in__use_cases.ic" NAME="All Features in: use_cases Coverage Results" MODIFIED="1703271670211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.cucumber.core.cli.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/HalaCar$All_Features_in__HalaCar.ic" NAME="All Features in: HalaCar Coverage Results" MODIFIED="1703269530478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -502,7 +511,7 @@
     <SUITE FILE_PATH="coverage/HalaCar$All_Features_in__use_cases__1_.ic" NAME="All Features in: use_cases (1) Coverage Results" MODIFIED="1703270517822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.cucumber.core.cli.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/HalaCar$java_in_CarAccessioresCompany.ic" NAME="java in CarAccessioresCompany Coverage Results" MODIFIED="1703270610662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/HalaCar$java_in_CarAccessioresCompany.ic" NAME="java in CarAccessioresCompany Coverage Results" MODIFIED="1703277948227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/HalaCar$All_in_CarAccessioresCompany.ic" NAME="All in CarAccessioresCompany Coverage Results" MODIFIED="1703269612958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

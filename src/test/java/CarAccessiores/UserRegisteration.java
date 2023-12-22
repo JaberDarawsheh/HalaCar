@@ -21,7 +21,7 @@ public class UserRegisteration {
 	@Given("a user is on the registration page")
 	public void a_user_is_on_the_registration_page() 
 	{
-		
+
 	}
 
 	@When("they provide valid registration details, including {string} and {string}")
@@ -35,7 +35,7 @@ public class UserRegisteration {
 	    try {
 			regObj.setData(user_email , user_password , user_type);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
