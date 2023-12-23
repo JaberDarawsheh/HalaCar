@@ -24,6 +24,8 @@ public class Customer extends User {
     private static final String CAR_MODEL="Car Model";
     private static final String INSTALLER_MAIL="Installer Email";
     private static final String REQUEST_NUM="Request Number";
+    private static final String P_TYPE="Product Type";
+    private static final String INSTALL_DATE="Installation Date";
     public Customer(String userEmail, String userPassword) {
         super(userEmail,userPassword);
         pass = userPassword;
@@ -50,7 +52,7 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-20s | %-15s | %-10s | %-12s |%n";
-            logger.log(Level.INFO, String.format(format, P_NAME, "Product Type", "Unit Price", "Order Date"));
+            logger.log(Level.INFO, String.format(format, P_NAME, P_TYPE, "Unit Price", "Order Date"));
             int[] columnWidths={20,15,10,12};
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
@@ -121,7 +123,7 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-30s | %-15s | %-10s | %-10s |%n";
-            logger.log(Level.INFO, String.format("| %-5s | %-30s | %-15s | %-10s | %-10s |%n", "ID", P_NAME, "Product Type", "Unit Price", "Quantity"));
+            logger.log(Level.INFO, String.format("| %-5s | %-30s | %-15s | %-10s | %-10s |%n", "ID", P_NAME, P_TYPE, "Unit Price", "Quantity"));
             int[] columnWidths={5,30,15,10,10};
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
@@ -262,7 +264,7 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME, "Product Type", CAR_MODEL, INSTALLER_MAIL ,"Installation Date", STATUS));
+            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME, P_TYPE, CAR_MODEL, INSTALLER_MAIL ,INSTALL_DATE, STATUS));
 
             int[] columnWidths={15,10,15,20,15,30,10};
 
@@ -296,7 +298,7 @@ public class Customer extends User {
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
 
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, "Product Type", INSTALLER_MAIL, CAR_MODEL, "Installation Date", STATUS));
+            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
@@ -330,7 +332,7 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, "Product Type", INSTALLER_MAIL, CAR_MODEL, "Installation Date", STATUS));
+            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
@@ -363,7 +365,7 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-20s | %-15s | %-30s | %-10s |";
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME , "Product Type", INSTALLER_MAIL, CAR_MODEL, "Installation Date", STATUS));
+            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME , P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();

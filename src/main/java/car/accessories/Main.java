@@ -11,7 +11,8 @@ public class Main // to delete
 	static Scanner str = new Scanner(System.in);
 	static Scanner strin= new Scanner(System.in);
 	static final Logger logger = Logger.getLogger(Main.class.getName());
-	private static final String invalidCho="Invalid Choice !, Pleas try again";
+	private static final String INVALID_CHO ="Invalid Choice !, Pleas try again";
+	private static final String BOARDERS="==============================================";
 
 	public static void main(String[] args) throws SQLException
 	{
@@ -68,15 +69,15 @@ public class Main // to delete
 				Admin admin=new Admin(user_email,user_password);
 				logger.info("The Admin entered the site");
 				boolean adminLogFlag = true;
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				logger.info("            WELCOME TO OUR MENU");
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				logger.info("Option 1 - Show Products Catalog .");
 				logger.info("Option 2 - Search and filter options to easily find products.");
 				logger.info("Option 3 - Admin role management menu.");
 				logger.info("Option 4 - Show admin dashboard.");
 				logger.info("Option 5 - Admin Logout the site.");
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				while(adminLogFlag)
 				{
 
@@ -215,6 +216,8 @@ public class Main // to delete
 														admin.isUnavailable(temp3);
 														choice=0;
 														break;
+													default:
+														logger.info(INVALID_CHO);
 												}
 												break;
 											case 3:
@@ -286,14 +289,14 @@ public class Main // to delete
 
 												break;
 											default:
-												logger.info(invalidCho);
+												logger.info(INVALID_CHO);
 										}
 										break;
 									case 4:
 
 										break;
 									default:
-										logger.info(invalidCho);
+										logger.info(INVALID_CHO);
 
 								}
 							}
@@ -302,7 +305,7 @@ public class Main // to delete
 							adminLogFlag=false;
 							break;
 
-						default:logger.info(invalidCho);
+						default:logger.info(INVALID_CHO);
 					}//end switch
 				}// end while(adminLogFlag)
 
@@ -318,9 +321,9 @@ public class Main // to delete
 				boolean customerLogFlag=true;
 				int choice=0;
 				logger.info("The Customer entered the site");
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				logger.info("             WELCOME TO HALA CAR");
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				logger.info("Option 1 - Show Products Catalog .");
 				logger.info("Option 2 - View shopping cart.");
 				logger.info("Option 3 - Customer Profile access.");
@@ -328,7 +331,7 @@ public class Main // to delete
 				logger.info("Option 5 - Change email.");
 				logger.info("Option 6 - Show personal information.");
 				logger.info("Option 7 - Customer Logout the site.");
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				while(customerLogFlag) {
 
 					choice= scanner.nextInt();
@@ -377,6 +380,8 @@ public class Main // to delete
 									case 2:
 										Customer.showCompleted();
 										break;
+									default:
+										logger.info(INVALID_CHO);
 								}
 							}
 							break;
@@ -419,7 +424,7 @@ public class Main // to delete
 									case 5:
 										break;
 									default:
-										logger.warning("invalid action please re enter the number");
+										logger.warning(INVALID_CHO);
 										break;
 
 								}
@@ -440,7 +445,7 @@ public class Main // to delete
 							customerLogFlag=false;
 							break;
 						default:
-							logger.info("invalid action please re enter the number");
+							logger.info(INVALID_CHO);
 							break;
 					}
 
@@ -453,14 +458,14 @@ public class Main // to delete
 				Installer Installer=new Installer(user_email,user_password);
 				boolean installerLogFlag=true;
 				int choice=0;
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				logger.info("             WELCOME TO HALA CAR");
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				logger.info("Option 1 - Show pending requests.");
 				logger.info("Option 2 - Show assigned requests.");
 				logger.info("Option 3 - status check.");
 				logger.info("Option 4 - Installer Logout the site.");
-				logger.info("==============================================");
+				logger.info(BOARDERS);
 				while(installerLogFlag){
 					int rid=0;
 					choice= scanner.nextInt();
@@ -503,7 +508,7 @@ public class Main // to delete
 							installerLogFlag=false;
 							break;
 						default:
-							logger.info("invalid action please re enter the number");
+							logger.info(INVALID_CHO);
 							break;
 
 					}
