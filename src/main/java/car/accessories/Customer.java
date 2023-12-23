@@ -58,7 +58,7 @@ public class Customer extends User {
                 StringBuilder rowData = new StringBuilder();
                 for (int i = 1; i < numberOfColumns; i++) {
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    String formattedColumn = String.format("%%-%ds", columnWidths[i-1], columnValue);
                     rowData.append(formattedColumn);
                     rowData.append(" | "); // Add separator between columns
 
@@ -69,7 +69,7 @@ public class Customer extends User {
                 String onlydate =dateTimeSplit[0];
                 rowData.append(onlydate);
 
-                logger.info(String.format("| %-20s   |%n", rowData));
+                logger.info(String.format("| %-"+"%ds   |%n",20, rowData));
             }
 
         }
@@ -129,7 +129,7 @@ public class Customer extends User {
                 StringBuilder rowData = new StringBuilder();
                 for (int i = 1; i <= numberOfColumns; i++) {
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    String formattedColumn = String.format("%%-%ds", columnWidths[i-1], columnValue);
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Add separator between columns
@@ -180,9 +180,7 @@ public class Customer extends User {
     }
 
     public int showProfile(int choice) {
-        //the full functionality will be added soon
-        //logger.log(Level.INFO,"| 1-Change Email |\n|2-Change password|\n|3-View order history|\n|4-View installation requests|\n|5-Go back to the main menu|");
-        // logger.log(Level.INFO,"| 1-View order history|\n|2-View installation requests history|\n|3-Go back to the main menu|");
+
         logger.info("=== Option  Menu ===");
         logger.info("Sub-option 1 View order history");
         logger.info("Sub-option 2 View installation requests history");
@@ -255,7 +253,7 @@ public class Customer extends User {
                         " FROM install_request WHERE status =? and email = ? ";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        Logger logger = Logger.getLogger("ShowScheduled");
+
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "scheduled");
@@ -278,7 +276,7 @@ public class Customer extends User {
                     rowData.append(formattedColumn);
                     rowData.append(" | "); // Add separator between columns
                 }
-                logger.log(Level.INFO, String.format("| %-5s |", rowData.toString()));
+                logger.log(Level.INFO, String.format("| %-5s ", rowData.toString()));
             }
         }
     }
@@ -288,7 +286,7 @@ public class Customer extends User {
                 " FROM install_request WHERE status =? AND email =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        Logger logger = Logger.getLogger("ShowCompleted");
+
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "completed");
@@ -307,7 +305,7 @@ public class Customer extends User {
 
                 for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
                     String columnValues = rSet.getString(i);
-                    String formattedColumn = String.format("%-"+columnValue[i-1]+"s", columnValues); // Adjust width as needed
+                    String formattedColumn = String.format("%%-%ds",columnValue[i-1], columnValues); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns
@@ -323,7 +321,7 @@ public class Customer extends User {
                 " FROM install_request WHERE status =? AND email =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        Logger logger = Logger.getLogger("ShowCanceled");
+
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "canceled");
@@ -341,7 +339,7 @@ public class Customer extends User {
 
                 for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
                     String columnValues = rSet.getString(i);
-                    String formattedColumn = String.format("%-"+columnValue[i-1]+"s", columnValues); // Adjust width as needed
+                    String formattedColumn = String.format("%%-%ds",columnValue[i-1], columnValues); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns
@@ -357,7 +355,7 @@ public class Customer extends User {
                 " FROM install_request WHERE  email =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        Logger logger = Logger.getLogger("ShowCanceled");
+
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, user.getUserEmail());
@@ -370,17 +368,10 @@ public class Customer extends User {
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
 
-//                for (int i = 1; i <= numberOfColumns; i++) {
-//                    rowData.append(rSet.getString(i));
-//                    if (i < numberOfColumns) {
-//                        rowData.append(" ");
-//                    }
-//                }
-//                logger.log(Level.INFO, String.format(format, rowData.toString()));
                 int [] columnval={15,10,15,20,20,15,30,10};
                 for (int i = 1; i <= numberOfColumns; i++) {
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%-"+columnval[i-1]+"s", columnValue); // Adjust width as needed
+                    String formattedColumn = String.format("%%-%ds",columnval[i-1], columnValue); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns

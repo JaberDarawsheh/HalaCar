@@ -64,9 +64,9 @@ public class Installer extends User{
                 String productName = rSet.getString(P_NAME);
                 String productType = rSet.getString("productType");
                 String email = rSet.getString(MAIL);
-                String carModel = rSet.getString(CAR_MODEL);
+                String carsModel = rSet.getString(CAR_MODEL);
                 String preferredDate = rSet.getString(P_DATE);
-                String infoToBePrinted=String.format(format, rid, pid, productName, email, carModel, preferredDate);
+                String infoToBePrinted=String.format(format, rid, pid,productType ,productName, email, carsModel, preferredDate);
                 logger.log(Level.INFO, infoToBePrinted);
             }
         }

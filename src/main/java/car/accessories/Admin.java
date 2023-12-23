@@ -233,9 +233,8 @@ public class Admin extends User {
                     for (int i = 1; i <= 2; i++) {
                         String columnValue = resultSet.getString(i);
 
-                        // Define a fixed width for each column and left-align the text
-                        int columnWidth = 18;
-                        String formattedValue = String.format("%-" + "%ds", columnWidth, columnValue);
+
+                        String formattedValue = String.format("%-18s",columnValue);
 
                         rowData.append(formattedValue);
 
@@ -315,10 +314,10 @@ public class Admin extends User {
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
             stmt.setString(1, email);
             stmt.setInt(2,rid);
-            int rowsAffected = stmt.executeUpdate();
+            rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                logger.info("The request has been assigned to :"+email);
+                logger.info(String.format("The request has been assigned to :%s",email));
 
             } else {
                 logger.warning(SOME_THING_WRONG_MESSAGE);
@@ -335,7 +334,7 @@ public class Admin extends User {
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
             stmt.setString(1,time);
             stmt.setInt(2,rid);
-            int rowsAffected = stmt.executeUpdate();
+            rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
                 logger.info("The request time scheduled.");
@@ -354,7 +353,7 @@ public class Admin extends User {
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"completed");
             stmt.setInt(2,rid);
-            int rowsAffected = stmt.executeUpdate();
+            rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
                 logger.info("The request status updated to completed.");
@@ -372,7 +371,7 @@ public class Admin extends User {
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"canceled");
             stmt.setInt(2,rid);
-            int rowsAffected = stmt.executeUpdate();
+            rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
                 logger.info("The request status updated to canceled.");
