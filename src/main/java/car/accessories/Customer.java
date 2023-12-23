@@ -81,7 +81,7 @@ public class Customer extends User {
         try {
             returnValue= cat.systemFoundCatalog();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.info("the cataloge currently un available please try again later");
         }
         return returnValue;
     }
