@@ -235,7 +235,7 @@ public class Admin extends User {
 
                         // Define a fixed width for each column and left-align the text
                         int columnWidth = 18;
-                        String formattedValue = String.format("%-" + columnWidth + "s", columnValue);
+                        String formattedValue = String.format("%-" + "%ds", columnWidth, columnValue);
 
                         rowData.append(formattedValue);
 

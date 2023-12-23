@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="all low priority bad smells fix">
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,15 +209,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="10724000" />
-    </task>
-    <task id="LOCAL-00001" summary="some of the main">
-      <option name="closed" value="true" />
-      <created>1698876297076</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1698876297076</updated>
+      <workItem from="1703319631286" duration="11026000" />
     </task>
     <task id="LOCAL-00002" summary="some of the main">
       <option name="closed" value="true" />
@@ -607,7 +595,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703342738026</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="all low priority bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703342869897</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1703342869898</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
