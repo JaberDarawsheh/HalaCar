@@ -6,7 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="duplication reduction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/CustomLogFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/CustomLogFormatter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +66,7 @@
     "JUnit.java in CarAccessioresCompany.executor": "Coverage",
     "Maven.CarAccessioresCompany [clean].executor": "Run",
     "Maven.CarAccessioresCompany [compile].executor": "Run",
+    "Maven.CarAccessioresCompany [test,-e].executor": "Run",
     "Maven.CarAccessioresCompany [verify].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -97,6 +110,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="CarAccessiores" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn test -e" />
+    </option>
   </component>
   <component name="RunManager" selected="JUnit.java in CarAccessioresCompany">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -230,15 +248,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="25048000" />
-    </task>
-    <task id="LOCAL-00020" summary="all test cases passed">
-      <option name="closed" value="true" />
-      <created>1703267699997</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1703267699997</updated>
+      <workItem from="1703319631286" duration="25836000" />
     </task>
     <task id="LOCAL-00021" summary="all test cases passed">
       <option name="closed" value="true" />
@@ -624,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703356434957</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="duplication reduction">
+      <option name="closed" value="true" />
+      <created>1703358452858</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1703358452859</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
