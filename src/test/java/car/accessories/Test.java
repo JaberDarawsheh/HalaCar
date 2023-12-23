@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = {"html:target/cucumber-report"},
+		plugin = {"html:target/cucumber-report.html"},
 		features = "use_cases",
 		glue = "")
 public class Test {
