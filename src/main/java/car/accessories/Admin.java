@@ -44,7 +44,7 @@ public class Admin extends User {
         }
     }
 
-    public void UpdatePass(String email, String userP) throws SQLException {
+    public void updatePass(String email, String userP) throws SQLException {
         sql = "UPDATE systemusers SET `user_password`= ? WHERE `user_email` = ?";
         ConnectDB conDB = new ConnectDB();
         conDB.testConn();
@@ -285,10 +285,10 @@ public class Admin extends User {
     public void scheduleNewAppointment(int rid, String mail,String time) throws SQLException {
         assignTO(rid,mail);
         setTime(rid,time);
-        set_scheduled(rid);
+        setScheduled(rid);
 
     }
-    public void set_scheduled(int rid) throws SQLException {
+    public void setScheduled(int rid) throws SQLException {
 
         ConnectDB connection = new ConnectDB();
         connection.testConn();
@@ -308,17 +308,17 @@ public class Admin extends User {
 
     }
 
-    public void assignTO(int rid,String Email) throws SQLException {
+    public void assignTO(int rid,String email) throws SQLException {
         sql = "UPDATE install_request SET assigned = ? WHERE rid =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
-            stmt.setString(1, Email);
+            stmt.setString(1, email);
             stmt.setInt(2,rid);
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                logger.info("The request has been assigned to :"+Email);
+                logger.info("The request has been assigned to :"+email);
 
             } else {
                 logger.warning(SOME_THING_WRONG_MESSAGE);

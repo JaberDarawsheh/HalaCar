@@ -114,7 +114,7 @@ public class UserRoles {
         String user_pass="";
         // Write code here that turns the phrase above into concrete actions
         try {
-            user.UpdatePass("subhi"+randomNum+"@outlook.com","subhi123456");
+            user.updatePass("subhi"+randomNum+"@outlook.com","subhi123456");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -203,7 +203,7 @@ public class UserRoles {
     @Then("the Customer should be able to view detailed product information")
     public void the_customer_should_be_able_to_view_detailed_product_information() {
         try {
-            customer.ShowCatalogToCustomer();
+            customer.showCatalogToCustomer();
             //the test will pass if there is no unhandled exception occurred
         } catch (SQLException e) {
             e.printStackTrace();
@@ -219,7 +219,7 @@ public class UserRoles {
         int id=1;
         int quantity=10;
         try {
-            customer.AddToCart(id,quantity);
+            customer.addToCart(id,quantity);
             //the test will pass if there is no unhandled exception occurred
         } catch (SQLException e) {
             e.printStackTrace();

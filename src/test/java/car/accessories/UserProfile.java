@@ -32,7 +32,7 @@ public class UserProfile {
 
     @Then("they should see their personal information")
     public void they_should_see_their_personal_information() {
-        customer.ShowPersonalInfo();
+        customer.showPersonalInfo();
 
 
     }
@@ -76,7 +76,7 @@ public class UserProfile {
 
     @Then("the updated information should be visible in the profile")
     public void the_updated_information_should_be_visible_in_the_profile() {
-        customer.ShowPersonalInfo();
+        customer.showPersonalInfo();
     }
 
     @When("the user accesses their profile's order history")

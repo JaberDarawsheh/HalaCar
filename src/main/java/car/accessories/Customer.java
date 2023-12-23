@@ -17,7 +17,7 @@ public class Customer extends User {
     private UserLoginPage user;
     private ProductCat cat;
     private String pass;
-    private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
+    private static final Logger logger = Logger.getLogger(Customer.class.getName());
     private static final String P_NAME="Product Name";
     private static final String STATUS="Status";
     private static final String PID="Product ID";
@@ -33,7 +33,7 @@ public class Customer extends User {
         cat=new ProductCat();
     }
 
-    public void ShowPersonalInfo() {
+    public void showPersonalInfo() {
         logger.info("Personal Information ");
         logger.info("Email: " + user.getUserEmail());
     }
@@ -42,11 +42,11 @@ public class Customer extends User {
     public void showHistory() throws SQLException {
         String historySQL = "SELECT `productName`,`productType`,`unitPrice`,`orderDate`" +
                 " FROM history WHERE email=? ";
-        ConnectDB DataBase = new ConnectDB();
-        DataBase.testConn();
+        ConnectDB dataBase = new ConnectDB();
+        dataBase.testConn();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
-        try (PreparedStatement stmnt = DataBase.getConnection().prepareStatement(historySQL)) {
+        try (PreparedStatement stmnt = dataBase.getConnection().prepareStatement(historySQL)) {
             stmnt.setString(1, user.getUserEmail());
             ResultSet rSet = stmnt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
@@ -86,17 +86,17 @@ public class Customer extends User {
         return returnValue;
     }
 
-    public void ShowCatalogToCustomer() throws SQLException{
+    public void showCatalogToCustomer() throws SQLException{
         cat.showProductsCatalogToUser();
     }
 
-    public void AddToCart(int id,int Quantity) throws SQLException {
-        String CARTsql = "INSERT INTO cart (pid,productName,productType,unitPrice,quantity,email)"+
+    public void addToCart(int id, int Quantity) throws SQLException {
+        String cartSQL = "INSERT INTO cart (pid,productName,productType,unitPrice,quantity,email)"+
                      "SELECT `id`,`productName`,`productType`,`productPrice`,?,?"+
                      "FROM ProductCatalog WHERE id =?";
         ConnectDB connDataBase = new ConnectDB();
         connDataBase.testConn();
-        try(PreparedStatement stmt = connDataBase.getConnection().prepareStatement(CARTsql)){
+        try(PreparedStatement stmt = connDataBase.getConnection().prepareStatement(cartSQL)){
             stmt.setInt(1, Quantity);
             stmt.setString(2, user.getUserEmail());
             stmt.setInt(3,id);
@@ -115,14 +115,14 @@ public class Customer extends User {
         String showCart = "SELECT `pid`,`productName`,`productType`,`unitPrice`,`quantity` FROM cart WHERE email =?";
         ConnectDB connDataBase = new ConnectDB();
         connDataBase.testConn();
-        Logger logger = Logger.getLogger("ViewCart");
+
 
         try (PreparedStatement stmnt = connDataBase.getConnection().prepareStatement(showCart)) {
             stmnt.setString(1, user.getUserEmail());
             ResultSet rSet = stmnt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            String format = "| %-15s | %-30s | %-15s | %-10s | %-10s |%n";
+
             logger.log(Level.INFO, String.format("| %-5s | %-30s | %-15s | %-10s | %-10s |%n", "ID", P_NAME, P_TYPE, "Unit Price", "Quantity"));
             int[] columnWidths={5,30,15,10,10};
             while (rSet.next()) {
@@ -191,8 +191,8 @@ public class Customer extends User {
         if (choice != 3) {
 
             Scanner scanner = new Scanner(System.in);
-            int userChoice = scanner.nextInt();
-            return userChoice;
+
+            return scanner.nextInt();
         }else
             return choice;
 
@@ -200,16 +200,16 @@ public class Customer extends User {
 
     public void installationRequest(int id,String carModel,String installationDate) throws SQLException,ParseException  {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Date Date = dateFormat.parse(installationDate);
+        Date date1 = dateFormat.parse(installationDate);
 
 
         String creatRequest="INSERT INTO install_request (pid,productName,productType,email,carModel,preferredDate,status)"+
                             "SELECT `id`,`productName`,`productType`,?,?,?,?"+
                             "FROM ProductCatalog WHERE id=?";
-        String customer_email=user.getUserEmail();
+        String customerEmail=user.getUserEmail();
         String query ="SELECT * FROM ProductCatalog WHERE id=?";
         String orderName;
-        Timestamp date = new Timestamp(Date.getTime());
+        Timestamp date = new Timestamp(date1.getTime());
         ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(creatRequest)){
@@ -240,7 +240,7 @@ public class Customer extends User {
                         + "Our team will contact you shortly\n\n"
                         + "Thank you,\nCar Accessories Company";
 
-                toCustomerEmail.sendNotificationToCustomer(customer_email, emailMessageTOCustomer);
+                toCustomerEmail.sendNotificationToCustomer(customerEmail, emailMessageTOCustomer);
 
             } else {
                 logger.warning("\nsome thing went wrong please try again later");
@@ -302,12 +302,12 @@ public class Customer extends User {
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
-                int [] column_value={15,10,15,20,15,30,10};
+                int [] columnValue={15,10,15,20,15,30,10};
 
 
-                for (int i = 1; i <= numberOfColumns&&i <= column_value.length; i++) {
-                    String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%-"+column_value[i-1]+"s", columnValue); // Adjust width as needed
+                for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
+                    String columnValues = rSet.getString(i);
+                    String formattedColumn = String.format("%-"+columnValue[i-1]+"s", columnValues); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns

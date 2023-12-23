@@ -130,7 +130,7 @@ public class Main // to delete
 										password = scanner.next();
 										try {
 
-											admin.UpdatePass(email, password);
+											admin.updatePass(email, password);
 										}
 										catch (SQLException e) {
 											logger.warning("some thing went wrong please try again later");
@@ -247,7 +247,7 @@ public class Main // to delete
 										if(temp3==1){
 											logger.info("please enter the new password: ");
 											temp1=str.nextLine();
-											admin.UpdatePass(cemail,temp1);
+											admin.updatePass(cemail,temp1);
 										}else if(temp3==2){
 											logger.info("please enter the new email: ");
 											temp1=scan.nextLine();
@@ -340,14 +340,14 @@ public class Main // to delete
 					switch(choice){
 						case 1:
 							if(Customer.calatogAvailable()){
-								Customer.ShowCatalogToCustomer();
+								Customer.showCatalogToCustomer();
 								logger.info("enter 0 if you want to go back");
 								logger.info("please enter the id of the product you want to add to cart :");
 								int id= scanner.nextInt();
 								if(id!=0){
 									logger.info("how many pieces you want to add to the cart?");
 									int quantity= scanner.nextInt();
-									Customer.AddToCart(id,quantity);
+									Customer.addToCart(id,quantity);
 
 								}
 
@@ -441,7 +441,7 @@ public class Main // to delete
 							Customer.changeEmail(temp1);
 							break;
 						case 6:
-							Customer.ShowPersonalInfo();
+							Customer.showPersonalInfo();
 							break;
 						case 7:
 							logger.info("The Customer has left the site.");

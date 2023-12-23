@@ -113,7 +113,7 @@ public class AdminDashboard {
     @Then("should be able to edit customer information")
     public void should_be_able_to_edit_customer_information() {
         try {
-            admin.UpdatePass("khalidsameer@gmail.com","00000");
+            admin.updatePass("khalidsameer@gmail.com","00000");
         } catch (SQLException e) {
             fail("some thing wrong with UpdatePass method");
         }
