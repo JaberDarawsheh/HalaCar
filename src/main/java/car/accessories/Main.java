@@ -36,7 +36,9 @@ public class Main // to delete
 		while(loopRunner) {
 			
 			Scanner scanner = new Scanner(System.in);
-			if(scanner.nextInt()==0)
+			int sameer=scanner.nextInt();
+
+			if(logOption(sameer))
 			{
 				logger.info("Enter user Email :");
 				String newUserEmail = scanner.next();
@@ -369,6 +371,7 @@ public class Main // to delete
 								logger.info(String.format("%s",e));
 								break;
 							}
+							break;
 						case 3:
 							int access=0;
 							while(access!=3) {
@@ -532,5 +535,9 @@ public class Main // to delete
 
 		login.adminLogout();
 		logger.info("The Admin has left the site.");
+	}
+	public static boolean logOption(int y){
+		if(y==0) return true;
+		else return false;
 	}
 }

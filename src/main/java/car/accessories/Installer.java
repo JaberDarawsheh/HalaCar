@@ -22,7 +22,7 @@ public class Installer extends User{
     private static final String TRY_AGAIN_MESSAGE = "\n some thing went wrong please try again later";
     private static final String UPDATE_QUERY ="UPDATE install_request SET status = ? WHERE rid =?";
     private static final String P_NAME="productName";
-    private static final String EMAIL="email";
+    private static final String MAIL ="email";
     private static final String CAR_MODEL="carModel";
     private static final String P_DATE="preferredDate";
     private static final String REQUEST_TABLE_QUERY="SELECT * FROM Install_request WHERE rid=?";
@@ -63,7 +63,7 @@ public class Installer extends User{
                 int pid = rSet.getInt("pid");
                 String productName = rSet.getString(P_NAME);
                 String productType = rSet.getString("productType");
-                String email = rSet.getString(EMAIL);
+                String email = rSet.getString(MAIL);
                 String carModel = rSet.getString(CAR_MODEL);
                 String preferredDate = rSet.getString(P_DATE);
                 String infoToBePrinted=String.format(format, rid, pid, productName, email, carModel, preferredDate);
@@ -93,10 +93,10 @@ public class Installer extends User{
                         orderName = rs.getString(P_NAME);
                         Date date = rs.getDate(P_DATE);
                         orderDate = dateFormat.format(date);
-                        customer_email = rs.getString(EMAIL);
+                        customer_email = rs.getString(MAIL);
                         carModel = rs.getString(CAR_MODEL);
                         requestID = rs.getString("rid");
-                        customerEmail = rs.getString(EMAIL);
+                        customerEmail = rs.getString(MAIL);
                     }
                 }
                 SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
@@ -197,10 +197,10 @@ public class Installer extends User{
                         orderDate =formatedDateTime;
 
                     }
-                    customer_email = rs.getString(EMAIL);
+                    customer_email = rs.getString(MAIL);
                     carModel = rs.getString(CAR_MODEL);
                     requestID = rs.getString("rid");
-                    customerEmail = rs.getString(EMAIL);
+                    customerEmail = rs.getString(MAIL);
                 }
                 SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
                 String emailMessageToInstaller =
@@ -271,10 +271,10 @@ public class Installer extends User{
                         String[] dateTimeSplit = formatedDateTime.split("\\s+");
                         installationTime = dateTimeSplit[0];
                         orderDate = dateTimeSplit[0];
-                        customer_email = rs.getString(EMAIL);
+                        customer_email = rs.getString(MAIL);
                         carModel = rs.getString(CAR_MODEL);
                         requestID = rs.getString("rid");
-                        customerEmail = rs.getString(EMAIL);
+                        customerEmail = rs.getString(MAIL);
                     }
                 }
                 SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
@@ -335,10 +335,10 @@ public class Installer extends User{
                             orderDate =formatedDateTime;
 
                         }
-                        customer_email = rs.getString(EMAIL);
+                        customer_email = rs.getString(MAIL);
                         carModel = rs.getString(CAR_MODEL);
                         requestID = rs.getString("rid");
-                        customerEmail = rs.getString(EMAIL);
+                        customerEmail = rs.getString(MAIL);
                     }
                 }
                 SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
@@ -392,7 +392,7 @@ public class Installer extends User{
                 int pid = rSet.getInt("pid");
                 String productName = rSet.getString(P_NAME);
                 String productType = rSet.getString("productType");
-                String email = rSet.getString(EMAIL);
+                String email = rSet.getString(MAIL);
                 String carModel = rSet.getString(CAR_MODEL);
                 String preferredDate = rSet.getString(P_DATE);
                 String contentOfTable=String.format(format, rid, pid,productType ,productName, email, carModel, preferredDate);
