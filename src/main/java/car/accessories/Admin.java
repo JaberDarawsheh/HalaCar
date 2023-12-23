@@ -242,9 +242,9 @@ public class Admin extends User {
                             rowData.append("|"); // Add a vertical bar as a separator between columns
                         }
                     }
-
-
-                    logger.info(rowData.toString());
+                    if (logger.isLoggable(Level.INFO)) {
+                        logger.log(Level.INFO, rowData.toString());
+                    }
                 }
             }
 
