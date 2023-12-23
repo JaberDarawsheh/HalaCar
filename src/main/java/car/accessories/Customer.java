@@ -52,7 +52,9 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-20s | %-15s | %-10s | %-12s |%n";
-            logger.log(Level.INFO, String.format(format, P_NAME, P_TYPE, "Unit Price", "Order Date"));
+            if (logger.isLoggable(Level.INFO)) {
+                logger.log(Level.INFO, String.format(format, P_NAME, P_TYPE, "Unit Price", "Order Date"));
+            }
             int[] columnWidths={20,15,10,12};
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
@@ -69,8 +71,9 @@ public class Customer extends User {
                 String [] dateTimeSplit=formattedDateTime.split("\\s+");
                 String onlydate =dateTimeSplit[0];
                 rowData.append(onlydate);
-
-                logger.info(String.format("| %-"+"%ds   |%n",20, rowData));
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.info(String.format("| %-" + "%ds   |%n", 20, rowData));
+                }
             }
 
         }
@@ -123,8 +126,9 @@ public class Customer extends User {
             ResultSet rSet = stmnt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-
-            logger.log(Level.INFO, String.format("| %-5s | %-30s | %-15s | %-10s | %-10s |%n", "ID", P_NAME, P_TYPE, "Unit Price", "Quantity"));
+            if (logger.isLoggable(Level.INFO)) {
+                logger.log(Level.INFO, String.format("| %-5s | %-30s | %-15s | %-10s | %-10s |%n", "ID", P_NAME, P_TYPE, "Unit Price", "Quantity"));
+            }
             int[] columnWidths={5,30,15,10,10};
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
@@ -137,8 +141,9 @@ public class Customer extends User {
                         rowData.append(" | "); // Add separator between columns
                     }
                 }
-
-                logger.info(String.format("| %-5s  |%n", rowData));
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.info(String.format("| %-5s  |%n", rowData));
+                }
             }
         }
     }
@@ -264,8 +269,9 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME, P_TYPE, CAR_MODEL, INSTALLER_MAIL ,INSTALL_DATE, STATUS));
-
+            if (logger.isLoggable(Level.INFO)) {
+                logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME, P_TYPE, CAR_MODEL, INSTALLER_MAIL, INSTALL_DATE, STATUS));
+            }
             int[] columnWidths={15,10,15,20,15,30,10};
 
             while (rSet.next()) {
@@ -279,7 +285,9 @@ public class Customer extends User {
                     rowData.append(formattedColumn);
                     rowData.append(" | "); // Add separator between columns
                 }
-                logger.log(Level.INFO, String.format("| %-5s ", rowData.toString()));
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.log(Level.INFO, String.format("| %-5s ", rowData.toString()));
+                }
             }
         }
     }
@@ -298,9 +306,9 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
-
+            if (logger.isLoggable(Level.INFO)) {
+                logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
+            }
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
                 int [] columnValue={15,10,15,20,15,30,10};
@@ -315,7 +323,9 @@ public class Customer extends User {
                         rowData.append(" | "); // Separator between columns
                     }
                 }
-                logger.log(Level.INFO, rowData.toString());
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.log(Level.INFO, rowData.toString());
+                }
             }
         }
     }
@@ -325,8 +335,6 @@ public class Customer extends User {
                 " FROM install_request WHERE status =? AND email =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-
-
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "canceled");
             stmt.setString(2, user.getUserEmail());
@@ -334,13 +342,12 @@ public class Customer extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
-
+            if (logger.isLoggable(Level.INFO)) {
+                logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
+            }
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
                 int [] columnValue={15,10,15,20,15,30,10};
-
-
                 for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
                     String columnValues = rSet.getString(i);
                     String formSpes="%-"+columnValue[i-1]+"s";
@@ -350,7 +357,9 @@ public class Customer extends User {
                         rowData.append(" | "); // Separator between columns
                     }
                 }
-                logger.log(Level.INFO, rowData.toString());
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.log(Level.INFO, rowData.toString());
+                }
             }
         }
     }
@@ -360,16 +369,15 @@ public class Customer extends User {
                 " FROM install_request WHERE  email =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-
-
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-10s | %-15s | %-20s | %-20s | %-15s | %-30s | %-10s |";
-            logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME , P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
-
+            if (logger.isLoggable(Level.INFO)) {
+                logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
+            }
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
 
@@ -383,7 +391,9 @@ public class Customer extends User {
                         rowData.append(" | "); // Separator between columns
                     }
                 }
-                logger.log(Level.INFO, rowData.toString());
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.log(Level.INFO, rowData.toString());
+                }
             }
         }
     }
