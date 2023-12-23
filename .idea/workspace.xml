@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="vulnerability resolve">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ConnectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +97,20 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.All Features in: use_cases">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="car.accessories.Main" />
+      <module name="CarAccessioresCompany" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="car.accessories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
@@ -105,26 +120,6 @@
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
       <shortenClasspath name="NONE" />
       <option name="SUGGESTED_NAME" value="All Features in: use_cases" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Successful User Registration" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/userRegisteration.feature" />
-      <option name="GLUE" value="CarAccessiores" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="CarAccessioresCompany" />
-      <option name="NAME_FILTER" value="^Successful User Registration$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Successful User Registration$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Successful User Registration" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -168,7 +163,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Cucumber Java.All Features in: use_cases" />
       <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
       <item itemvalue="JUnit.Test" />
@@ -176,11 +171,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
         <item itemvalue="JUnit.java in CarAccessioresCompany" />
         <item itemvalue="JUnit.Test" />
         <item itemvalue="JUnit.CarAccessiores in CarAccessioresCompany" />
-        <item itemvalue="Cucumber Java.Scenario: Successful User Registration" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +211,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="2293000" />
+      <workItem from="1703319631286" duration="3386000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -546,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703322031239</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="vulnerability resolve">
+      <option name="closed" value="true" />
+      <created>1703322327986</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1703322327986</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

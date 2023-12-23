@@ -6,16 +6,17 @@ import java.util.logging.Logger;
 public class ConnectDB {
 
 	protected Connection connection;
-	private static final String P="";
-	
+
+
 	public void testConn() throws SQLException {
 
 		try {
 		    Class.forName("com.mysql.cj.jdbc.Driver");
 		    String url = "jdbc:mysql://localhost:3306/caraccessories";
 		    String username = "root";
+			String password = System.getProperty("database.password");
 
-		    connection = DriverManager.getConnection(url, username, P);
+		    connection = DriverManager.getConnection(url, username, password);
 		    
 		} catch (ClassNotFoundException | SQLException e) {
 			Logger logger = Logger.getLogger(ConnectDB.class.getName());
