@@ -54,20 +54,20 @@ public class Installer extends User{
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "pending");
-            ResultSet rSet = stmt.executeQuery();
+            ResultSet reSet = stmt.executeQuery();
             String format = "| %-15s | %-10s | %-15s | %-30s | %-15s | %-20s |%n";
             String toBePrinted=String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date");
             logger.log(Level.INFO, toBePrinted);
 
-            while (rSet.next()) {
-                int rid = rSet.getInt("rid");
-                int pid = rSet.getInt("pid");
-                String productName = rSet.getString(P_NAME);
-                String productType = rSet.getString("productType");
-                String email = rSet.getString(MAIL);
-                String carsModel = rSet.getString(CAR_MODEL);
-                String preferredDate = rSet.getString(P_DATE);
-                String infoToBePrinted=String.format(format, rid, pid,productType ,productName, email, carsModel, preferredDate);
+            while (reSet.next()) {
+                int rid = reSet.getInt("rid");
+                int pid = reSet.getInt("pid");
+                String productName1 = reSet.getString(P_NAME);
+                String productType1 = reSet.getString("productType");
+                String email1 = reSet.getString(MAIL);
+                String carsModel1 = reSet.getString(CAR_MODEL);
+                String preferredDate1 = reSet.getString(P_DATE);
+                String infoToBePrinted=String.format(format, rid, pid,productType1 ,productName1, email1, carsModel1, preferredDate1);
                 logger.log(Level.INFO, infoToBePrinted);
             }
         }
@@ -391,13 +391,13 @@ public class Installer extends User{
             while (rSet.next()) {
                 int rid = rSet.getInt("rid");
                 int pid = rSet.getInt("pid");
-                String productName = rSet.getString(P_NAME);
-                String productType = rSet.getString("productType");
-                String email = rSet.getString(MAIL);
-                String carModels = rSet.getString(CAR_MODEL);
-                String preferredDate = rSet.getString(P_DATE);
-                String contentOfTable=String.format(format, rid, pid,productType ,productName, email, carModels, preferredDate);
-                logger.log(Level.INFO, contentOfTable);
+                String productName2 = rSet.getString(P_NAME);
+                String productType2 = rSet.getString("productType");
+                String email2 = rSet.getString(MAIL);
+                String carModels2 = rSet.getString(CAR_MODEL);
+                String preferredDate2 = rSet.getString(P_DATE);
+                String contentOfTable2=String.format(format, rid, pid,productType2 ,productName2, email2, carModels2, preferredDate2);
+                logger.log(Level.INFO, contentOfTable2);
             }
         }
     }
