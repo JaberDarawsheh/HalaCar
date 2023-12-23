@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class Admin extends User {
 
     private ProductCat cat;
-    static final Logger logger = Logger.getLogger(Main.class.getName());
+    static final Logger logger = Logger.getLogger(Admin.class.getName());
     String sql;
     int rowsAffected;
     private static final String SOME_THING_WRONG_MESSAGE ="\nsome thing went wrong please try again later";
