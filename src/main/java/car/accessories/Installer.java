@@ -10,10 +10,10 @@ import java.util.logging.Logger;
 
 
 public class Installer extends User{
-    private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
+    private static final Logger logger = Logger.getLogger(Installer.class.getName());
     private String orderName;
     private String orderDate;
-    private String customer_email;
+    private String customerMail;
     private String carModel;
     private String requestID;
     private String customerEmail;
@@ -93,7 +93,7 @@ public class Installer extends User{
                         orderName = rs.getString(P_NAME);
                         Date date = rs.getDate(P_DATE);
                         orderDate = dateFormat.format(date);
-                        customer_email = rs.getString(MAIL);
+                        customerMail = rs.getString(MAIL);
                         carModel = rs.getString(CAR_MODEL);
                         requestID = rs.getString("rid");
                         customerEmail = rs.getString(MAIL);
@@ -108,7 +108,7 @@ public class Installer extends User{
                                 + CAR_MOD+carModel+"\n"
                                 + DATE_OF + orderDate + "\n"
                                 + "Time of installation: " + installationTime + "\n"
-                                + C_MAIL + customer_email + "\n\n"
+                                + C_MAIL + customerMail + "\n\n"
                                 + MAIL_SIGNATURE;
                 toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
@@ -140,8 +140,8 @@ public class Installer extends User{
             stmt.setInt(1,id);
             ResultSet rSet = stmt.executeQuery();
             if(rSet.next()) {
-                String status = rSet.getString("status");
-                return status;
+
+                return rSet.getString("status");
             }
             return "request not found";
 
@@ -197,7 +197,7 @@ public class Installer extends User{
                         orderDate =formatedDateTime;
 
                     }
-                    customer_email = rs.getString(MAIL);
+                    customerMail = rs.getString(MAIL);
                     carModel = rs.getString(CAR_MODEL);
                     requestID = rs.getString("rid");
                     customerEmail = rs.getString(MAIL);
@@ -211,7 +211,7 @@ public class Installer extends User{
                                 + PART_TO_INSTALL + orderName + "\n"
                                 + CAR_MOD+carModel+"\n"
                                 + DATE_OF + orderDate + "\n"
-                                + C_MAIL + customer_email + "\n\n"
+                                + C_MAIL + customerMail + "\n\n"
                                 + MAIL_SIGNATURE;
                 toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
@@ -271,7 +271,7 @@ public class Installer extends User{
                         String[] dateTimeSplit = formatedDateTime.split("\\s+");
                         installationTime = dateTimeSplit[0];
                         orderDate = dateTimeSplit[0];
-                        customer_email = rs.getString(MAIL);
+                        customerMail = rs.getString(MAIL);
                         carModel = rs.getString(CAR_MODEL);
                         requestID = rs.getString("rid");
                         customerEmail = rs.getString(MAIL);
@@ -285,7 +285,7 @@ public class Installer extends User{
                                 + PART_TO_INSTALL + orderName + "\n"
                                 + CAR_MOD+carModel+"\n"
                                 + DATE_OF + orderDate + "\n"
-                                + C_MAIL + customer_email + "\n\n"
+                                + C_MAIL + customerMail + "\n\n"
                                 + MAIL_SIGNATURE;
                 toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();
@@ -335,7 +335,7 @@ public class Installer extends User{
                             orderDate =formatedDateTime;
 
                         }
-                        customer_email = rs.getString(MAIL);
+                        customerMail = rs.getString(MAIL);
                         carModel = rs.getString(CAR_MODEL);
                         requestID = rs.getString("rid");
                         customerEmail = rs.getString(MAIL);
@@ -350,7 +350,7 @@ public class Installer extends User{
                                 + PART_TO_INSTALL + orderName + "\n"
                                 + CAR_MOD+carModel+"\n"
                                 + DATE_OF + orderDate + "\n"
-                                + C_MAIL + customer_email + "\n\n"
+                                + C_MAIL + customerMail + "\n\n"
                                 + MAIL_SIGNATURE;
                 toInstallerEmail.sendNotificationToInstaller(user.getUserEmail(), emailMessageToInstaller);
                 SendNotificationViaEmail toCustomerEmail = new SendNotificationViaEmail();

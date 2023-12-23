@@ -86,7 +86,7 @@ public class UserLoginPage {
 		return this.loginFlag;
 	}
 	
-	public boolean LogOut() 
+	public boolean logOut()
 	{
 		this.loginFlag=false;
 		return this.loginFlag;
@@ -107,8 +107,7 @@ public class UserLoginPage {
 		return this.installerIsLogin;
 	}
 	
-	public boolean adminLogout() throws SQLException
-	{
+	public boolean adminLogout() {
 		this.adminIsLogin=false;
 		return this.adminIsLogin;
 	}

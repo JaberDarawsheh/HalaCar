@@ -13,9 +13,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class SendNotificationViaEmail 
+public class SendNotificationViaEmail
 {
 	private static final Logger logger = Logger.getLogger(SendNotificationViaEmail.class.getName());
+
+    private static final String SECURE_PASS="eujm kiyn xfjv kjfq";
 
     public void sendNotificationToCustomer(String customerEmail, String messageContent) {
         String subject = "Test Email";
@@ -58,7 +60,7 @@ public class SendNotificationViaEmail
     }
 
     private String getPasswordFromSecureStorage() {
-        return "eujm kiyn xfjv kjfq";
+        return SECURE_PASS;
     }
    
 }

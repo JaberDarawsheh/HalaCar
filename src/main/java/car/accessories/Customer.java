@@ -90,14 +90,14 @@ public class Customer extends User {
         cat.showProductsCatalogToUser();
     }
 
-    public void addToCart(int id, int Quantity) throws SQLException {
+    public void addToCart(int id, int quantity) throws SQLException {
         String cartSQL = "INSERT INTO cart (pid,productName,productType,unitPrice,quantity,email)"+
                      "SELECT `id`,`productName`,`productType`,`productPrice`,?,?"+
                      "FROM ProductCatalog WHERE id =?";
         ConnectDB connDataBase = new ConnectDB();
         connDataBase.testConn();
         try(PreparedStatement stmt = connDataBase.getConnection().prepareStatement(cartSQL)){
-            stmt.setInt(1, Quantity);
+            stmt.setInt(1, quantity);
             stmt.setString(2, user.getUserEmail());
             stmt.setInt(3,id);
             int rowsAffected = stmt.executeUpdate();
@@ -336,12 +336,12 @@ public class Customer extends User {
 
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
-                int [] column_value={15,10,15,20,15,30,10};
+                int [] columnValue={15,10,15,20,15,30,10};
 
 
-                for (int i = 1; i <= numberOfColumns&&i <= column_value.length; i++) {
-                    String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%-"+column_value[i-1]+"s", columnValue); // Adjust width as needed
+                for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
+                    String columnValues = rSet.getString(i);
+                    String formattedColumn = String.format("%-"+columnValue[i-1]+"s", columnValues); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns

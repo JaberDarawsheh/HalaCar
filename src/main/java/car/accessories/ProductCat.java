@@ -161,8 +161,8 @@ public class ProductCat {
 	public boolean isproductFoundFlagFound() {
 		return productFoundFlag;
 	}
-	public void setFlagFound(boolean productFound_flag) {
-		this.productFoundFlag = productFound_flag;
+	public void setFlagFound(boolean pFoundFlag) {
+		this.productFoundFlag = pFoundFlag;
 	}
 
 

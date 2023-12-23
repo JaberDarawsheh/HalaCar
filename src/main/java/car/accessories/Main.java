@@ -182,12 +182,12 @@ public class Main // to delete
 										switch(choice){
 											case 1:
 												logger.info("please enter the product name: ");
-												String Temp1= str.nextLine();
+												String temporary1= str.nextLine();
 												logger.info("please enter the product type: ");
 												temp2= str.nextLine();
 												logger.info("please enter the product price: ");
 												temp3= scanner.nextInt();
-												admin.addProduct(Temp1,temp2,temp3);
+												admin.addProduct(temporary1,temp2,temp3);
 												break;
 											case 2 :
 												logger.info("=== Product edit options ===");
@@ -319,7 +319,7 @@ public class Main // to delete
 			else if(loginP.isCustomerLogged())
 			{
 				String temp1;
-				Customer Customer=new Customer(user_email,user_password);
+				Customer customer1=new Customer(user_email,user_password);
 				boolean customerLogFlag=true;
 				int choice=0;
 				logger.info("The Customer entered the site");
@@ -339,15 +339,15 @@ public class Main // to delete
 					choice= scanner.nextInt();
 					switch(choice){
 						case 1:
-							if(Customer.calatogAvailable()){
-								Customer.showCatalogToCustomer();
+							if(customer1.calatogAvailable()){
+								customer1.showCatalogToCustomer();
 								logger.info("enter 0 if you want to go back");
 								logger.info("please enter the id of the product you want to add to cart :");
 								int id= scanner.nextInt();
 								if(id!=0){
 									logger.info("how many pieces you want to add to the cart?");
 									int quantity= scanner.nextInt();
-									Customer.addToCart(id,quantity);
+									customer1.addToCart(id,quantity);
 
 								}
 
@@ -358,11 +358,11 @@ public class Main // to delete
 							break;
 						case 2:
 							try {
-								Customer.viewCart();
+								customer1.viewCart();
 								logger.info("if you want to check out please press 1 ");
 								int check = scanner.nextInt();
 								if(check==1){
-									Customer.checkOut();
+									customer1.checkOut();
 									break;
 								}
 
@@ -375,13 +375,13 @@ public class Main // to delete
 						case 3:
 							int access=0;
 							while(access!=3) {
-								access=Customer.showProfile(0);
+								access=customer1.showProfile(0);
 								switch (access) {
 									case 1:
-										Customer.showHistory();
+										customer1.showHistory();
 										break;
 									case 2:
-										Customer.showCompleted();
+										customer1.showCompleted();
 										break;
 									default:
 										logger.info(INVALID_CHO);
@@ -410,19 +410,19 @@ public class Main // to delete
 										logger.info("please enter the preferred date in the following format (dd-MM-yyyy)");
 										String date=str.nextLine();
 										try {
-											Customer.installationRequest(pid,carModel,date);
+											customer1.installationRequest(pid,carModel,date);
 										} catch (ParseException e) {
 											logger.warning("the date format is wrong try again please");
 										}
 										break;
 									case 2:
-										Customer.showScheduled();
+										customer1.showScheduled();
 										break;
 									case 3:
-										Customer.showCompleted();
+										customer1.showCompleted();
 										break;
 									case 4:
-										Customer.showCanceled();
+										customer1.showCanceled();
 										break;
 									case 5:
 										break;
@@ -438,10 +438,10 @@ public class Main // to delete
 							Scanner mahmoud = new Scanner(System.in);
 							logger.info("please enter your new email");
 							temp1=mahmoud.nextLine();
-							Customer.changeEmail(temp1);
+							customer1.changeEmail(temp1);
 							break;
 						case 6:
-							Customer.showPersonalInfo();
+							customer1.showPersonalInfo();
 							break;
 						case 7:
 							logger.info("The Customer has left the site.");
@@ -458,7 +458,7 @@ public class Main // to delete
 			else if(loginP.installerIsLogin)
 			{
 				logger.info("The Installer entered the site");
-				Installer Installer=new Installer(user_email,user_password);
+				Installer installer1=new Installer(user_email,user_password);
 				boolean installerLogFlag=true;
 				int choice=0;
 				logger.info(BOARDERS);
@@ -474,17 +474,17 @@ public class Main // to delete
 					choice= scanner.nextInt();
 					switch(choice){
 						case 1:
-							Installer.showPending();
+							installer1.showPending();
 							logger.info("enter 0 to go back to the main menu \nenter the request number to assign it to your self:");
 							rid=scanner.nextInt();
 							if(rid!=0){
 								logger.info("enter a time for the appointment in the following format HH:mm:ss");
 								String time= str.nextLine();
-								Installer.schedule(rid,time);
+								installer1.schedule(rid,time);
 							}
 							break;
 						case 2:
-							Installer.showAssigned();
+							installer1.showAssigned();
 							logger.info("=== Option 2 Menu ===");
 							logger.info("Sub-option 1 if you want to mark a request as completed");
 							logger.info("Sub-option 2 if you want to cancel a request");
@@ -493,17 +493,17 @@ public class Main // to delete
 							if(temp==1){
 								logger.info("please enter the request number you want to mark as completed");
 								rid= scanner.nextInt();
-								Installer.setCompleted(rid);
+								installer1.setCompleted(rid);
 							} else if (temp==2) {
 								logger.info("please enter the request number you want to cancel");
 								rid= scanner.nextInt();
-								Installer.setCanceled(rid);
+								installer1.setCanceled(rid);
 							}
 							break;
 						case 3:
 							logger.info("please enter the request number you want to check");
 							rid= scanner.nextInt();
-							String status= Installer.getStatus(rid);
+							String status= installer1.getStatus(rid);
 							logger.info("the status for the mentioned request number is: "+status);
 							break;
 						case 4:
@@ -537,7 +537,6 @@ public class Main // to delete
 		logger.info("The Admin has left the site.");
 	}
 	public static boolean logOption(int y){
-		if(y==0) return true;
-		else return false;
+		return y==0;
 	}
 }
