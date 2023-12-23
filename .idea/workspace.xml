@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="medium priority bad smells fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,15 +231,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="16241000" />
-    </task>
-    <task id="LOCAL-00008" summary="4 feature ready">
-      <option name="closed" value="true" />
-      <created>1698955944419</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1698955944419</updated>
+      <workItem from="1703319631286" duration="16468000" />
     </task>
     <task id="LOCAL-00009" summary="admin dashboard and user profile ready">
       <option name="closed" value="true" />
@@ -623,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703348252729</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="medium priority bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703348401834</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1703348401834</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

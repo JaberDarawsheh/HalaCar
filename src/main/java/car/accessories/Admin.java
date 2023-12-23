@@ -263,7 +263,9 @@ public class Admin extends User {
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
             String format = "| %-15s | %-20s | %-20s | %-35s | %-30s | %-20s | %-15s |%n";
-            logger.log(Level.INFO, String.format(format, "Request Number","Product Name", "Product Type", "Customer Email", "Car Model", "Installation Time", "Status"));
+            if (logger.isLoggable(Level.INFO)) {
+                logger.log(Level.INFO, String.format(format, "Request Number", "Product Name", "Product Type", "Customer Email", "Car Model", "Installation Time", "Status"));
+            }
             int[] columnWidths={15,20,20,35,30,20,15};
 
             while (rSet.next()) {
@@ -279,7 +281,9 @@ public class Admin extends User {
 
                 }
                 String formatSpes="| %-15s ";
-                logger.log(Level.INFO, String.format(formatSpes, rowData.toString()));
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.log(Level.INFO, String.format(formatSpes, rowData.toString()));
+                }
             }
         }
     }
@@ -320,8 +324,9 @@ public class Admin extends User {
             rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                logger.info(String.format("The request has been assigned to :%s",email));
-
+                if (logger.isLoggable(Level.INFO)) {
+                    logger.info(String.format("The request has been assigned to :%s", email));
+                }
             } else {
                 logger.warning(SOME_THING_WRONG_MESSAGE);
             }
