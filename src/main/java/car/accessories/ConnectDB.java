@@ -5,7 +5,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 public class ConnectDB {
 
-	protected Connection connection; 
+	protected Connection connection;
+	private static String P="";
 	
 	public void testConn() throws SQLException {
 
@@ -13,8 +14,8 @@ public class ConnectDB {
 		    Class.forName("com.mysql.cj.jdbc.Driver");
 		    String url = "jdbc:mysql://localhost:3306/caraccessories";
 		    String username = "root";
-			String pass="";
-		    connection = DriverManager.getConnection(url, username, pass);
+
+		    connection = DriverManager.getConnection(url, username, P);
 		    
 		} catch (ClassNotFoundException | SQLException e) {
 			Logger logger = Logger.getLogger(ConnectDB.class.getName());
