@@ -1,12 +1,12 @@
 package car.accessories;
 
 import org.junit.runner.RunWith;
-import cucumber.api.junit.Cucumber;
-import cucumber.api.CucumberOptions;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = {"html:target/cucumber-report.html"},
+		plugin = {"html:target/cucumber-report"},
 		features = "use_cases",
 		glue = "")
 public class Test {

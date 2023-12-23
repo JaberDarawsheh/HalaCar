@@ -139,7 +139,7 @@ public class ProductCat {
 
 	public boolean  searchAboutSomeProduct(String strangeProduct) throws SQLException
 	{
-		String querySt = "SELECT COUNT(*) FROM ProductCatalog WHERE `productNam` = ?";
+		String querySt = "SELECT COUNT(*) FROM ProductCatalog WHERE `productName` = ?";
 		connec.testConn();
 
 		try (PreparedStatement preparedStatement = connec.getConnection().prepareStatement(querySt)) {

@@ -6,8 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="duplication reduction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ConnectDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +111,7 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: AdminDashboard">
+  <component name="RunManager" selected="JUnit.java in CarAccessioresCompany">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="car.accessories.Main" />
       <module name="CarAccessioresCompany" />
@@ -191,11 +203,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
+        <item itemvalue="JUnit.java in CarAccessioresCompany" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
+        <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
         <item itemvalue="Cucumber Java.Scenario: Customer views the installation request status" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.java in CarAccessioresCompany" />
       </list>
     </recent_temporary>
   </component>
@@ -231,15 +243,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="21434000" />
-    </task>
-    <task id="LOCAL-00017" summary="all test cases passed">
-      <option name="closed" value="true" />
-      <created>1703267055319</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1703267055319</updated>
+      <workItem from="1703319631286" duration="22767000" />
     </task>
     <task id="LOCAL-00018" summary="all test cases passed">
       <option name="closed" value="true" />
@@ -625,7 +629,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703354239925</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="duplication reduction">
+      <option name="closed" value="true" />
+      <created>1703354924727</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1703354924727</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,7 +750,7 @@
     <SUITE FILE_PATH="coverage/HalaCar$All_Features_in__use_cases__1_.ic" NAME="All Features in: use_cases (1) Coverage Results" MODIFIED="1703270517822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.cucumber.core.cli.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/HalaCar$java_in_CarAccessioresCompany.ic" NAME="java in CarAccessioresCompany Coverage Results" MODIFIED="1703282751921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/HalaCar$java_in_CarAccessioresCompany.ic" NAME="java in CarAccessioresCompany Coverage Results" MODIFIED="1703355906009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/HalaCar$All_in_CarAccessioresCompany.ic" NAME="All in CarAccessioresCompany Coverage Results" MODIFIED="1703269612958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
