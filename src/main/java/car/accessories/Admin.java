@@ -276,7 +276,8 @@ public class Admin extends User {
                     rowData.append(" | "); // Add separator between columns
 
                 }
-                logger.log(Level.INFO, String.format("| %-15s ", rowData.toString()));
+                String formatSpes="| %-15s ";
+                logger.log(Level.INFO, String.format(formatSpes, rowData.toString()));
             }
         }
     }

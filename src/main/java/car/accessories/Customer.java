@@ -58,7 +58,8 @@ public class Customer extends User {
                 StringBuilder rowData = new StringBuilder();
                 for (int i = 1; i < numberOfColumns; i++) {
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%%-%ds", columnWidths[i-1], columnValue);
+                    String formSpes="%-"+columnWidths[i-1]+"s";
+                    String formattedColumn = String.format(formSpes, columnValue);
                     rowData.append(formattedColumn);
                     rowData.append(" | "); // Add separator between columns
 
@@ -129,7 +130,8 @@ public class Customer extends User {
                 StringBuilder rowData = new StringBuilder();
                 for (int i = 1; i <= numberOfColumns; i++) {
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%%-%ds", columnWidths[i-1], columnValue);
+                    String formSpes="%-"+columnWidths[i-1]+"s";
+                    String formattedColumn = String.format(formSpes, columnValue);
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Add separator between columns
@@ -272,7 +274,8 @@ public class Customer extends User {
 
                 for (int i = 1; i <= numberOfColumns && i <= columnWidths.length; i++) {
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    String formSpes="%-" + columnWidths[i-1] + "s";
+                    String formattedColumn = String.format(formSpes, columnValue);
                     rowData.append(formattedColumn);
                     rowData.append(" | "); // Add separator between columns
                 }
@@ -305,7 +308,8 @@ public class Customer extends User {
 
                 for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
                     String columnValues = rSet.getString(i);
-                    String formattedColumn = String.format("%%-%ds",columnValue[i-1], columnValues); // Adjust width as needed
+                    String formSpes="%-" + columnValue[i-1] + "s";
+                    String formattedColumn = String.format(formSpes, columnValues); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns
@@ -339,7 +343,8 @@ public class Customer extends User {
 
                 for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
                     String columnValues = rSet.getString(i);
-                    String formattedColumn = String.format("%%-%ds",columnValue[i-1], columnValues); // Adjust width as needed
+                    String formSpes="%-"+columnValue[i-1]+"s";
+                    String formattedColumn = String.format(formSpes, columnValues); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns
@@ -371,7 +376,8 @@ public class Customer extends User {
                 int [] columnval={15,10,15,20,20,15,30,10};
                 for (int i = 1; i <= numberOfColumns; i++) {
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%%-%ds",columnval[i-1], columnValue); // Adjust width as needed
+                    String formSpes="%-"+columnval[i-1]+"s";
+                    String formattedColumn = String.format(formSpes, columnValue); // Adjust width as needed
                     rowData.append(formattedColumn);
                     if (i < numberOfColumns) {
                         rowData.append(" | "); // Separator between columns

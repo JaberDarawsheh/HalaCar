@@ -8,10 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +48,7 @@
     "Cucumber Java.All Features in: HalaCar.executor": "Coverage",
     "Cucumber Java.All Features in: use_cases (1).executor": "Coverage",
     "Cucumber Java.All Features in: use_cases.executor": "Run",
+    "Cucumber Java.Feature: AdminDashboard.executor": "Run",
     "Cucumber Java.Scenario: Customer views the installation request status.executor": "Run",
     "Cucumber Java.Scenario: Successful User Registration.executor": "Run",
     "JUnit.All in CarAccessioresCompany.executor": "Coverage",
@@ -102,7 +101,7 @@
       <recent name="CarAccessiores" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.All Features in: use_cases">
+  <component name="RunManager" selected="Cucumber Java.Feature: AdminDashboard">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="car.accessories.Main" />
       <module name="CarAccessioresCompany" />
@@ -136,6 +135,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Feature: AdminDashboard" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/AdminDashboard.feature" />
+      <option name="GLUE" value="car.accessories" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="CarAccessioresCompany" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Feature: AdminDashboard" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: Customer views the installation request status" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/InstallationRequest.feature" />
@@ -157,21 +176,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CarAccessioresCompany" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="car.accessories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="car.accessories" />
-      <option name="MAIN_CLASS_NAME" value="car.accessories.Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="java in CarAccessioresCompany" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CarAccessioresCompany" />
       <option name="TEST_OBJECT" value="directory" />
@@ -182,18 +186,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
       <item itemvalue="Cucumber Java.Scenario: Customer views the installation request status" />
       <item itemvalue="Cucumber Java.All Features in: use_cases" />
-      <item itemvalue="JUnit.Test" />
       <item itemvalue="JUnit.java in CarAccessioresCompany" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
         <item itemvalue="Cucumber Java.Scenario: Customer views the installation request status" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.java in CarAccessioresCompany" />
-        <item itemvalue="JUnit.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -229,15 +233,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="13243000" />
-    </task>
-    <task id="LOCAL-00003" summary="some of the main">
-      <option name="closed" value="true" />
-      <created>1698908711436</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1698908711436</updated>
+      <workItem from="1703319631286" duration="14070000" />
     </task>
     <task id="LOCAL-00004" summary="some of the main">
       <option name="closed" value="true" />
@@ -623,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703343219987</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="medium priority bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703345454729</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1703345454730</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
