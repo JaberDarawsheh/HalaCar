@@ -53,15 +53,17 @@ public class ProductCat {
 
 	                for (int i = 1; i <= columnCount; i++) {
 	                    String columnValue = resultSet.getString(i);
-	                    int columnWidth = 18;
-	                    String formattedValue = String.format("%-" + columnWidth + "s", columnValue);           
+	                    String osman="%-"+18+"s";
+	                    String formattedValue = String.format(osman, columnValue);
 	                    rowData.append(formattedValue);
 
 	                    if (i < columnCount) {
 	                        rowData.append("|"); 
 	                    }
 	                }
-	                logger.log(Level.INFO, rowData.toString());
+					if (logger.isLoggable(Level.INFO)) {
+						logger.log(Level.INFO, rowData.toString());
+					}
 	            }
 	        }
 	    }
