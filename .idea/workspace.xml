@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="medium priority bad smells fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/InstallationRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/ProductCatalog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserLoginToSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserProfile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRegisteration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRoles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/sendEmail.class" beforeDir="false" />
-    </list>
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="medium priority bad smells fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -243,15 +227,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="15432000" />
-    </task>
-    <task id="LOCAL-00005" summary="full main">
-      <option name="closed" value="true" />
-      <created>1698937619799</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1698937619799</updated>
+      <workItem from="1703319631286" duration="15491000" />
     </task>
     <task id="LOCAL-00006" summary="l3yon alsha3eb">
       <option name="closed" value="true" />
@@ -637,7 +613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703346235476</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="medium priority bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703347622411</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1703347622411</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

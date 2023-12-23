@@ -329,7 +329,7 @@ public class UserRoles {
     public void the_installer_should_be_able_to_schedule_appointments_for_accepted_requests() {
         try {
             installer.schedule(rid,"15:30:00");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             fail();
         }
