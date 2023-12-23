@@ -26,6 +26,10 @@ public class Customer extends User {
     private static final String REQUEST_NUM="Request Number";
     private static final String P_TYPE="Product Type";
     private static final String INSTALL_DATE="Installation Date";
+    private static final String SOME_THING="\nsome thing went wrong please try again later";
+    private static final String SELECT_QUERY="SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`"
+                                               + " FROM install_request WHERE status =? and email = ? ";
+    private static final String FORMATER="| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
     public Customer(String userEmail, String userPassword) {
         super(userEmail,userPassword);
         pass = userPassword;
@@ -110,7 +114,7 @@ public class Customer extends User {
                 logger.info("added to the cart successfully.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(SOME_THING);
             }
         }
     }
@@ -167,7 +171,7 @@ public class Customer extends User {
                 logger.info("The order is processing.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(SOME_THING);
             }
         }
         try (PreparedStatement stmt = conDB.getConnection().prepareStatement(delteOrderFromCart)){
@@ -178,7 +182,7 @@ public class Customer extends User {
                 logger.info("The order is placed successfully.");
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(SOME_THING);
             }
         }
 
@@ -248,7 +252,7 @@ public class Customer extends User {
                 toCustomerEmail.sendNotificationToCustomer(customerEmail, emailMessageTOCustomer);
 
             } else {
-                logger.warning("\nsome thing went wrong please try again later");
+                logger.warning(SOME_THING);
             }
         }
 
@@ -256,21 +260,20 @@ public class Customer extends User {
     }
 
     public void showScheduled() throws SQLException {
-        String query =  "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
-                        " FROM install_request WHERE status =? and email = ? ";
+
         ConnectDB connection = new ConnectDB();
         connection.testConn();
 
 
-        try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
+        try (PreparedStatement stmt = connection.getConnection().prepareStatement(SELECT_QUERY)) {
             stmt.setString(1, "scheduled");
             stmt.setString(2, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
+
             if (logger.isLoggable(Level.INFO)) {
-                logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_NAME, P_TYPE, CAR_MODEL, INSTALLER_MAIL, INSTALL_DATE, STATUS));
+                logger.log(Level.INFO, String.format(FORMATER, REQUEST_NUM, PID, P_NAME, P_TYPE, CAR_MODEL, INSTALLER_MAIL, INSTALL_DATE, STATUS));
             }
             int[] columnWidths={15,10,15,20,15,30,10};
 
@@ -293,21 +296,20 @@ public class Customer extends User {
     }
 
     public void showCompleted() throws SQLException {
-        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
-                " FROM install_request WHERE status =? AND email =?";
+
         ConnectDB connection = new ConnectDB();
         connection.testConn();
 
 
-        try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
+        try (PreparedStatement stmt = connection.getConnection().prepareStatement(SELECT_QUERY)) {
             stmt.setString(1, "completed");
             stmt.setString(2, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
+
             if (logger.isLoggable(Level.INFO)) {
-                logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
+                logger.log(Level.INFO, String.format(FORMATER, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
             }
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
@@ -331,19 +333,18 @@ public class Customer extends User {
     }
 
     public void showCanceled() throws SQLException {
-        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`" +
-                " FROM install_request WHERE status =? AND email =?";
+
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
+        try (PreparedStatement stmt = connection.getConnection().prepareStatement(SELECT_QUERY)) {
             stmt.setString(1, "canceled");
             stmt.setString(2, user.getUserEmail());
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            String format = "| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
+
             if (logger.isLoggable(Level.INFO)) {
-                logger.log(Level.INFO, String.format(format, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
+                logger.log(Level.INFO, String.format(FORMATER, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
             }
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
