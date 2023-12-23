@@ -243,7 +243,8 @@ public class Admin extends User {
                         }
                     }
 
-                    logger.log(Level.INFO, rowData.toString());
+
+                    logger.info(rowData.toString());
                 }
             }
 
