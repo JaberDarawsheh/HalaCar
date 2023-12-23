@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="bad smells fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="all low priority bad smells fix">
       <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/SendNotificationViaEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/SendNotificationViaEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/SendNotificationViaEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +213,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="10581000" />
+      <workItem from="1703319631286" duration="10724000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -604,7 +599,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703341765888</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="all low priority bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703342738026</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1703342738026</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +683,8 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="vulnerability resolve" />
     <MESSAGE value="bad smells fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bad smells fix" />
+    <MESSAGE value="all low priority bad smells fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="all low priority bad smells fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

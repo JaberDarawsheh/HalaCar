@@ -531,7 +531,7 @@ public class Main // to delete
 		
 	} // end first while loop
 	
-	public static void theAdminLogout(UserLoginPage login) throws SQLException {
+	public static void theAdminLogout(UserLoginPage login)  {
 
 		login.adminLogout();
 		logger.info("The Admin has left the site.");
