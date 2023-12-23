@@ -127,7 +127,7 @@ public class AdminDashboard {
     @Then("should be able to delete a customer account")
     public void should_be_able_to_delete_a_customer_account() {
         try {
-            admin.DeleteUser("khalidfathi@yahoo.com");
+            admin.deleteUser("khalidfathi@yahoo.com");
         } catch (SQLException e) {
             fail("some thing wrong with DeleteUser method");
         }

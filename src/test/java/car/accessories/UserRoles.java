@@ -148,7 +148,7 @@ public class UserRoles {
         // Write code here that turns the phrase above into concrete actions
         boolean deleted=false;
         try {
-            user.DeleteUser("subhi"+randomNum+"@outlook.com");
+            user.deleteUser("subhi"+randomNum+"@outlook.com");
         } catch (SQLException e) {
             e.printStackTrace();
         }

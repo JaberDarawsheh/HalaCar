@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="vulnerability resolve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/UserRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/UserRoles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Installer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/UserRoles.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +219,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="6126000" />
+      <workItem from="1703319631286" duration="6776000" />
     </task>
     <task id="LOCAL-00001" summary="some of the main">
       <option name="closed" value="true" />
@@ -558,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703323284462</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="vulnerability resolve">
+      <option name="closed" value="true" />
+      <created>1703325953543</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1703325953543</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

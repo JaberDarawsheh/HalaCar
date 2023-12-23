@@ -141,7 +141,7 @@ public class Main // to delete
 										email = scanner.next();
 										try {
 
-											admin.DeleteUser(email);
+											admin.deleteUser(email);
 										}
 										catch (SQLException e) {
 											logger.warning("some thing went wrong please try again later");

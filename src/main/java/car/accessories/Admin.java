@@ -23,7 +23,7 @@ public class Admin extends User {
         cat=new ProductCat();
     }
 
-    public void addCustomer(String email, String Upass) throws SQLException {
+    public void addCustomer(String email, String userP) throws SQLException {
         sql = "INSERT INTO systemusers (user_email,user_password,user_type) VALUES (? , ? , ?)";
         ConnectDB conDB = new ConnectDB();
         //the new user is added
@@ -31,7 +31,7 @@ public class Admin extends User {
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1, email);
-            stmt.setString(2, Upass);
+            stmt.setString(2, userP);
             stmt.setString(3, "customer");
             rowsAffected = stmt.executeUpdate();
 
@@ -44,12 +44,12 @@ public class Admin extends User {
         }
     }
 
-    public void UpdatePass(String email, String Upass) throws SQLException {
+    public void UpdatePass(String email, String userP) throws SQLException {
         sql = "UPDATE systemusers SET `user_password`= ? WHERE `user_email` = ?";
         ConnectDB conDB = new ConnectDB();
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
-            stmt.setString(1,Upass);
+            stmt.setString(1,userP);
             stmt.setString(2, email);
             rowsAffected = stmt.executeUpdate();
 
@@ -83,7 +83,7 @@ public class Admin extends User {
         }
     }
 
-    public void DeleteUser(String email) throws SQLException {
+    public void deleteUser(String email) throws SQLException {
         sql = "DELETE FROM systemusers WHERE user_email = ?";
 
         ConnectDB conDB = new ConnectDB();
@@ -256,7 +256,6 @@ public class Admin extends User {
                 " FROM install_request WHERE status NOT IN ('canceled', 'completed');";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        Logger logger = Logger.getLogger("ShowScheduled");
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(sql)) {
 
@@ -272,13 +271,11 @@ public class Admin extends User {
 
                 for (int i = 1; i <= numberOfColumns; i++) {
 
-                    if (i <= numberOfColumns) {
+                    String columnValue = rSet.getString(i);
+                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    rowData.append(formattedColumn);
+                    rowData.append(" | "); // Add separator between columns
 
-                        String columnValue = rSet.getString(i);
-                        String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
-                        rowData.append(formattedColumn);
-                        rowData.append(" | "); // Add separator between columns
-                    }
                 }
                 logger.log(Level.INFO, String.format("| %-15s ", rowData.toString()));
             }
