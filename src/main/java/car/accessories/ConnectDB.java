@@ -13,8 +13,7 @@ public class ConnectDB {
 		    Class.forName("com.mysql.cj.jdbc.Driver");
 		    String url = "jdbc:mysql://localhost:3306/caraccessories";
 		    String username = "root";
-		    String password = "";
-		    connection = DriverManager.getConnection(url, username, password);
+		    connection = DriverManager.getConnection(url, username, "");
 		    
 		} catch (ClassNotFoundException | SQLException e) {
 			Logger logger = Logger.getLogger(ConnectDB.class.getName());

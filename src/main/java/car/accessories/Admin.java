@@ -15,7 +15,8 @@ public class Admin extends User {
     static final Logger logger = Logger.getLogger(Main.class.getName());
     String sql;
     int rowsAffected;
-    private static final String someThingWrongMessage="\nsome thing went wrong please try again later";
+    private static final String SOME_THING_WRONG_MESSAGE ="\nsome thing went wrong please try again later";
+    private static final String UPDATE_REQUEST="UPDATE install_request SET status = ? WHERE rid =?";
 
     public Admin(String userEmail,String userPassword) {
         super(userEmail,userPassword);
@@ -38,7 +39,7 @@ public class Admin extends User {
                 logger.info("User added successfully.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
     }
@@ -56,7 +57,7 @@ public class Admin extends User {
                 logger.info("the password updated successfully.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
         }
@@ -76,7 +77,7 @@ public class Admin extends User {
                 logger.info("the email updated successfully.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
         }
@@ -97,7 +98,7 @@ public class Admin extends User {
                 logger.info("User deleted successfully.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
 
@@ -126,7 +127,7 @@ public class Admin extends User {
                 logger.info("Product added successfully.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
     }
@@ -143,7 +144,7 @@ public class Admin extends User {
                 logger.info("Product is now un available.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
     }
@@ -160,7 +161,7 @@ public class Admin extends User {
                 logger.info("Product name updated.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
     }
@@ -177,7 +178,7 @@ public class Admin extends User {
                 logger.info("Product type updated.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
     }
@@ -194,7 +195,7 @@ public class Admin extends User {
                 logger.info("Product price updated.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
     }
@@ -210,7 +211,7 @@ public class Admin extends User {
                 logger.info("Product is deleted successfully.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
     }
@@ -291,10 +292,10 @@ public class Admin extends User {
 
     }
     public void set_scheduled(int rid) throws SQLException {
-        sql="UPDATE install_request SET status = ? WHERE rid =?";
+
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
+        try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"scheduled");
             stmt.setInt(2,rid);
             rowsAffected = stmt.executeUpdate();
@@ -303,7 +304,7 @@ public class Admin extends User {
                 logger.info("The request status updated to scheduled.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
         }
@@ -323,7 +324,7 @@ public class Admin extends User {
                 logger.info("The request has been assigned to :"+Email);
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
         }
@@ -343,17 +344,17 @@ public class Admin extends User {
                 logger.info("The request time scheduled.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
         }
     }
 
     public void setStatusToCompleted(int rid) throws SQLException {
-        sql ="UPDATE install_request SET status = ? WHERE rid =?";
+
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
+        try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"completed");
             stmt.setInt(2,rid);
             int rowsAffected = stmt.executeUpdate();
@@ -362,17 +363,16 @@ public class Admin extends User {
                 logger.info("The request status updated to completed.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
         }
     }
 
     public void setStatusToCanceled(int rid) throws SQLException {
-        sql ="UPDATE install_request SET status = ? WHERE rid =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
+        try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"canceled");
             stmt.setInt(2,rid);
             int rowsAffected = stmt.executeUpdate();
@@ -381,7 +381,7 @@ public class Admin extends User {
                 logger.info("The request status updated to canceled.");
 
             } else {
-                logger.warning(someThingWrongMessage);
+                logger.warning(SOME_THING_WRONG_MESSAGE);
             }
 
         }
