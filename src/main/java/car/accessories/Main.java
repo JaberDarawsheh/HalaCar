@@ -52,14 +52,14 @@ public class Main // to delete
 			else 
 			{	
 			logger.info("Enter user Email : ");
-			String user_email = scanner.next();
+			String userEmail = scanner.next();
 			logger.info("Enter user Password : ");
-			String user_password = scanner.next();
+			String userPassword = scanner.next();
 
-			UserLoginPage loginP = new UserLoginPage(user_email , user_password);
+			UserLoginPage loginP = new UserLoginPage(userEmail , userPassword);
 			ProductCat catalog = new ProductCat();
 
-			loginP.isValidCredentials(user_email, user_password);
+			loginP.isValidCredentials(userEmail, userPassword);
 
 			if(loginP.isAdminLogged())
 			{
@@ -69,7 +69,7 @@ public class Main // to delete
 				String temp1;
 				String temp2;
 				int temp3=0;
-				Admin admin=new Admin(user_email,user_password);
+				Admin admin=new Admin(userEmail,userPassword);
 				logger.info("The Admin entered the site");
 				boolean adminLogFlag = true;
 				logger.info(BOARDERS);
@@ -319,7 +319,7 @@ public class Main // to delete
 			else if(loginP.isCustomerLogged())
 			{
 				String temp1;
-				Customer customer1=new Customer(user_email,user_password);
+				Customer customer1=new Customer(userEmail,userPassword);
 				boolean customerLogFlag=true;
 				int choice=0;
 				logger.info("The Customer entered the site");
@@ -458,7 +458,7 @@ public class Main // to delete
 			else if(loginP.installerIsLogin)
 			{
 				logger.info("The Installer entered the site");
-				Installer installer1=new Installer(user_email,user_password);
+				Installer installer1=new Installer(userEmail,userPassword);
 				boolean installerLogFlag=true;
 				int choice=0;
 				logger.info(BOARDERS);
