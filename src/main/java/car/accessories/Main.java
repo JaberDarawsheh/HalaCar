@@ -1,4 +1,5 @@
 package car.accessories;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Scanner;
@@ -102,7 +103,6 @@ public class Main // to delete
 							break;
 						case 3:
 							while(choice!=4){
-								//logger.info("1-add new user \n2-change password for existing user \n3-delete a user \n4-back to main menu \n please enter a number\n ");
 								logger.info("=== Option 3 Menu ===");
 								logger.info("Sub-option 1 - Add new user to the system");
 								logger.info("Sub-option 2 - Change password for existing user");
@@ -308,11 +308,11 @@ public class Main // to delete
 							break;
 
 						default:logger.info(INVALID_CHO);
-					}//end switch
-				}// end while(adminLogFlag)
+					}
+				}
 
 
-			}// end if(loginP.is_Admin_logged())
+			}
 
 
 
@@ -480,8 +480,12 @@ public class Main // to delete
 							if(rid!=0){
 								logger.info("enter a time for the appointment in the following format HH:mm:ss");
 								String time= str.nextLine();
-								installer1.schedule(rid,time);
-							}
+                                try {
+                                    installer1.schedule(rid,time);
+                                } catch (IOException e) {
+									logger.warning(e.toString());
+                                }
+                            }
 							break;
 						case 2:
 							installer1.showAssigned();
@@ -503,8 +507,8 @@ public class Main // to delete
 						case 3:
 							logger.info("please enter the request number you want to check");
 							rid= scanner.nextInt();
-							String status= installer1.getStatus(rid);
-							logger.info("the status for the mentioned request number is: "+status);
+							String status= "the status for the mentioned request number is: "+installer1.getStatus(rid);
+							logger.info(status);
 							break;
 						case 4:
 							logger.info("The Installer has left the site.");

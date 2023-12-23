@@ -1,5 +1,6 @@
 package car.accessories;
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -235,7 +236,7 @@ public class Installer extends User{
 
     }
 
-    public void schedule(int id, String time) throws SQLException {
+    public void schedule(int id, String time) throws SQLException,IOException {
         int length =time.length();
         if(length==8) {
             setTime(id, time);
@@ -243,7 +244,7 @@ public class Installer extends User{
             assign(id);
         }else{
             logger.warning("wrong time format");
-            throw new RuntimeException("wrong time format");
+            throw new IOException("wrong time format");
 
         }
     }
@@ -393,9 +394,9 @@ public class Installer extends User{
                 String productName = rSet.getString(P_NAME);
                 String productType = rSet.getString("productType");
                 String email = rSet.getString(MAIL);
-                String carModel = rSet.getString(CAR_MODEL);
+                String carModels = rSet.getString(CAR_MODEL);
                 String preferredDate = rSet.getString(P_DATE);
-                String contentOfTable=String.format(format, rid, pid,productType ,productName, email, carModel, preferredDate);
+                String contentOfTable=String.format(format, rid, pid,productType ,productName, email, carModels, preferredDate);
                 logger.log(Level.INFO, contentOfTable);
             }
         }

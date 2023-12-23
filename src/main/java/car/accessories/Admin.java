@@ -271,7 +271,8 @@ public class Admin extends User {
                 for (int i = 1; i <= numberOfColumns; i++) {
 
                     String columnValue = rSet.getString(i);
-                    String formattedColumn = String.format("%-" + columnWidths[i-1] + "s", columnValue);
+                    String formSpes="%-" + columnWidths[i-1] + "s";
+                    String formattedColumn = String.format(formSpes, columnValue);
                     rowData.append(formattedColumn);
                     rowData.append(" | "); // Add separator between columns
 

@@ -106,7 +106,7 @@ public class InstallationRequest {
         time="12:31:00";
         try {
             installer.schedule(id,time);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             fail();
         }
