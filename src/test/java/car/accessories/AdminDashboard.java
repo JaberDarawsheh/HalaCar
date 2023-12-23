@@ -6,8 +6,7 @@ import io.cucumber.java.en.When;
 
 import java.sql.SQLException;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class AdminDashboard {
     String user_email , user_password;
@@ -36,7 +35,7 @@ public class AdminDashboard {
             fail("some thing wrong with showProductCatalog method ");
             flag=0;
         }
-        assertTrue(flag==1);
+        assertEquals(1,flag);
     }
 
     @Then("should be able to add a new product")
@@ -48,7 +47,7 @@ public class AdminDashboard {
             fail("some thing wrong with addProduct method ");
             flag=0;
         }
-        assertTrue(flag==1);
+        assertEquals(1,flag);
 
     }
 
@@ -80,7 +79,7 @@ public class AdminDashboard {
             fail("changeProductPrice"+ e.getMessage());
             flag=0;
         }
-        assertTrue(flag==1);
+        assertEquals(1,flag);;
     }
 
     @Then("should be able to delete a product")
@@ -93,7 +92,7 @@ public class AdminDashboard {
             fail("some thing wrong with deleteProduct method");
             flag=0;
         }
-        assertTrue(flag==1);
+        assertEquals(1,flag);
     }
 
     @When("the admin selects the option to manage customer accounts")

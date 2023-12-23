@@ -38,7 +38,6 @@ public class Registeration {
 	            logger.warning("Account creation failed. No rows were affected.");
 	        }
 	    } catch (SQLException e) {
-	    	Logger logger = Logger.getLogger(Registeration.class.getName());
 	        logger.log(Level.SEVERE, "An error occurred", e);
 	    }
 	}

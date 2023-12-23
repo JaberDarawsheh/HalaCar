@@ -18,21 +18,20 @@ public class ProductCat {
 		String numberOfProduct = "SELECT COUNT(*) FROM `productCatalog` WHERE `isAvilable`=1;";
 		connec.testConn();
 
-		boolean productFoundFlag = false;
+		boolean productFoundFlag1 = false;
 
 		try (java.sql.Statement stmt = connec.getConnection().createStatement();
 		     ResultSet rs = stmt.executeQuery(numberOfProduct)) {
 
 		    if (rs.next()) {
 		        int rowCount = rs.getInt(1);
-		        productFoundFlag = rowCount > 0;
+		        productFoundFlag1 = rowCount > 0;
 		    }
 
 		} catch (SQLException e) {
-			Logger logger = Logger.getLogger(ProductCat.class.getName());
 		    logger.log(Level.SEVERE, "An error occurred", e);
 		}
-		return productFoundFlag;
+		return productFoundFlag1;
 	}
 
 	
@@ -68,7 +67,7 @@ public class ProductCat {
 	    }
 	}
 
-	public void showProductsCatalogToAdmin(Admin d) throws SQLException {
+	public void showProductsCatalogToAdmin() throws SQLException {
 		connec.testConn();
 		logger.log(Level.INFO, "|        id       |   product name   |   product type   |   product price  |   product img    |   availability   |");
 		String query = "SELECT * FROM productcatalog";
@@ -85,9 +84,9 @@ public class ProductCat {
 					for (int i = 1; i <= columnCount; i++) {
 						String columnValue = resultSet.getString(i);
 
-						// Define a fixed width for each column and left-align the text
-						int columnWidth = 18;
-						String formattedValue = String.format("%-" + columnWidth + "s", columnValue);
+						int columnWidth=18;
+						String formspesef="%-" + columnWidth + "s";
+						String formattedValue = String.format(formspesef, columnValue);
 
 						rowData.append(formattedValue);
 
@@ -95,8 +94,9 @@ public class ProductCat {
 							rowData.append("|"); // Add a vertical bar as a separator between columns
 						}
 					}
-
-					logger.log(Level.INFO, rowData.toString());
+					if (logger.isLoggable(Level.INFO)) {
+						logger.log(Level.INFO, rowData.toString());
+					}
 				}
 			}
 		}
@@ -122,9 +122,10 @@ public class ProductCat {
 	                String productAvailable = resultSet.getString("isAvilable");
 	                
 	                String splitCol="      |      " ;
-	                logger.log(Level.INFO, String.format("Product id: %s%sProduct name: %s%sProduct price: %s%sProduct type: %s%sProduct available: %s%s",
-	                	    id, splitCol, name, splitCol, productPrice, splitCol, productType, splitCol, productAvailable, splitCol));
-
+					if (logger.isLoggable(Level.INFO)) {
+						logger.log(Level.INFO, String.format("Product id: %s%sProduct name: %s%sProduct price: %s%sProduct type: %s%sProduct available: %s%s",
+								id, splitCol, name, splitCol, productPrice, splitCol, productType, splitCol, productAvailable, splitCol));
+					}
 	                foundResults = true;
 	            }
 	        }
@@ -150,7 +151,6 @@ public class ProductCat {
 		        }
 		    }
 		} catch (SQLException e) {
-			Logger logger = Logger.getLogger(ProductCat.class.getName());
 		    logger.log(Level.SEVERE, "An error occurred", e); 
 		}
 

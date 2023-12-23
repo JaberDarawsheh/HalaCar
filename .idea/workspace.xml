@@ -6,8 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="medium priority bad smells fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/ProductCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Registeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Registeration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/UserLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/car/accessories/InstallationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/car/accessories/InstallationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/UserLoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/car/accessories/AdminDashboard.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,15 +239,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="17347000" />
-    </task>
-    <task id="LOCAL-00010" summary="admin dashboard and user profile ready">
-      <option name="closed" value="true" />
-      <created>1701012790629</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1701012790630</updated>
+      <workItem from="1703319631286" duration="18783000" />
     </task>
     <task id="LOCAL-00011" summary="admin dashboard and user profile ready">
       <option name="closed" value="true" />
@@ -625,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703348636167</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="medium priority bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703350849228</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1703350849228</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

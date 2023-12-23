@@ -6,12 +6,11 @@ import io.cucumber.java.en.When;
 
 import java.sql.SQLException;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static org.junit.Assert.*;
 
 public class InstallationRequest {
     private static final Logger logger = Logger.getLogger(ProductCat.class.getName());
@@ -125,7 +124,7 @@ public class InstallationRequest {
     }
     @Then("the request status is Scheduled")
     public void the_request_status_is_Scheduled() {
-        assertTrue(status.equals("scheduled"));
+        assertEquals("scheduled",status);
 
     }
 
@@ -173,7 +172,7 @@ public class InstallationRequest {
             e.printStackTrace();
             fail();
         }
-        assertTrue(status.equals("completed"));
+        assertEquals("completed",status);
     }
 
     @Then("the request status is displayed as completed")
@@ -211,7 +210,7 @@ public class InstallationRequest {
             e.printStackTrace();
             fail();
         }
-        assertTrue(status.equals("canceled"));
+        assertEquals("canceled",status);
 
     }
 

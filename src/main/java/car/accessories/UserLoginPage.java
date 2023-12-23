@@ -114,8 +114,8 @@ public class UserLoginPage {
 	
 	public boolean customerLogout()
 	{
-		this.adminIsLogin=false;
-		return this.adminIsLogin;
+		this.customerIsLogin=false;
+		return this.customerIsLogin;
 	}
 	
 	public boolean installerLogout()

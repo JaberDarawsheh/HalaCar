@@ -110,7 +110,7 @@ public class Admin extends User {
     }
 
     public void showProductCatalog() throws SQLException {
-        cat.showProductsCatalogToAdmin(this);
+        cat.showProductsCatalogToAdmin();
     }
 
     public void addProduct(String productName, String productType, int productPrice) throws SQLException {
