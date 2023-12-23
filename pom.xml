@@ -9,6 +9,7 @@
       <sonar.host.url>http://localhost:9000</sonar.host.url> 
        <sonar.organization>caracccompany</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+       <sonar.coverage.exclusion>**MyApp.java</sonar.coverage.exclusion>
     </properties>
    
        <dependencies>

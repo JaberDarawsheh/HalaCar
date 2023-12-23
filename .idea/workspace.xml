@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="medium priority bad smells fix">
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Registeration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,15 +229,7 @@
       <workItem from="1703192252323" duration="445000" />
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
-      <workItem from="1703319631286" duration="19171000" />
-    </task>
-    <task id="LOCAL-00012" summary="admin dashboard and user profile ready">
-      <option name="closed" value="true" />
-      <created>1701118430024</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1701118430024</updated>
+      <workItem from="1703319631286" duration="19733000" />
     </task>
     <task id="LOCAL-00013" summary="admin dashboard and user profile ready">
       <option name="closed" value="true" />
@@ -623,7 +615,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703352146346</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="medium priority bad smells fix">
+      <option name="closed" value="true" />
+      <created>1703352611044</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1703352611044</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
