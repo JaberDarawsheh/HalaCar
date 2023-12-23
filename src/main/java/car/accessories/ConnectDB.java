@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 public class ConnectDB {
 
 	protected Connection connection;
-	private static String P="";
+	private static final String P="";
 	
 	public void testConn() throws SQLException {
 

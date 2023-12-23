@@ -1,27 +1,27 @@
-# name: work flow for test cases
+ name: work flow for test cases
 
-# on:
-#   push:
-#     branches:
-#       - main
+ on:
+   push:
+     branches:
+       - main
   
 
-# jobs:
-#   build-on-ubuntu:
-#     runs-on: ubuntu-latest
+ jobs:
+   build-on-ubuntu:
+     runs-on: ubuntu-latest
 
-#     steps:
-#       - name: step 1 checkout main branch from git
-#         uses: actions/checkout@v2
+     steps:
+       - name: step 1 checkout main branch from git
+         uses: actions/checkout@v2
 
-#       - name: step 2 set up jdk
-#         uses: actions/setup-java@v3
-#         with:
-#           java-version: 17
-#           distribution: 'zulu' # Alternative distribution options are 
+       - name: step 2 set up jdk
+         uses: actions/setup-java@v3
+         with:
+           java-version: 17
+           distribution: 'zulu' # Alternative distribution options are
 
-#       - name: step 3 build maven
-#         run: mvn --batch-mode -DskipTest package
+       - name: step 3 build maven
+         run: mvn --batch-mode -DskipTest package
 
-#       - name: step 4 run test cases
-#         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+       - name: step 4 run test cases
+         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
