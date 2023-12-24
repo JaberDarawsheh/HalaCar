@@ -14,6 +14,7 @@ public class Admin extends User {
     private ProductCat cat;
     static final Logger logger = Logger.getLogger(Admin.class.getName());
     String sql;
+    ConnectDB conDB = new ConnectDB();
     int rowsAffected;
     private static final String SOME_THING_WRONG_MESSAGE ="\nsome thing went wrong please try again later";
     private static final String UPDATE_REQUEST="UPDATE install_request SET status = ? WHERE rid =?";
@@ -31,8 +32,7 @@ public class Admin extends User {
 
     public void addCustomer(String email, String userP) throws SQLException {
         sql = "INSERT INTO systemusers (user_email,user_password,user_type) VALUES (? , ? , ?)";
-        ConnectDB conDB = new ConnectDB();
-        //the new user is added
+
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1, email);
@@ -48,7 +48,7 @@ public class Admin extends User {
     }
     public void updatePass(String email, String userP) throws SQLException {
         sql = "UPDATE systemusers SET `user_password`= ? WHERE `user_email` = ?";
-        ConnectDB conDB = new ConnectDB();
+
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,userP);
@@ -63,7 +63,7 @@ public class Admin extends User {
     }
     public void updateEmail(String mail, String newEmail) throws SQLException {
         sql = "UPDATE systemusers SET `user_email`= ? WHERE `user_email` = ?";
-        ConnectDB conDB = new ConnectDB();
+
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,newEmail);
@@ -79,10 +79,6 @@ public class Admin extends User {
 
     public void deleteUser(String email) throws SQLException {
         sql = "DELETE FROM systemusers WHERE user_email = ?";
-
-        ConnectDB conDB = new ConnectDB();
-
-
         conDB.testConn();
         try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,email);
@@ -109,9 +105,8 @@ public class Admin extends User {
 
     public void addProduct(String productName, String productType, int productPrice) throws SQLException {
         sql = "INSERT INTO productcatalog (productName, productType, productPrice, isAvilable) VALUES (?, ?, ?, ?)";
-        ConnectDB connection= new ConnectDB();
-        connection.testConn();
-        try(PreparedStatement stmt = connection.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,productName);
             stmt.setString(2,productType);
             stmt.setInt(3,productPrice);
@@ -128,9 +123,8 @@ public class Admin extends User {
 
     public void isUnavailable(int pid) throws SQLException {
         sql =UPDATE_PCATALOG+" isAvilable = ? WHERE id = ?";
-        ConnectDB conn=new ConnectDB();
-        conn.testConn();
-        try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt= conDB.getConnection().prepareStatement(sql)){
             stmt.setInt(1,0);
             stmt.setInt(2,pid);
             rowsAffected = stmt.executeUpdate();
@@ -145,9 +139,8 @@ public class Admin extends User {
 
     public void changeProductName(int pid,String newName) throws SQLException {
         sql=UPDATE_PCATALOG+" productName = ? WHERE id = ?";
-        ConnectDB conn=new ConnectDB();
-        conn.testConn();
-        try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt= conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,newName);
             stmt.setInt(2,pid);
             rowsAffected = stmt.executeUpdate();
@@ -162,9 +155,8 @@ public class Admin extends User {
 
     public void changeProductType(int pid, String newType) throws SQLException {
         sql=UPDATE_PCATALOG+" productType = ? WHERE id = ?";
-        ConnectDB conn=new ConnectDB();
-        conn.testConn();
-        try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt= conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,newType);
             stmt.setInt(2,pid);
             rowsAffected = stmt.executeUpdate();
@@ -179,9 +171,8 @@ public class Admin extends User {
 
     public void changeProductPrice(int pid, int newPrice) throws SQLException {
         sql=UPDATE_PCATALOG+" productPrice = ? WHERE id =? ";
-        ConnectDB conn=new ConnectDB();
-        conn.testConn();
-        try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt= conDB.getConnection().prepareStatement(sql)){
             stmt.setInt(1,newPrice);
             stmt.setInt(2,pid);
             rowsAffected = stmt.executeUpdate();
@@ -196,9 +187,8 @@ public class Admin extends User {
 
     public void deleteProduct(int pid) throws SQLException {
         sql="DELETE FROM productcatalog WHERE id = ?";
-        ConnectDB conn=new ConnectDB();
-        conn.testConn();
-        try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt= conDB.getConnection().prepareStatement(sql)){
             stmt.setInt(1,pid);
             rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
@@ -213,9 +203,8 @@ public class Admin extends User {
     public void showCustomer() throws SQLException {
         logger.log(Level.INFO, "|        id       |   Customer Email   |");
         sql="SELECT * FROM systemusers WHERE user_type = ?";
-        ConnectDB conn=new ConnectDB();
-        conn.testConn();
-        try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt= conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,"customer");
             try (ResultSet resultSet = stmt.executeQuery()) {
                 ResultSetMetaData metaData = resultSet.getMetaData();
@@ -248,10 +237,9 @@ public class Admin extends User {
     public void showScheduledAppointments() throws SQLException {
         sql = "SELECT `rid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`,`status`" +
                 " FROM install_request WHERE status NOT IN ('canceled', 'completed');";
-        ConnectDB connection = new ConnectDB();
-        connection.testConn();
+        conDB.testConn();
 
-        try (PreparedStatement stmt = connection.getConnection().prepareStatement(sql)) {
+        try (PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)) {
 
             ResultSet rSet = stmt.executeQuery();
             ResultSetMetaData metaData = rSet.getMetaData();
@@ -290,9 +278,8 @@ public class Admin extends User {
     }
     public void setScheduled(int rid) throws SQLException {
 
-        ConnectDB connection = new ConnectDB();
-        connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
+        conDB.testConn();
+        try(PreparedStatement stmt =conDB.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"scheduled");
             stmt.setInt(2,rid);
             rowsAffected = stmt.executeUpdate();
@@ -310,9 +297,8 @@ public class Admin extends User {
 
     public void assignTO(int rid,String email) throws SQLException {
         sql = "UPDATE install_request SET assigned = ? WHERE rid =?";
-        ConnectDB connection = new ConnectDB();
-        connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt =conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1, email);
             stmt.setInt(2,rid);
             rowsAffected = stmt.executeUpdate();
@@ -331,9 +317,8 @@ public class Admin extends User {
     public void setTime(int rid,String time) throws SQLException {
         sql = "UPDATE install_request SET preferredDate = TIMESTAMP(CONCAT(CAST(DATE(preferredDate) AS DATE), ' ', ?))"+
                 " WHERE rid=?";
-        ConnectDB connection = new ConnectDB();
-        connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(sql)){
+        conDB.testConn();
+        try(PreparedStatement stmt =conDB.getConnection().prepareStatement(sql)){
             stmt.setString(1,time);
             stmt.setInt(2,rid);
             rowsAffected = stmt.executeUpdate();
@@ -350,9 +335,8 @@ public class Admin extends User {
 
     public void setStatusToCompleted(int rid) throws SQLException {
 
-        ConnectDB connection = new ConnectDB();
-        connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
+        conDB.testConn();
+        try(PreparedStatement stmt =conDB.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"completed");
             stmt.setInt(2,rid);
             rowsAffected = stmt.executeUpdate();
@@ -368,9 +352,8 @@ public class Admin extends User {
     }
 
     public void setStatusToCanceled(int rid) throws SQLException {
-        ConnectDB connection = new ConnectDB();
-        connection.testConn();
-        try(PreparedStatement stmt =connection.getConnection().prepareStatement(UPDATE_REQUEST)){
+        conDB.testConn();
+        try(PreparedStatement stmt =conDB.getConnection().prepareStatement(UPDATE_REQUEST)){
             stmt.setString(1,"canceled");
             stmt.setInt(2,rid);
             rowsAffected = stmt.executeUpdate();

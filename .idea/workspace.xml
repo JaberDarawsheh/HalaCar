@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="duplication in admin,customer&amp;installer resolved">
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="duplication in productcat resolved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,23 +239,7 @@
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
       <workItem from="1703319631286" duration="39391000" />
-      <workItem from="1703435814521" duration="701000" />
-    </task>
-    <task id="LOCAL-00031" summary="bad smells fix">
-      <option name="closed" value="true" />
-      <created>1703286427376</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1703286427376</updated>
-    </task>
-    <task id="LOCAL-00032" summary="bad smells fix">
-      <option name="closed" value="true" />
-      <created>1703286730805</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1703286730805</updated>
+      <workItem from="1703435814521" duration="1960000" />
     </task>
     <task id="LOCAL-00033" summary="bad smells fix">
       <option name="closed" value="true" />
@@ -634,7 +617,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703434912308</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="duplication in installer resolved">
+      <option name="closed" value="true" />
+      <created>1703436546455</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1703436546456</updated>
+    </task>
+    <task id="LOCAL-00081" summary="duplication in productcat resolved">
+      <option name="closed" value="true" />
+      <created>1703437079518</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1703437079518</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -715,7 +714,9 @@
     <MESSAGE value="duplication reduction" />
     <MESSAGE value="...." />
     <MESSAGE value="duplication in admin,customer&amp;installer resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="duplication in admin,customer&amp;installer resolved" />
+    <MESSAGE value="duplication in installer resolved" />
+    <MESSAGE value="duplication in productcat resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="duplication in productcat resolved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
