@@ -533,7 +533,7 @@ public class Main // to delete
 		}
 		}
 		
-	} // end first while loop
+	}
 	
 	public static void theAdminLogout(UserLoginPage login)  {
 

@@ -27,8 +27,7 @@ public class Customer extends User {
     private static final String P_TYPE="Product Type";
     private static final String INSTALL_DATE="Installation Date";
     private static final String SOME_THING="\nsome thing went wrong please try again later";
-    private static final String SELECT_QUERY="SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status`"
-                                               + " FROM install_request WHERE status =? and email = ? ";
+    private static final String SELECT_QUERY="SELECT `rid`,`pid`,`productName`,`productType`,`carModel`,`assigned`,`preferredDate`,`status` FROM install_request WHERE status =? and email = ? ";
     private static final String FORMATER="| %-15s | %-10s | %-15s | %-20s | %-15s | %-30s | %-10s |%n";
     public Customer(String userEmail, String userPassword) {
         super(userEmail,userPassword);
