@@ -54,22 +54,26 @@ public class Installer extends User{
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, "pending");
-            ResultSet reSet = stmt.executeQuery();
-            String format = "| %-15s | %-10s | %-15s | %-30s | %-15s | %-20s |%n";
-            String toBePrinted=String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date");
-            logger.log(Level.INFO, toBePrinted);
+            exctSQL(stmt);
+        }
+    }
 
-            while (reSet.next()) {
-                int rid = reSet.getInt("rid");
-                int pid = reSet.getInt("pid");
-                String productName1 = reSet.getString(P_NAME);
-                String productType1 = reSet.getString("productType");
-                String email1 = reSet.getString(MAIL);
-                String carsModel1 = reSet.getString(CAR_MODEL);
-                String preferredDate1 = reSet.getString(P_DATE);
-                String infoToBePrinted=String.format(format, rid, pid,productType1 ,productName1, email1, carsModel1, preferredDate1);
-                logger.log(Level.INFO, infoToBePrinted);
-            }
+    private void exctSQL(PreparedStatement stmt) throws SQLException {
+        ResultSet reSet = stmt.executeQuery();
+        String format = "| %-15s | %-10s | %-15s | %-30s | %-15s | %-20s |%n";
+        String toBePrinted=String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date");
+        logger.log(Level.INFO, toBePrinted);
+
+        while (reSet.next()) {
+            int rid = reSet.getInt("rid");
+            int pid = reSet.getInt("pid");
+            String productName1 = reSet.getString(P_NAME);
+            String productType1 = reSet.getString("productType");
+            String email1 = reSet.getString(MAIL);
+            String carsModel1 = reSet.getString(CAR_MODEL);
+            String preferredDate1 = reSet.getString(P_DATE);
+            String infoToBePrinted=String.format(format, rid, pid,productType1 ,productName1, email1, carsModel1, preferredDate1);
+            logger.log(Level.INFO, infoToBePrinted);
         }
     }
 
@@ -186,22 +190,7 @@ public class Installer extends User{
                     stmnt.setInt(1,id);
                     ResultSet rs= stmnt.executeQuery();
                     rs.next();//
-                    orderName = rs.getString(P_NAME);
-                    Date date = rs.getDate(P_DATE);
-                    String formatedDateTime=dateFormat.format(date);
-                    if (formatedDateTime.contains(" ")) {
-                        String[] dateTimeSplit = formatedDateTime.split("\\s+");
-                        installationTime = dateTimeSplit[1];
-                        orderDate = dateTimeSplit[0];
-                    }else {
-                        installationTime ="not determined yet";
-                        orderDate =formatedDateTime;
-
-                    }
-                    customerMail = rs.getString(MAIL);
-                    carModel = rs.getString(CAR_MODEL);
-                    requestID = rs.getString("rid");
-                    customerEmail = rs.getString(MAIL);
+                    getDateANDPname(dateFormat, rs);
                 }
                 SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
                 String emailMessageToInstaller =
@@ -234,6 +223,25 @@ public class Installer extends User{
 
         }
 
+    }
+
+    private void getDateANDPname(SimpleDateFormat dateFormat, ResultSet rs) throws SQLException {
+        orderName = rs.getString(P_NAME);
+        Date date = rs.getDate(P_DATE);
+        String formatedDateTime=dateFormat.format(date);
+        if (formatedDateTime.contains(" ")) {
+            String[] dateTimeSplit = formatedDateTime.split("\\s+");
+            installationTime = dateTimeSplit[1];
+            orderDate = dateTimeSplit[0];
+        }else {
+            installationTime ="not determined yet";
+            orderDate =formatedDateTime;
+
+        }
+        customerMail = rs.getString(MAIL);
+        carModel = rs.getString(CAR_MODEL);
+        requestID = rs.getString("rid");
+        customerEmail = rs.getString(MAIL);
     }
 
     public void schedule(int id, String time) throws SQLException,IOException {
@@ -323,23 +331,7 @@ public class Installer extends User{
                     stmnt.setInt(1,id);
                     ResultSet rs= stmnt.executeQuery();
                     if(rs.next()) {
-                        orderName = rs.getString(P_NAME);
-                        Date date = rs.getDate(P_DATE);
-                        String formatedDateTime = dateFormat.format(date);
-
-                        if (formatedDateTime.contains(" ")) {
-                            String[] dateTimeSplit = formatedDateTime.split("\\s+");
-                            installationTime = dateTimeSplit[1];
-                            orderDate = dateTimeSplit[0];
-                        }else {
-                            installationTime ="not determined yet";
-                            orderDate =formatedDateTime;
-
-                        }
-                        customerMail = rs.getString(MAIL);
-                        carModel = rs.getString(CAR_MODEL);
-                        requestID = rs.getString("rid");
-                        customerEmail = rs.getString(MAIL);
+                        getDateANDPname(dateFormat, rs);
                     }
                 }
                 SendNotificationViaEmail toInstallerEmail = new SendNotificationViaEmail();
@@ -383,22 +375,7 @@ public class Installer extends User{
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(query)) {
             stmt.setString(1, user.getUserEmail());
-            ResultSet rSet = stmt.executeQuery();
-            String format = "| %-15s | %-10s | %-15s | %-30s | %-15s | %-20s |%n";
-            String headOfTable=String.format(format, "Request Number", "Product ID", "Product Type", "Requester Email", "Car Model", "Preferred Date");
-            logger.log(Level.INFO,headOfTable);
-
-            while (rSet.next()) {
-                int rid = rSet.getInt("rid");
-                int pid = rSet.getInt("pid");
-                String productName2 = rSet.getString(P_NAME);
-                String productType2 = rSet.getString("productType");
-                String email2 = rSet.getString(MAIL);
-                String carModels2 = rSet.getString(CAR_MODEL);
-                String preferredDate2 = rSet.getString(P_DATE);
-                String contentOfTable2=String.format(format, rid, pid,productType2 ,productName2, email2, carModels2, preferredDate2);
-                logger.log(Level.INFO, contentOfTable2);
-            }
+            exctSQL(stmt);
         }
     }
 }

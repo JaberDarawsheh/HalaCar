@@ -135,15 +135,7 @@ public class Customer extends User {
             int[] columnWidths={5,30,15,10,10};
             while (rSet.next()) {
                 StringBuilder rowData = new StringBuilder();
-                for (int i = 1; i <= numberOfColumns; i++) {
-                    String columnValue = rSet.getString(i);
-                    String formSpes="%-"+columnWidths[i-1]+"s";
-                    String formattedColumn = String.format(formSpes, columnValue);
-                    rowData.append(formattedColumn);
-                    if (i < numberOfColumns) {
-                        rowData.append(" | "); // Add separator between columns
-                    }
-                }
+                tableFormatPrint(rSet, numberOfColumns, rowData, columnWidths);
                 if (logger.isLoggable(Level.INFO)) {
                     logger.info(String.format("| %-5s  |%n", rowData));
                 }
@@ -302,32 +294,7 @@ public class Customer extends User {
 
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(SELECT_QUERY)) {
             stmt.setString(1, "completed");
-            stmt.setString(2, user.getUserEmail());
-            ResultSet rSet = stmt.executeQuery();
-            ResultSetMetaData metaData = rSet.getMetaData();
-            int numberOfColumns = metaData.getColumnCount();
-
-            if (logger.isLoggable(Level.INFO)) {
-                logger.log(Level.INFO, String.format(FORMATER, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
-            }
-            while (rSet.next()) {
-                StringBuilder rowData = new StringBuilder();
-                int [] columnValue={15,10,15,20,15,30,10};
-
-
-                for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
-                    String columnValues = rSet.getString(i);
-                    String formSpes="%-" + columnValue[i-1] + "s";
-                    String formattedColumn = String.format(formSpes, columnValues); // Adjust width as needed
-                    rowData.append(formattedColumn);
-                    if (i < numberOfColumns) {
-                        rowData.append(" | "); // Separator between columns
-                    }
-                }
-                if (logger.isLoggable(Level.INFO)) {
-                    logger.log(Level.INFO, rowData.toString());
-                }
-            }
+            sqlGetUserEmail(stmt);
         }
     }
 
@@ -337,30 +304,38 @@ public class Customer extends User {
         connection.testConn();
         try (PreparedStatement stmt = connection.getConnection().prepareStatement(SELECT_QUERY)) {
             stmt.setString(1, "canceled");
-            stmt.setString(2, user.getUserEmail());
-            ResultSet rSet = stmt.executeQuery();
-            ResultSetMetaData metaData = rSet.getMetaData();
-            int numberOfColumns = metaData.getColumnCount();
+            sqlGetUserEmail(stmt);
+        }
+    }
 
+    private void sqlGetUserEmail(PreparedStatement stmt) throws SQLException {
+        stmt.setString(2, user.getUserEmail());
+        ResultSet rSet = stmt.executeQuery();
+        ResultSetMetaData metaData = rSet.getMetaData();
+        int numberOfColumns = metaData.getColumnCount();
+
+        if (logger.isLoggable(Level.INFO)) {
+            logger.log(Level.INFO, String.format(FORMATER, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
+        }
+        while (rSet.next()) {
+            StringBuilder rowData = new StringBuilder();
+            int [] columnValue={15,10,15,20,15,30,10};
+            for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
+                tableFormaterV2(rSet, numberOfColumns, rowData, columnValue, i);
+            }
             if (logger.isLoggable(Level.INFO)) {
-                logger.log(Level.INFO, String.format(FORMATER, REQUEST_NUM, PID, P_TYPE, INSTALLER_MAIL, CAR_MODEL, INSTALL_DATE, STATUS));
+                logger.log(Level.INFO, rowData.toString());
             }
-            while (rSet.next()) {
-                StringBuilder rowData = new StringBuilder();
-                int [] columnValue={15,10,15,20,15,30,10};
-                for (int i = 1; i <= numberOfColumns&&i <= columnValue.length; i++) {
-                    String columnValues = rSet.getString(i);
-                    String formSpes="%-"+columnValue[i-1]+"s";
-                    String formattedColumn = String.format(formSpes, columnValues); // Adjust width as needed
-                    rowData.append(formattedColumn);
-                    if (i < numberOfColumns) {
-                        rowData.append(" | "); // Separator between columns
-                    }
-                }
-                if (logger.isLoggable(Level.INFO)) {
-                    logger.log(Level.INFO, rowData.toString());
-                }
-            }
+        }
+    }
+
+    private void tableFormaterV2(ResultSet rSet, int numberOfColumns, StringBuilder rowData, int[] columnValue, int i) throws SQLException {
+        String columnValues = rSet.getString(i);
+        String formSpes="%-"+columnValue[i-1]+"s";
+        String formattedColumn = String.format(formSpes, columnValues); // Adjust width as needed
+        rowData.append(formattedColumn);
+        if (i < numberOfColumns) {
+            rowData.append(" | "); // Separator between columns
         }
     }
 
@@ -382,19 +357,17 @@ public class Customer extends User {
                 StringBuilder rowData = new StringBuilder();
 
                 int [] columnval={15,10,15,20,20,15,30,10};
-                for (int i = 1; i <= numberOfColumns; i++) {
-                    String columnValue = rSet.getString(i);
-                    String formSpes="%-"+columnval[i-1]+"s";
-                    String formattedColumn = String.format(formSpes, columnValue); // Adjust width as needed
-                    rowData.append(formattedColumn);
-                    if (i < numberOfColumns) {
-                        rowData.append(" | "); // Separator between columns
-                    }
-                }
+                tableFormatPrint(rSet, numberOfColumns, rowData, columnval);
                 if (logger.isLoggable(Level.INFO)) {
                     logger.log(Level.INFO, rowData.toString());
                 }
             }
+        }
+    }
+
+    private void tableFormatPrint(ResultSet rSet, int numberOfColumns, StringBuilder rowData, int[] columnval) throws SQLException {
+        for (int i = 1; i <= numberOfColumns; i++) {
+            tableFormaterV2(rSet, numberOfColumns, rowData, columnval, i);
         }
     }
 

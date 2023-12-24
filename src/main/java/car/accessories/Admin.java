@@ -23,21 +23,7 @@ public class Admin extends User {
         cat=new ProductCat();
     }
 
-    private void executeUpdate(String sql, Object... params) throws SQLException {
-        ConnectDB conDB = new ConnectDB();
-        conDB.testConn();
-        try (PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)) {
-            for (int i = 0; i < params.length; i++) {
-                stmt.setObject(i + 1, params[i]);
-            }
-            rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                logger.info("Operation completed successfully.");
-            } else {
-                logger.warning(SOME_THING_WRONG_MESSAGE);
-            }
-        }
-    }
+
 
     public void addCustomer(String email, String userP) throws SQLException {
         sql = "INSERT INTO systemusers (user_email,user_password,user_type) VALUES (? , ? , ?)";
