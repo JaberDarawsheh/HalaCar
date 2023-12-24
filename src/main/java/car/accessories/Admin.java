@@ -17,11 +17,15 @@ public class Admin extends User {
     int rowsAffected;
     private static final String SOME_THING_WRONG_MESSAGE ="\nsome thing went wrong please try again later";
     private static final String UPDATE_REQUEST="UPDATE install_request SET status = ? WHERE rid =?";
+    private static final String UPDATE_PCATALOG="UPDATE productcatalog SET";
 
-    public Admin(String userEmail,String userPassword) {
-        super(userEmail,userPassword);
-        cat=new ProductCat();
+    public Admin(String userEmail,String userPassword)
+    {
+        super(userEmail, userPassword);
+        cat = new ProductCat();
+
     }
+
 
 
 
@@ -123,7 +127,7 @@ public class Admin extends User {
     }
 
     public void isUnavailable(int pid) throws SQLException {
-        sql ="UPDATE productcatalog SET isAvilable = ? WHERE id = ?";
+        sql =UPDATE_PCATALOG+" isAvilable = ? WHERE id = ?";
         ConnectDB conn=new ConnectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
@@ -140,7 +144,7 @@ public class Admin extends User {
     }
 
     public void changeProductName(int pid,String newName) throws SQLException {
-        sql="UPDATE productcatalog SET productName = ? WHERE id = ?";
+        sql=UPDATE_PCATALOG+" productName = ? WHERE id = ?";
         ConnectDB conn=new ConnectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
@@ -157,7 +161,7 @@ public class Admin extends User {
     }
 
     public void changeProductType(int pid, String newType) throws SQLException {
-        sql="UPDATE productcatalog SET productType = ? WHERE id = ?";
+        sql=UPDATE_PCATALOG+" productType = ? WHERE id = ?";
         ConnectDB conn=new ConnectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){
@@ -174,7 +178,7 @@ public class Admin extends User {
     }
 
     public void changeProductPrice(int pid, int newPrice) throws SQLException {
-        sql="UPDATE productcatalog SET productPrice = ? WHERE id =? ";
+        sql=UPDATE_PCATALOG+" productPrice = ? WHERE id =? ";
         ConnectDB conn=new ConnectDB();
         conn.testConn();
         try(PreparedStatement stmt= conn.getConnection().prepareStatement(sql)){

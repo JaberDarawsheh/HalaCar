@@ -27,6 +27,7 @@ public class Installer extends User{
     private static final String CAR_MODEL="carModel";
     private static final String P_DATE="preferredDate";
     private static final String REQUEST_TABLE_QUERY="SELECT * FROM Install_request WHERE rid=?";
+    private static final String FROM_INSTALL="FROM install_request";
     private static final String DATE_FORMAT="dd-MM-yyyy";
     private static final String INSTALLER_GREETING="Dear Installer,\n\nWe hope this email finds you well.";
     private static final String CUSTOMER_GREETING="Dear Customer,\n\n";
@@ -47,8 +48,8 @@ public class Installer extends User{
 
 
     public void showPending() throws SQLException {
-        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`" +
-                " FROM install_request WHERE status =?";
+        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`email`,`carModel`,`preferredDate` " +FROM_INSTALL+
+                " WHERE status =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
 
@@ -138,7 +139,7 @@ public class Installer extends User{
     }
 
     public String getStatus(int id) throws SQLException {
-        String statusSQL = "SELECT `status` FROM install_request WHERE rid=?";
+        String statusSQL = "SELECT `status` "+FROM_INSTALL+" WHERE rid=?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
         try(PreparedStatement stmt =connection.getConnection().prepareStatement(statusSQL)){
@@ -368,8 +369,8 @@ public class Installer extends User{
     }
 
     public void showAssigned() throws SQLException {
-        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`" +
-                " FROM install_request WHERE assigned =?";
+        String query = "SELECT `rid`,`pid`,`productName`,`productType`,`email`,`carModel`,`preferredDate`" +FROM_INSTALL+
+                " WHERE assigned =?";
         ConnectDB connection = new ConnectDB();
         connection.testConn();
 
