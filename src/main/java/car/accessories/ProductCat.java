@@ -35,41 +35,7 @@ public class ProductCat {
 	}
 
 	
-	
-	
-	public void showProductsCatalogToUser() throws SQLException {
-	    connec.testConn();
-	    logger.log(Level.INFO, "|        id       |   product name   |   product type   |   product price  |   product img    |   availability   |");
-	    String query = "SELECT * FROM productcatalog";
-
-	    try (PreparedStatement preparedStatement = connec.getConnection().prepareStatement(query)) {
-
-	        try (ResultSet resultSet = preparedStatement.executeQuery()) {
-	            ResultSetMetaData metaData = resultSet.getMetaData();
-	            int columnCount = metaData.getColumnCount();
-
-	            while (resultSet.next()) {
-	                StringBuilder rowData = new StringBuilder();
-
-	                for (int i = 1; i <= columnCount; i++) {
-	                    String columnValue = resultSet.getString(i);
-	                    String osman="%-"+18+"s";
-	                    String formattedValue = String.format(osman, columnValue);
-	                    rowData.append(formattedValue);
-
-	                    if (i < columnCount) {
-	                        rowData.append("|"); 
-	                    }
-	                }
-					if (logger.isLoggable(Level.INFO)) {
-						logger.log(Level.INFO, rowData.toString());
-					}
-	            }
-	        }
-	    }
-	}
-
-	public void showProductsCatalogToAdmin() throws SQLException {
+	private void showProducts() throws SQLException{
 		connec.testConn();
 		logger.log(Level.INFO, "|        id       |   product name   |   product type   |   product price  |   product img    |   availability   |");
 		String query = "SELECT * FROM productcatalog";
@@ -85,15 +51,12 @@ public class ProductCat {
 
 					for (int i = 1; i <= columnCount; i++) {
 						String columnValue = resultSet.getString(i);
-
-						int columnWidth=18;
-						String formspesef="%-" + columnWidth + "s";
-						String formattedValue = String.format(formspesef, columnValue);
-
+						String osman="%-"+18+"s";
+						String formattedValue = String.format(osman, columnValue);
 						rowData.append(formattedValue);
 
 						if (i < columnCount) {
-							rowData.append("|"); // Add a vertical bar as a separator between columns
+							rowData.append("|");
 						}
 					}
 					if (logger.isLoggable(Level.INFO)) {
@@ -102,6 +65,14 @@ public class ProductCat {
 				}
 			}
 		}
+	}
+	
+	public void showProductsCatalogToUser() throws SQLException {
+		showProducts();
+	}
+
+	public void showProductsCatalogToAdmin() throws SQLException {
+		showProducts();
 
 	}
 	

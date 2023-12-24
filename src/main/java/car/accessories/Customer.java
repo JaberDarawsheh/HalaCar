@@ -332,10 +332,10 @@ public class Customer extends User {
     private void tableFormaterV2(ResultSet rSet, int numberOfColumns, StringBuilder rowData, int[] columnValue, int i) throws SQLException {
         String columnValues = rSet.getString(i);
         String formSpes="%-"+columnValue[i-1]+"s";
-        String formattedColumn = String.format(formSpes, columnValues); // Adjust width as needed
+        String formattedColumn = String.format(formSpes, columnValues);
         rowData.append(formattedColumn);
         if (i < numberOfColumns) {
-            rowData.append(" | "); // Separator between columns
+            rowData.append(" | ");
         }
     }
 
