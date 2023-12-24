@@ -23,64 +23,35 @@ public class Admin extends User {
         cat=new ProductCat();
     }
 
-    public void addCustomer(String email, String userP) throws SQLException {
-        sql = "INSERT INTO systemusers (user_email,user_password,user_type) VALUES (? , ? , ?)";
+    private void executeUpdate(String sql, Object... params) throws SQLException {
         ConnectDB conDB = new ConnectDB();
-        //the new user is added
-
         conDB.testConn();
-        try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
-            stmt.setString(1, email);
-            stmt.setString(2, userP);
-            stmt.setString(3, "customer");
+        try (PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)) {
+            for (int i = 0; i < params.length; i++) {
+                stmt.setObject(i + 1, params[i]);
+            }
             rowsAffected = stmt.executeUpdate();
-
             if (rowsAffected > 0) {
-                logger.info("User added successfully.");
-
+                logger.info("Operation completed successfully.");
             } else {
                 logger.warning(SOME_THING_WRONG_MESSAGE);
             }
         }
+    }
+
+    public void addCustomer(String email, String userP) throws SQLException {
+        String sql = "INSERT INTO systemusers (user_email,user_password,user_type) VALUES (? , ? , ?)";
+        executeUpdate(sql, email, userP, "customer");
     }
 
     public void updatePass(String email, String userP) throws SQLException {
-        sql = "UPDATE systemusers SET `user_password`= ? WHERE `user_email` = ?";
-        ConnectDB conDB = new ConnectDB();
-        conDB.testConn();
-        try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
-            stmt.setString(1,userP);
-            stmt.setString(2, email);
-            rowsAffected = stmt.executeUpdate();
-
-            if (rowsAffected > 0) {
-                logger.info("the password updated successfully.");
-
-            } else {
-                logger.warning(SOME_THING_WRONG_MESSAGE);
-            }
-
-        }
-
+        String sql = "UPDATE systemusers SET `user_password`= ? WHERE `user_email` = ?";
+        executeUpdate(sql, userP, email);
     }
 
     public void updateEmail(String mail, String newEmail) throws SQLException {
-        sql = "UPDATE systemusers SET `user_email`= ? WHERE `user_email` = ?";
-        ConnectDB conDB = new ConnectDB();
-        conDB.testConn();
-        try(PreparedStatement stmt = conDB.getConnection().prepareStatement(sql)){
-            stmt.setString(1,newEmail);
-            stmt.setString(2, mail);
-            rowsAffected = stmt.executeUpdate();
-
-            if (rowsAffected > 0) {
-                logger.info("the email updated successfully.");
-
-            } else {
-                logger.warning(SOME_THING_WRONG_MESSAGE);
-            }
-
-        }
+        String sql = "UPDATE systemusers SET `user_email`= ? WHERE `user_email` = ?";
+        executeUpdate(sql, newEmail, mail);
     }
 
     public void deleteUser(String email) throws SQLException {
