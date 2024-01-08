@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="duplication in productcat resolved">
+    <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="duplication resolved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/ProductCat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/car/accessories/Admin.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
     &quot;JUnit.All in CarAccessioresCompany.executor&quot;: &quot;Coverage&quot;,
     &quot;JUnit.CarAccessiores in CarAccessioresCompany.executor&quot;: &quot;Coverage&quot;,
     &quot;JUnit.Test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in CarAccessioresCompany.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.java in CarAccessioresCompany.executor&quot;: &quot;Run&quot;,
     &quot;Maven.CarAccessioresCompany [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.CarAccessioresCompany [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.CarAccessioresCompany [test,-e].executor&quot;: &quot;Run&quot;,
@@ -107,19 +107,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.java in CarAccessioresCompany">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="car.accessories.Main" />
-      <module name="CarAccessioresCompany" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="car.accessories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All Features in: use_cases" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases" />
@@ -181,6 +168,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarAccessioresCompany" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="car.accessories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="car.accessories" />
+      <option name="MAIN_CLASS_NAME" value="car.accessories.Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in CarAccessioresCompany" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CarAccessioresCompany" />
       <option name="TEST_OBJECT" value="directory" />
@@ -190,19 +192,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
       <item itemvalue="Cucumber Java.Scenario: Customer views the installation request status" />
       <item itemvalue="Cucumber Java.All Features in: use_cases" />
+      <item itemvalue="JUnit.Test" />
       <item itemvalue="JUnit.java in CarAccessioresCompany" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in CarAccessioresCompany" />
+        <item itemvalue="JUnit.Test" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
         <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
         <item itemvalue="Cucumber Java.Scenario: Customer views the installation request status" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -239,15 +241,8 @@
       <workItem from="1703192722517" duration="11795000" />
       <workItem from="1703268981340" duration="19621000" />
       <workItem from="1703319631286" duration="39391000" />
-      <workItem from="1703435814521" duration="1960000" />
-    </task>
-    <task id="LOCAL-00033" summary="bad smells fix">
-      <option name="closed" value="true" />
-      <created>1703287031423</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1703287031423</updated>
+      <workItem from="1703435814521" duration="11848000" />
+      <workItem from="1704691431332" duration="920000" />
     </task>
     <task id="LOCAL-00034" summary="bad smells fix">
       <option name="closed" value="true" />
@@ -633,7 +628,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703437079518</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="duplication resolved">
+      <option name="closed" value="true" />
+      <created>1703437793137</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1703437793137</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,7 +719,8 @@
     <MESSAGE value="duplication in admin,customer&amp;installer resolved" />
     <MESSAGE value="duplication in installer resolved" />
     <MESSAGE value="duplication in productcat resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="duplication in productcat resolved" />
+    <MESSAGE value="duplication resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="duplication resolved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -750,7 +754,7 @@
     <SUITE FILE_PATH="coverage/HalaCar$All_Features_in__use_cases__1_.ic" NAME="All Features in: use_cases (1) Coverage Results" MODIFIED="1703270517822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>io.cucumber.core.cli.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/HalaCar$java_in_CarAccessioresCompany.ic" NAME="java in CarAccessioresCompany Coverage Results" MODIFIED="1703355906009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/HalaCar$java_in_CarAccessioresCompany.ic" NAME="java in CarAccessioresCompany Coverage Results" MODIFIED="1703445838956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/HalaCar$All_in_CarAccessioresCompany.ic" NAME="All in CarAccessioresCompany Coverage Results" MODIFIED="1703269612958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

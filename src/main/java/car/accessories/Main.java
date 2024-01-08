@@ -35,7 +35,7 @@ public class Main // to delete
 		logger.info("---------------------------------------------------------");
 		boolean loopRunner=true;
 		while(loopRunner) {
-			
+
 			Scanner scanner = new Scanner(System.in);
 			int sameer=scanner.nextInt();
 
@@ -49,8 +49,8 @@ public class Main // to delete
 				Registeration reg = new Registeration();
 				reg.setData(newUserEmail, newUserPassword , customer);
 			}
-			else 
-			{	
+			else
+			{
 			logger.info("Enter user Email : ");
 			String userEmail = scanner.next();
 			logger.info("Enter user Password : ");
@@ -532,9 +532,9 @@ public class Main // to delete
 
 		}
 		}
-		
+
 	}
-	
+
 	public static void theAdminLogout(UserLoginPage login)  {
 
 		login.adminLogout();
