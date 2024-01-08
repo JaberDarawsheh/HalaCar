@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 import java.util.logging.ConsoleHandler;
 
-public class Main
+public class Main//hello
 {
 	static Scanner scan = new Scanner(System.in);
 	static Scanner str = new Scanner(System.in);

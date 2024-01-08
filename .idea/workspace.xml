@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6749a787-147b-4762-88a9-bf9f02945c47" name="Changes" comment="fgjgh">
-      <change beforePath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/car/accessories/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,7 @@
     "JUnit.All in CarAccessioresCompany.executor": "Coverage",
     "JUnit.CarAccessiores in CarAccessioresCompany.executor": "Coverage",
     "JUnit.Test.executor": "Run",
-    "JUnit.java in CarAccessioresCompany.executor": "Coverage",
+    "JUnit.java in CarAccessioresCompany.executor": "Run",
     "Maven.CarAccessioresCompany [clean].executor": "Run",
     "Maven.CarAccessioresCompany [compile].executor": "Run",
     "Maven.CarAccessioresCompany [test,-e].executor": "Run",
@@ -104,7 +104,7 @@
       <command value="mvn test -e" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.java in CarAccessioresCompany">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="car.accessories.Main" />
       <module name="CarAccessioresCompany" />
@@ -190,8 +190,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.java in CarAccessioresCompany" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Test" />
         <item itemvalue="Cucumber Java.All Features in: use_cases" />
         <item itemvalue="Cucumber Java.Feature: AdminDashboard" />
@@ -233,15 +233,7 @@
       <workItem from="1703319631286" duration="39391000" />
       <workItem from="1703435814521" duration="11848000" />
       <workItem from="1704691431332" duration="920000" />
-      <workItem from="1704696769616" duration="357000" />
-    </task>
-    <task id="LOCAL-00035" summary="bad smells fix">
-      <option name="closed" value="true" />
-      <created>1703287829192</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1703287829192</updated>
+      <workItem from="1704696769616" duration="1451000" />
     </task>
     <task id="LOCAL-00036" summary="test report fix so it can fix the work fllow">
       <option name="closed" value="true" />
@@ -627,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704697088618</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="fgjgh">
+      <option name="closed" value="true" />
+      <created>1704697286263</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1704697286264</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
